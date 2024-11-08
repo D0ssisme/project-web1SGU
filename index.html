@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="main.css" />
+
+
+
+  <title>Đăng Nhập</title>
+
+</head>
+
+<body>
+  <div class="boxcha">
+    <div class="box">
+
+    </div>
+  </div>
+  <!-- <div class="modall">
+    <div class="modal_overplay">
+
+    </div>
+    <div class="modal_body">
+      <div class="moda_form">
+
+        <div class="form__head">
+          <h4>Đăng Ký</h4>
+        </div>
+
+
+        <div class="form__body">
+          <div class="form__group">
+            <input type="text" class="form__input" placeholder="Số Điện Thoại">
+          </div>
+          <div class="form__group">
+            <input type="text" class="form__input" placeholder="Địa chỉ">
+          </div>
+          <div class="form__group">
+            <input type="password" class="form__input" placeholder="Mật Khẩu">
+          </div>
+          <div class="form__group">
+            <input type="password" class="form__input" placeholder="Nhập lại mật khẩu">
+          </div>
+
+
+          <div class="form__police">
+
+            <p class="form__police-text">
+              <input type="checkbox"> đồng ý với OnlyFan về
+              <a href="" class="form__police-link">điều khoản dịch vụ </a>&
+              <a href="" class="form__police-link">Chính sách bảo mật </a>
+            </p>
+
+          </div>
+
+          <div class="control">
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-danger">Đăng ký</button>
+            </div>
+          </div>
+
+          <div class="line-text">
+            <span class="text-line">hoặc đăng ký bằng</span>
+          </div>
+
+          <div class="form-social d-flex justify-content-between">
+            <button type="button" class="btn btn-primary form_icon w-45">
+              <i class="fa-brands fa-facebook-f"></i> Facebook
+            </button>
+
+            <button type="button" class="btn btn-danger form_icon w-45">
+              <i class="fa-brands fa-google-plus-g"></i> Google
+            </button>
+          </div>
+          <div class="haveacc">
+            Bạn đã có tài khoản?
+            <a href="">đăng nhập</a>
+          </div>
+        </div> -->
+
+
+</body>
+
+</html>
+
+
+
+
+</head>
+
+<body>
+
+  <div class="modall" id="modalForm">
+    <div class="modal_overplay"></div>
+    <div class="modal_body">
+
+      <div class="moda_form">
+        <div class="form__head">
+          <h4>ĐĂNG NHẬP</h4>
+        </div>
+
+        <div class="form__body">
+          <div class="form__group">
+            <input type="text" class="form__input" id="user" placeholder="Số Điện Thoại" />
+          </div>
+          <div class="form__group">
+            <input type="password" class="form__input" placeholder="Mật Khẩu" />
+          </div>
+
+          <div class="form__forgotpassword">
+
+            <input type="checkbox" id="remember" />
+            <label for="remember">Ghi nhớ mật khẩu</label>
+
+            <a href="" class="form__forgotpassword-link"> Quên mật khẩu? </a>
+          </div>
+
+          <div class="control">
+            <div class="d-grid gap-2">
+              <button onclick="checkform()" type="submit" class="btn btn-danger">Đăng Nhập</button>
+            </div>
+          </div>
+
+          <div class="line-text">
+            <span class="text-line">hoặc đăng nhập bằng</span>
+          </div>
+
+          <div class="form-social d-flex justify-content-between">
+            <button type="button" class="btn btn-primary form_icon w-45">
+              <i class="fa-brands fa-facebook-f"></i> Facebook
+            </button>
+
+            <button type="button" class="btn btn-danger form_icon w-45">
+              <i class="fa-brands fa-google-plus-g"></i> Google
+            </button>
+          </div>
+
+
+          <div class="form__chuadangky">
+            Bạn chưa có tài khoản?
+            <a href="">Đăng ký </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function checkform() {
+      var user = document.getElementById("user");
+      if (user.value == "") {
+        alert("nhap tai khoan vao thua bo !");
+        user.focus();
+      }
+    }
+  </script>
+
+</body>
+
+</html>

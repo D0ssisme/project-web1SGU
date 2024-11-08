@@ -1,0 +1,179 @@
+.modall {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+}
+
+.modal_overplay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+
+
+.modal_body {
+
+  background-color: white;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  border-radius: 13px;
+  width: 40%;
+
+}
+
+
+h4 {
+  font-size: 22px;
+}
+
+.form__body {
+  padding: 15px 15px;
+
+}
+
+.form__police {
+  padding: 15px 0px 15px 0px;
+  box-sizing: border-box;
+
+}
+
+.form__police-text {
+  font-size: 14px;
+}
+
+.form__group {
+  width: 100%;
+  padding-bottom: 8px;
+  box-sizing: border-box;
+
+}
+
+.form__input {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+  padding-left: 10px;
+  width: 100%;
+  height: 32px;
+  line-height: 20px;
+
+
+}
+
+.form__input:focus {
+  border-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.form__input::placeholder {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+
+}
+
+
+.form__head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+
+
+.form__chuadangky {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.w-45 {
+  width: 49%;
+}
+
+.form__forgotpassword {
+  padding-top: 15px;
+  padding-bottom: 35px;
+}
+
+.form__forgotpassword-link {
+  margin-left: 80px;
+}
+
+.control {
+  padding-bottom: 10px;
+}
+
+.line-text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+
+}
+
+.line-text::before,
+.line-text::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
+  margin: 0 3px;
+
+}
+
+.form-social {
+  margin-bottom: 10px;
+}
+
+.haveacc {
+  text-align: center;
+  /* Căn giữa nội dung trong div */
+  margin-top: 20px;
+  /* Tùy chọn: thêm khoảng cách phía trên */
+  font-size: 14px;
+  /* Kích thước chữ */
+}
+
+
+
+
+.boxcha {
+  width: 100%;
+  height: 38px;
+  background-color: red;
+
+}
+
+
+
+
+
+
+
+.box {
+  width: 100%;
+  height: 100px;
+  background-image: url('https://file.hstatic.net/200000722513/file/10.10_banner_001a4c.jpg');
+  background-repeat: no-repeat;
+  background-size: 90%;
+
+
+
+}
