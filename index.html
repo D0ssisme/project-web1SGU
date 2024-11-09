@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>project F</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/body_code/header.css">
     <link rel="stylesheet" href="./assets/css/body_code/footer.css">
@@ -12,133 +15,333 @@
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/body_code_mobile/header_mobile.css">
     <link rel="icon" type="./Images/png" href="./assets/Images/mini_logo.png">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
 </head>
+
 <body style="margin:0;">
     <div class="main">
         <!------------------------------------header------------------------------------->
         <header class="header">
             <div class="header__logo">
-                    <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo" class="header__logo-desktop"></a>
-                    <a href="index.html"><img src="./assets/Images/favicon.png" alt="logo_mini" class="header__logo-mobile"></a>
+                <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo"
+                        class="header__logo-desktop"></a>
+                <a href="index.html"><img src="./assets/Images/favicon.png" alt="logo_mini"
+                        class="header__logo-mobile"></a>
             </div>
 
             <div class="header__search">
-                    <div class="header__search-main">
-                        <input type="text" placeholder="Tìm kiếm sản phẩm" title="thanh tìm kiếm" id="input-box" autocomplete="off">
-                        <button class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                    <div class="result-box">
-                    </div>
+                <div class="header__search-main">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm" title="thanh tìm kiếm" id="input-box"
+                        autocomplete="off">
+                    <button class="search-button"><i
+                            class="header__find-button fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="result-box">
+                </div>
             </div>
 
             <div class="header__info">
-                    <ul>
-                        <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
-                        <li class="header__user"><i class="header__info-usericon fa-regular fa-user"></i></li>
-                        <li class="header__info-login"><span class="header__info-mobile"><a href="">Đăng nhập</a> / <a href="">Đăng ký</a></span></li>
-                    </ul>
+                <ul>
+                    <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                    <li class="header__user"><i class="header__info-usericon fa-regular fa-user"></i></li>
+                    <li class="header__info-login"><span class="header__info-mobile"><a href="#"
+                                onclick="showForm('register')">Đăng Ký</a> /
+                            <a href="#" onclick="showForm('login')">Đăng Nhập</a></span></li>
+                </ul>
             </div>
 
-    </header>
+        </header>
         <!------------------------------------------------------------------------------->
 
         <div class="container">
-            
+
         </div>
 
-         <!------------------------------------footer------------------------------------>
-         <footer class="footer">
+        <!------------------------------------footer------------------------------------>
+        <footer class="footer">
             <div class="grid">
-                    <div class="grid_row">
-                            <div class="grid_col-2-4">
-                                <h3 class="footer__heading">Giới thiệu</h3>
-                                <ul class="footer__list">
-                                    <li class="footer-item">
-                                        <a href="" class="footer-item_link">Giới thiệu về công ty</a>
-                                    </li>
-                                    <li class="footer-item">
-                                        <a href="" class="footer-item_link">Tuyển dụng</a>
-                                    </li>
-                                    <li class="footer-item">
-                                        <a href="" class="footer-item_link">Gửi góp ý, khiếu nại</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="grid_col-2-4">
-                                <h3 class="footer__heading">Tổng đài hỗ trợ</h3>
-                                <ul class="footer__list">
-                                    <li class="footer-item">
-                                        Gọi mua: <a href="tel:1900 232 461" class="footer-item_link">1900 232 461</a> (8:00 - 21:30)
-                                    </li>
-                                    <li class="footer-item">
-                                        Khiếu nại: <a href="tel:1800.1063 " class="footer-item_link">1800.1063 </a> (8:00 - 21:30)
-                                    </li>
-                                    <li class="footer-item">
-                                        Bảo hành: <a href="tel:1900 232 465" class="footer-item_link">1900 232 465</a> (8:00 - 21:00)
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="grid_col-2-4">
-                                <h3 class="footer__heading">Liên hệ với chúng tôi</h3>
-                                <ul class="footer__list">
-                                    <li class="footer-item">
-                                        <a href="" class="footer-item_link">
-                                            <i class="footer-item-icon fa-brands fa-facebook"></i>
-                                            Facebook</a>
-                                    </li>
-                                    <li class="footer-item">
-                                        <a href="" class="footer-item_link">
-                                            <i class="footer-item-icon fa-brands fa-instagram"></i>
-                                            Instagram</a>
-                                    </li>
-                                    <li class="footer-item">
-                                        <a href="mailto:fancompany@email.com" class="footer-item_link">
-                                            <i class="fa-regular fa-envelope"></i>
-                                            Email
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="grid_col-2-4">
-                                <h3 class="footer__heading">Chấp nhận thanh toán qua</h3>
-                                <ul class="footer-list-thanhtoan">
-                                    <li class="footer-item">
-                                        <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/visa.jpg" alt="visa_logo">
-                                    </li>
-                                    <li class="footer-item">
-                                        <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/mastercard.jpg" alt="mastercard_logo">
-                                    </li>
-                                    <li class="footer-item">
-                                        <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/cash.jpg" alt="tienmat_logo">
-                                    </li>
-                                    <li class="footer-item">
-                                        <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/internet-banking.jpg" alt="internetbanking_logo">
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="grid_col-2-4">
-                                <h3 class="footer__heading">Chứng nhận bảo mật</h3>
-                                <ul class="footer-list-baomat">
-                                    <li class="footer-list-item">
-                                        <img src="./assets/Images/baomat_logo/bocongthuong.png" alt="bocongthuong_logo" class="footer__logo-baomat--congthuong">
-                                    </li>
-                                    <li class="footer-list-item">
-                                        <img src="./assets/Images/baomat_logo/tinnhiem.png" alt="tinnhiem_logo" class="footer__logo-baomat">
-                                    </li>
-                                </ul>
-                            </div>
+                <div class="grid_row">
+                    <div class="grid_col-2-4">
+                        <h3 class="footer__heading">Giới thiệu</h3>
+                        <ul class="footer__list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item_link">Giới thiệu về công ty</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item_link">Tuyển dụng</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item_link">Gửi góp ý, khiếu nại</a>
+                            </li>
+                        </ul>
                     </div>
+                    <div class="grid_col-2-4">
+                        <h3 class="footer__heading">Tổng đài hỗ trợ</h3>
+                        <ul class="footer__list">
+                            <li class="footer-item">
+                                Gọi mua: <a href="tel:1900 232 461" class="footer-item_link">1900 232 461</a> (8:00 -
+                                21:30)
+                            </li>
+                            <li class="footer-item">
+                                Khiếu nại: <a href="tel:1800.1063 " class="footer-item_link">1800.1063 </a> (8:00 -
+                                21:30)
+                            </li>
+                            <li class="footer-item">
+                                Bảo hành: <a href="tel:1900 232 465" class="footer-item_link">1900 232 465</a> (8:00 -
+                                21:00)
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid_col-2-4">
+                        <h3 class="footer__heading">Liên hệ với chúng tôi</h3>
+                        <ul class="footer__list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item_link">
+                                    <i class="footer-item-icon fa-brands fa-facebook"></i>
+                                    Facebook</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item_link">
+                                    <i class="footer-item-icon fa-brands fa-instagram"></i>
+                                    Instagram</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="mailto:fancompany@email.com" class="footer-item_link">
+                                    <i class="fa-regular fa-envelope"></i>
+                                    Email
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid_col-2-4">
+                        <h3 class="footer__heading">Chấp nhận thanh toán qua</h3>
+                        <ul class="footer-list-thanhtoan">
+                            <li class="footer-item">
+                                <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/visa.jpg"
+                                    alt="visa_logo">
+                            </li>
+                            <li class="footer-item">
+                                <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/mastercard.jpg"
+                                    alt="mastercard_logo">
+                            </li>
+                            <li class="footer-item">
+                                <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/cash.jpg"
+                                    alt="tienmat_logo">
+                            </li>
+                            <li class="footer-item">
+                                <img class="footer__logo-thanhtoan"
+                                    src="./assets/Images/thanhtoan_logo/internet-banking.jpg"
+                                    alt="internetbanking_logo">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid_col-2-4">
+                        <h3 class="footer__heading">Chứng nhận bảo mật</h3>
+                        <ul class="footer-list-baomat">
+                            <li class="footer-list-item">
+                                <img src="./assets/Images/baomat_logo/bocongthuong.png" alt="bocongthuong_logo"
+                                    class="footer__logo-baomat--congthuong">
+                            </li>
+                            <li class="footer-list-item">
+                                <img src="./assets/Images/baomat_logo/tinnhiem.png" alt="tinnhiem_logo"
+                                    class="footer__logo-baomat">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="footer__second">
                 <div class="grid">
                     <p class="footer__second-text">
-                        <i class="fa-regular fa-copyright"></i> 2024 by Fan Company. All rights reserved   
+                        <i class="fa-regular fa-copyright"></i> 2024 by Fan Company. All rights reserved
                     </p>
                 </div>
             </div>
-    </footer>
+        </footer>
         <!------------------------------------------------------------------------------->
+
+
     </div>
+
+    <div class="modall" id="registerForm" style="display: none;">
+        <div class="modal_overplay" id="overlay" onclick="closeFormOutside()">
+
+        </div>
+        <div class="modal_body">
+            <div class="modal_form">
+
+                <div class="form__head">
+                    <h4 class="content2"><strong>Đăng Ký</strong></h4>
+
+                </div>
+
+
+                <div class="form__body">
+                    <div class="form__group">
+                        <input type="text" class="form__input" id="sdt" placeholder="Số Điện Thoại">
+                    </div>
+                    <div class="form__group">
+                        <input type="text" class="form__input" id="address" placeholder="Địa chỉ">
+                    </div>
+                    <div class="form__group">
+                        <input type="password" class="form__input" id="pass1" placeholder="Mật Khẩu">
+                    </div>
+                    <div class="form__group">
+                        <input type="password" class="form__input" id="pass2" placeholder="Nhập lại mật khẩu">
+                    </div>
+
+
+                    <div class="form__police">
+
+                        <p class="form__police-text">
+                            <input type="checkbox"> đồng ý với OnlyFan về
+                            <a href="" class="form__police-link">điều khoản dịch vụ </a>&
+                            <a href="" class="form__police-link">Chính sách bảo mật </a>
+                        </p>
+
+                    </div>
+
+                    <div class="control">
+                        <div class="d-grid gap-2">
+                            <button onclick="checkform()" type="submit" class="btn btn-danger btn-custom" id="btbdk">
+
+                                <h4 class="content">ĐĂNG KÝ</h4>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="line-text">
+                        <span class="text-line">hoặc đăng ký bằng</span>
+                    </div>
+
+                    <div class="form-social d-flex justify-content-between">
+                        <button type="button" class="btn btn-primary form_icon w-45 btn-custom1">
+                            <i class="fa-brands fa-facebook-f"></i> <strong class="content1">Facebook</strong>
+                        </button>
+
+                        <button type="button" class="btn btn-danger form_icon w-45 btn-custom1">
+                            <i class="fa-brands fa-google-plus-g"></i> <strong class="">Google</strong>
+                        </button>
+                    </div>
+                    <div class="haveacc">
+                        Bạn đã có tài khoản?
+                        <a href="">đăng nhập</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modall" id="loginForm" style="display:non ;">
+        <div class="modal_overplay" id="overlay" onclick="closeFormOutside()">
+
+        </div>
+        <div class="modal_body">
+            <div class="modal_form">
+
+                <div class="form__head">
+                    <h4 class="content2"><strong>Đăng Nhập</strong></h4>
+
+                </div>
+
+
+                <div class="form__body">
+                    <div class="form__group">
+                        <input type="text" class="form__input" id="sdt" placeholder="Số Điện Thoại">
+                    </div>
+
+                    <div class="form__group">
+                        <input type="password" class="form__input" id="pass1" placeholder="Mật Khẩu">
+                    </div>
+
+
+
+                    <div class="form__forgot">
+
+                        <p>
+
+                            <a href="" class="forgot_pass">Quên Mật Khẩu ?</a>
+
+                        </p>
+
+                    </div>
+
+                    <div class="control">
+                        <div class="d-grid gap-2">
+                            <button onclick="checkform()" type="submit" class="btn btn-danger btn-custom" id="btbdk">
+
+                                <h4 class="content">ĐĂNG NHẬP</h4>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="line-text">
+                        <span class="text-line">hoặc đăng nhập bằng</span>
+                    </div>
+
+                    <div class="form-social d-flex justify-content-between">
+                        <button type="button" class="btn btn-primary form_icon w-45 btn-custom1">
+                            <i class="fa-brands fa-facebook-f"></i> <strong class="content1">Facebook</strong>
+                        </button>
+
+                        <button type="button" class="btn btn-danger form_icon w-45 btn-custom1">
+                            <i class="fa-brands fa-google-plus-g"></i> <strong class="">Google</strong>
+                        </button>
+                    </div>
+                    <div class="haveacc">
+                        Bạn chưa có tài khoản?
+                        <a href="">đăng ký</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function checkform() {
+            var sdt = document.getElementById("sdt");
+            var address = document.getElementById("address");
+            var pass1 = document.getElementById("pass1");
+            var pass2 = document.getElementById("pass2");
+            if (sdt.value == "") {
+
+                alert("nhap sdt vao thua bo !");
+                sdt.focus();
+                return false;
+            }
+            else {
+                var phonePattern = /^[0-9]+$/;
+                if (!phonePattern.test(sdt.value)) {
+                    alert("Số điện thoại phải là số!");
+                    sdt.focus();
+                    return false;
+                }
+            }
+            if (address.value == "") {
+                alert("vui long nhap dia chi !");
+                return false;
+            }
+            if (pass1.value == "") {
+                alert("vui long nhap mat khau !");
+                return false;
+            }
+            if (pass2.value != "") {
+                if (pass2.value != pass1.value) {
+                    alert("mat khau khong trung khop !");
+                    return false;
+                }
+
+            }
+            else {
+                alert("vui long nhap map khau !");
+                return false;
+            }
+        }
+    </script>
+    <script src="assets/js/formlogin.js"></script>
+
 </body>
+
 </html>
