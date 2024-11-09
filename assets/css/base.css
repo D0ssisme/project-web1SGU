@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root
+{
+    --white-color:#fff   ;
+    --black-color:#000;
+    --text-color:#333;
+}
+
+*
+{
+    box-sizing:border-box;
+}
+html
+{
+    /* do đó nên 1rem = 10px */
+    font-size: 62.5%;
+    line-height:1.6rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing:border-box;
+}
+
+    /* tương thích với màn hình  */
+    .grid {
+        width: 100%;
+        padding:0 5%;
+        margin: 0 auto;
+    }
+
+    /* trong trường hợp không muốn dùng 1830px */
+.grid_full-width
+{
+    width:100%;
+}
+
+    /* đẩy lên cùng 1 hàng và tự căn khi xuống hàng */
+.grid_row
+{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.grid_col-2-4
+{
+    padding-left:5px;
+    padding-right:5px;
+    width:20%;
+}
+
