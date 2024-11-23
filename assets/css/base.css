@@ -42,7 +42,6 @@ html {
     width: 20%;
 }
 
-.all {}
 
 .modall {
     display: flex;
@@ -83,6 +82,7 @@ html {
     margin: 0px;
 
 
+
 }
 
 .content1 {
@@ -90,7 +90,13 @@ html {
 }
 
 .content2 {
-    font-size: 25px;
+
+    font-size: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+
 }
 
 
@@ -106,7 +112,7 @@ html {
 }
 
 .form__police-text {
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .form__group {
@@ -147,10 +153,9 @@ html {
 
 
 .form__head {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 15px;
+
+
+    padding: 15px 15px 0px 15px;
 }
 
 
@@ -212,7 +217,7 @@ html {
 .haveacc {
     text-align: center;
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .btn-custom {
@@ -247,4 +252,68 @@ html {
 
 .forgot_pass {
     margin-left: auto;
+    font-size: 15px;
+}
+
+.noacc {
+    font-size: 15px;
+}
+
+
+
+
+
+
+/* Dropdown menu mặc định ẩn */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    padding: 10px 0;
+    width: 200px;
+    border-radius: 5px;
+ 
+}
+
+.dropdown-content a {
+    color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #2478f4;
+
+}
+
+
+
+#account-button {
+    position: relative;
+    cursor: pointer;
+}
+
+
+#account- {
+    position: relative;
+    cursor: pointer;
+
+
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    z-index: 101;
+
 }

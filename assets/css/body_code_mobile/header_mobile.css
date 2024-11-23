@@ -8,10 +8,6 @@
     {
         height:80px;
     }
-    .header__logo-desktop
-    {
-        display:none;
-    }
     .header__logo-mobile
     {
         display:block;

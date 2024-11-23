@@ -1,0 +1,130 @@
+.header-mobile
+{
+    display: none;
+}
+@media screen and (max-width: 500px) {
+    .header
+    {
+        display: none;
+    }
+    .header-mobile{
+        display: block;
+    }
+    /* Header tổng thể */
+    .header-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 5%;
+        background-color: #2478f4;
+        height: 145px;
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    /* Phần logo và icons (hàng đầu tiên) */
+    .header_mobile-user {
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        width: 100%;
+        gap: 15px; /* Khoảng cách giữa logo và icons */
+        padding:10px 10px 5px 10px;
+    }
+
+    .header_img-logo {
+        width: 300px; /* Tăng chiều rộng */
+        height: auto; /* Đảm bảo tỷ lệ hình ảnh */
+    }
+
+    .header_img-logo img {
+        width: 70%; /* Hình ảnh chiếm toàn bộ chiều rộng của container */
+        height: auto; /* Đảm bảo hình ảnh giữ nguyên tỷ lệ */
+        object-fit: contain; /* Đảm bảo không bị méo */
+        max-height: 80px; /* Giới hạn chiều cao tối đa nếu cần */
+    }
+
+    .header_mobile-user ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header_mobile-user li {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Thanh tìm kiếm (hàng thứ hai) */
+    .header__search {
+        width: 100%;
+        padding: 0;
+    }
+
+    .header__search-main {
+        display: flex;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto; /* Căn giữa theo chiều ngang */
+    }
+
+    .header__search-main input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px 5px 5px 5px;
+        outline: none;
+        font-size:1.5rem;
+    }
+
+    .header__search-main .search-button {
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    .header__find-button
+    {
+        font-size:1.4rem;
+        color:#757575 ;
+    }
+    .search-button
+    {
+        background-color: #fff;
+    }
+    .header__search-main .search-button i {
+        font-size: 16px;
+    }
+
+    .header__info-usericon {
+        margin-left: 20px;
+    }
+
+    .header__info-usericon,
+    .header__info-cart {
+        font-size: 2.7rem;
+        color: #fff;
+    }
+    .header-options
+    {
+        margin-left:-30px;
+    }
+    .search-button:hover
+    {
+        background: none;   
+        cursor: text;
+    }
+    .header__info-usericon:hover
+    {
+        color: rgba(255, 255, 255, 0.7);
+    }
+}

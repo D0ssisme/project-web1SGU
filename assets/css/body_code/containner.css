@@ -34,10 +34,6 @@
     margin-left:30px;
 }
 
-.container__product-content-right span
-{
-    font-weight: bold;
-}
 .container__product-content
 {
     display:flex;
@@ -58,17 +54,6 @@
     max-width: 90%;
     position: relative;
     overflow: hidden;
-}
-
-.slide-image {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    display: none;
-}
-
-.slide-image:first-child {
-    display: block;
 }
 
 .prev, .next {
@@ -130,13 +115,13 @@
 .container__product-soluong
 {
     display: flex;
+    align-items: center;
 }
 .container__product-soluong input
 {
     width:40px;
     height:30px;
-    margin-top:8px;
-    margin-left:4px;
+
 }
 
 
@@ -277,7 +262,7 @@
 }
 .container__product-table tr
 {
-    font-size:1.5rem;
+    font-size:1.6rem;
     padding:5px;
 }
 .container__product-table
@@ -304,8 +289,9 @@
 
 .container__product-cols-indam,
 .container__product-cols {
-    padding: 10px;
+    padding: 9px;
 }
+
 .container__product-right-ul
 {
     list-style: none;
@@ -319,9 +305,9 @@
 
 .container__product-right-li
 {
-    padding:15px 0;
-    font-size:1.5rem;
-
+    padding:9px 0;
+    font-size:1.6rem;
+    line-height:25px;
 }
 
 .space-item-masp
@@ -329,7 +315,14 @@
     margin-left:5px;
 }
 .space-item-tt,
-.space-item-tag
+.space-item-tag,
+.space-item-masp,
+.space-item-price,
+.space-item-color
+{
+    font-weight: bold;
+}
+.space-item-tt
 {
     margin-left:11px;
 }
@@ -348,4 +341,182 @@
 .product-box-icon
 {
     color:#737373;
+}
+.quantity-btn {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 10px;
+    background-color: #f0f0f0;
+}
+
+#quantity {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.nav-left ul
+{
+    list-style: none;
+    padding-left:0;
+}
+.nav-left li
+{
+    margin-top:50px;
+    font-size: 1.8rem;
+    text-align: center;
+    height:30px;
+}
+.container_products-left
+{
+    justify-content: center;
+    align-items: top    ;
+    display:flex;
+
+}
+.product-main
+{
+    padding:0 5%;
+    margin-top:10px;
+}
+/* Định dạng chung cho container chứa thanh điều hướng */
+.container_products-left {
+    width: 25%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+}
+
+/* Định dạng cho danh sách các liên kết */
+.nav-left ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Định dạng cho từng mục trong danh sách */
+.nav-left ul li {
+    margin-bottom: 10px;
+}
+
+/* Định dạng cho các liên kết */
+.nav-left ul li a {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Khi hover vào các liên kết */
+.nav-left ul li a:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Định dạng cho các mục lọc khác, như đầu mục "Lọc theo sản phẩm" */
+/* Định dạng cho biểu tượng bộ lọc */
+.loc-filter {
+    cursor: pointer;
+    font-size: 24px;
+    color: #007BFF;
+    transition: color 0.3s;
+}
+
+.loc-filter:hover {
+    color: #0056b3;
+}
+
+/* Định dạng cho bảng lọc */
+#filter-box{
+    position: absolute; /* Đặt bảng lọc lên trên */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white; /* Màu nền của bảng lọc */
+    z-index: 10; /* Đảm bảo bảng lọc luôn hiển thị phía trên sản phẩm */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho bảng lọc */
+    display: none; /* Ẩn bảng lọc ban đầu */
+    margin-top: 30px;
+}
+
+.loc {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.loc h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#price-filter-form label,
+#price-filter-form input,
+#price-filter-form select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.loc-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.loc-button:hover {
+    background-color: #0056b3;
+}
+.slide {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Hiệu ứng chuyển động mượt mà */
+    width: 100%;
+}
+
+.slide-image {
+    min-width: 100%;
+    height: auto; /* Giữ tỉ lệ khung hình */
+    opacity: 0; /* Bắt đầu với độ mờ */
+    transition: opacity 0.5s ease-in-out; /* Hiệu ứng độ mờ mượt mà */
+}
+
+.slide-image.active {
+    opacity: 1; /* Chỉ ảnh đang hiển thị mới có độ mờ 1 */
+}
+
+.loc-main
+{
+    margin-bottom: 10px;
+    position: relative;
+}
+.slide-image-product
+{
+    width:390px;
 }

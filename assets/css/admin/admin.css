@@ -1,0 +1,294 @@
+/* Tổng quan */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+/* Tiêu đề */
+h2, h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Form và bảng */
+form, table {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"], input[type="number"], textarea, input[type="file"],select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"], button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #4cae4c;
+}
+
+/* Bảng sản phẩm */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Phân trang */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+.modal-content h4 {
+    margin-bottom: 15px;
+}
+
+/* Toast thông báo */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+/* Nút hành động */
+button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Các phần khác */
+#notification {
+    display: none;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.display_product {
+    display: flex; /* Căn chỉnh các phần tử con theo hàng ngang */
+    justify-content: space-between; /* Khoảng cách giữa các phần tử */
+    gap: 20px; /* Khoảng cách giữa 2 phần */
+    flex-wrap: wrap; /* Cho phép chuyển xuống dòng nếu không đủ không gian */
+}
+
+.left-section, .right-section {
+    width: 48%; /* Mỗi phần chiếm 48% chiều rộng */
+    box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng */
+}
+
+.left-section input, .right-section input, .left-section textarea, .right-section textarea {
+    width: 100%; /* Đảm bảo các input và textarea chiếm đủ chiều rộng */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi chiều rộng */
+}
+
+.left-section label, .right-section label {
+    display: block;
+    margin-bottom: 8px;
+}
+.distance
+{
+    margin-top:20px;
+}
+.button-distance
+{
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    margin-top:10px;
+}
+#confirmDeleteBtn
+{
+    background-color: rgb(222, 47, 47);
+}
+#confirmDeleteBtn:hover
+{
+    background-color: rgb(181, 50, 50);;
+}
+.phanloai {
+    display: flex;
+    justify-content: start; /* Căn trái, có thể thay đổi thành center nếu muốn căn giữa */
+    gap: 20px; /* Khoảng cách giữa các mục */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding:20px;
+    justify-content: center;
+}
+
+.phanloai_sp {
+    list-style: none; /* Xóa dấu chấm tròn mặc định của danh sách */
+    padding: 0; /* Xóa padding của danh sách */
+    display: flex; /* Đảm bảo các li nằm trên cùng một dòng */
+}
+
+.phanloai_sp li {
+    margin:0; /* Xóa margin cho li */
+}
+.li-space
+{
+    margin:0 0 0 10px;
+}
+.phanloai_sp a {
+    text-decoration: none; /* Xóa gạch chân của liên kết */
+    color: #333; /* Màu chữ */
+    font-weight: bold; /* Định dạng chữ đậm */
+    padding: 5px 10px; /* Khoảng cách trong liên kết */
+    border-radius: 4px; /* Làm bo góc */
+    transition: background-color 0.3s; /* Hiệu ứng khi hover */
+}
+
+.phanloai_sp a:hover {
+    background-color: #ddd; /* Màu nền khi hover */
+}
+button.edit-btn {
+    background-color: #007bff; /* Màu nền đỏ */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Bỏ viền */
+    padding: 5px 10px; /* Khoảng cách trong nút */
+    cursor: pointer; /* Con trỏ khi hover */
+    border-radius: 4px; /* Bo góc nút */
+    transition: background-color 0.3s;
+    height:35px;
+    width:62px;
+}
+button.edit-btn:hover {
+background-color: darkblue;
+}
+button.delete-btn {
+    background-color: red; /* Màu nền đỏ */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Xóa viền mặc định */
+    padding: 10px 20px; /* Khoảng cách trong nút */
+    border-radius: 4px; /* Bo góc */
+    cursor: pointer; /* Thêm con trỏ chuột kiểu pointer khi hover */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền khi hover */
+}
+
+button.delete-btn:hover {
+    background-color: darkred; /* Màu nền khi hover */
+}
+/* Cắt nội dung và thêm dấu ba chấm nếu quá dài */
+td.description {
+    white-space: nowrap; /* Ngừng xuống dòng */
+    overflow: hidden; /* Ẩn phần văn bản vượt quá giới hạn */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm "..." */
+    max-width: 150px; /* Giới hạn chiều rộng của ô (tùy chỉnh theo ý muốn) */
+}
+/* Cắt tên sản phẩm và thêm dấu ba chấm nếu quá dài */
+td.name {
+    white-space: nowrap; /* Ngừng xuống dòng */
+    overflow: hidden; /* Ẩn phần văn bản vượt quá giới hạn */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm "..." */
+    max-width: 100px; /* Giới hạn chiều rộng của ô (tùy chỉnh theo ý muốn) */
+}
