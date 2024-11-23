@@ -1,9 +1,10 @@
-{
-    "users": [
-      {
-        "username": "0987654321",
-        "password": "123456"
-      }
-    ]
+[
+  {
+      "sdt": "0984321",
+      "password": "123456"
+  },
+  {
+      "sdt": "0912345678",
+      "password": "mypassword"
   }
-
+]

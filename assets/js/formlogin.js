@@ -34,41 +34,51 @@ window.onload = function () {
 
 function checkLoginStatus() {
     if (localStorage.getItem('isLoggedIn') === 'true') {
-        const username = localStorage.getItem('username');
+        const sdt = localStorage.getItem('sdt'); // Lấy số điện thoại từ localStorage
 
+        // Tải dữ liệu người dùng từ file user.json
+        fetch('user.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Không thể tải file JSON');
+                }
+                return response.json();
+            })
+            .then(users => {
+                // Tìm người dùng trong file JSON với số điện thoại tương ứng
+                const user = users.find(usr => usr.sdt === sdt);
+                if (user) {
+                    document.getElementById('account-link').innerHTML = `Xin chào, ${user.sdt}`;
+                    document.getElementById('dropdown-menu').style.display = 'none';
+                    document.getElementById('logout-button').style.display = 'block';
+                    document.getElementById('account-link').removeAttribute('onclick');
+                    document.getElementById('account-').removeAttribute('onclick');
 
-        document.getElementById('account-link').innerHTML = `Xin chào, ${username}`;
-        document.getElementById('dropdown-menu').style.display = 'none';
-        document.getElementById('logout-button').style.display = 'block';
-        document.getElementById('account-link').removeAttribute('onclick');
-        document.getElementById('account-').removeAttribute('onclick');
+                    document.getElementById('account-button').onmouseover = function () {
+                        document.getElementById('dropdown-menu').style.display = 'block';
+                    };
+                    document.getElementById('account-button').onmouseout = function () {
+                        document.getElementById('dropdown-menu').style.display = 'none';
+                    };
 
-        document.getElementById('account-button').onmouseover = function () {
-            document.getElementById('dropdown-menu').style.display = 'block';
-        };
-        document.getElementById('account-button').onmouseout = function () {
-            document.getElementById('dropdown-menu').style.display = 'none';
-        };
-
-        document.getElementById('account-').onmouseover = function () {
-            document.getElementById('dropdown-menu').style.display = 'block';
-        };
-        document.getElementById('account-').onmouseout = function () {
-            document.getElementById('dropdown-menu').style.display = 'none';
-        };
-
-
-
-
-
-
+                    document.getElementById('account-').onmouseover = function () {
+                        document.getElementById('dropdown-menu').style.display = 'block';
+                    };
+                    document.getElementById('account-').onmouseout = function () {
+                        document.getElementById('dropdown-menu').style.display = 'none';
+                    };
+                }
+            })
+            .catch(error => {
+                console.error("Lỗi khi tải file JSON:", error);
+            });
     } else {
-
         document.getElementById('account-link').innerHTML = '<a href="#" onclick="showForm(\'login\')">Tài Khoản</a>';
         document.getElementById('dropdown-menu').style.display = 'none';
         document.getElementById('logout-button').style.display = 'none';
     }
 }
+
 
 function logout(event) {
     event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
@@ -111,13 +121,7 @@ function checkformlogin() {
     var sdtlogin = document.getElementById('sdtlogin').value;
     var passlogin = document.getElementById('passlogin').value;
 
-
-    const ACCOUNT = {
-        username: "0987654321",
-        password: "123456"
-    };
-
-
+    // Kiểm tra các thông tin nhập vào
     if (sdtlogin === '') {
         alert("Vui lòng nhập vào số điện thoại");
         document.getElementById('sdtlogin').focus();
@@ -131,25 +135,36 @@ function checkformlogin() {
         }
     }
 
-
     if (passlogin === '') {
         alert("Vui lòng nhập mật khẩu");
         document.getElementById('passlogin').focus();
         return false;
     }
 
-
-    if (sdtlogin === ACCOUNT.username && passlogin === ACCOUNT.password) {
-        alert("Đăng nhập thành công!");
-
-
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('username', ACCOUNT.username);
-        closeFormOutside();
-        checkLoginStatus();
-    } else {
-        alert("Sai thông tin đăng nhập !");
-    }
+    // Tải dữ liệu từ file JSON và kiểm tra thông tin đăng nhập
+    fetch('user.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Không thể tải file JSON');
+            }
+            return response.json();
+        })
+        .then(users => {
+            const user = users.find(usr => usr.sdt === sdtlogin && usr.password === passlogin);
+            if (user) {
+                alert("Đăng nhập thành công!");
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('sdt', user.sdt);
+                closeFormOutside();
+                checkLoginStatus();
+            } else {
+                alert("Sai thông tin đăng nhập !");
+            }
+        })
+        .catch(error => {
+            console.error("Lỗi khi tải file JSON:", error);
+            alert("Đã xảy ra lỗi khi kiểm tra tài khoản.");
+        });
 }
 
 function closeFormOutside() {
@@ -161,58 +176,5 @@ function closeFormOutside() {
 
 
 
-
-
-
-window.onload = function () {
-    checkLoginStatus(); // Kiểm tra trạng thái đăng nhập khi trang tải xong
-};
-
-
-function checkLoginStatus() {
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-        const username = localStorage.getItem('username');
-
-
-        document.getElementById('account-link').innerHTML = `Xin chào, ${username}`;
-        document.getElementById('dropdown-menu').style.display = 'none';
-        document.getElementById('logout-button').style.display = 'block';
-        document.getElementById('account-link').removeAttribute('onclick');
-        document.getElementById('account-').removeAttribute('onclick');
-
-        document.getElementById('account-button').onmouseover = function () {
-            document.getElementById('dropdown-menu').style.display = 'block';
-        };
-        document.getElementById('account-button').onmouseout = function () {
-            document.getElementById('dropdown-menu').style.display = 'none';
-        };
-
-        document.getElementById('account-').onmouseover = function () {
-            document.getElementById('dropdown-menu').style.display = 'block';
-        };
-        document.getElementById('account-').onmouseout = function () {
-            document.getElementById('dropdown-menu').style.display = 'none';
-        };
-
-
-
-
-
-
-    } else {
-
-        document.getElementById('account-link').innerHTML = '<a href="#" onclick="showForm(\'login\')">Tài Khoản</a>';
-        document.getElementById('dropdown-menu').style.display = 'none';
-        document.getElementById('logout-button').style.display = 'none';
-    }
-}
-
-function logout(event) {
-    event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('username');
-    alert('Bạn đã đăng xuất!');
-    location.reload();
-}
 
 
