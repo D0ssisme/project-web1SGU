@@ -29,7 +29,11 @@ function loadProduct() {
         .catch(error => console.error('Error:', error));
 }
 
-window.onload = loadProduct;
+
+window.onload = function () {
+    checkLoginStatus(); // Kiểm tra trạng thái đăng nhập khi trang tải xong
+    loadProduct();
+};
 
 
 const searchButton = document.getElementById('search-button');
