@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/body_code/header.css">
-    <link rel="stylesheet" href="./assets/css/body_code/footer.css">
-    <link rel="stylesheet" href="./assets/css/body_code/containner.css">
-    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css">
-    <link rel="stylesheet" href="./assets/css/body_code_mobile/header_mobile.css">
-    <link rel="stylesheet" href="./assets/css/body_code/middle.css">
-    <link rel="stylesheet" href="./assets/css/body_code/style.css">
-    <link rel="icon" type="./Images/png" href="./assets/Images/mini_logo.png">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/body_code/header.css">
+    <link rel="stylesheet" href="../assets/css/body_code/footer.css">
+    <link rel="stylesheet" href="../assets/css/body_code/containner.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/body_code_mobile/header_mobile.css">
+    <link rel="stylesheet" href="../assets/css/body_code/middle.css">
+    <link rel="stylesheet" href="../assets/css/body_code/style.css">
+    <link rel="stylesheet" href="../assets/css/body_code_mobile/footer_mobile.css">
+    <link rel="icon" type="../Images/png" href="../assets/Images/mini_logo.png">
     <title>Kết quả tìm kiếm</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
         <div class="header__logo">
-                <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo" class="header__logo-desktop"></a>
-                <a href="index.html"><img src="./assets/Images/favicon.png" alt="logo_mini" class="header__logo-mobile"></a>
+                <a href="../index.html"><img src="../assets/Images/fan_logo.png" alt="logo" class="header__logo-desktop"></a>
         </div>
 
         <div class="header__search">
@@ -140,19 +140,19 @@
                             </ul>
                         </div>
                         <div class="grid_col-2-4">
-                            <h3 class="footer__heading">Chấp nhận thanh toán qua</h3>
+                            <h3 class="footer__heading">Thanh toán qua</h3>
                             <ul class="footer-list-thanhtoan">
                                 <li class="footer-item">
-                                    <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/visa.jpg" alt="visa_logo">
+                                    <img class="footer__logo-thanhtoan" src="../assets/Images/thanhtoan_logo/visa.jpg" alt="visa_logo">
                                 </li>
                                 <li class="footer-item">
-                                    <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/mastercard.jpg" alt="mastercard_logo">
+                                    <img class="footer__logo-thanhtoan" src="../assets/Images/thanhtoan_logo/mastercard.jpg" alt="mastercard_logo">
                                 </li>
                                 <li class="footer-item">
-                                    <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/cash.jpg" alt="tienmat_logo">
+                                    <img class="footer__logo-thanhtoan" src="../assets/Images/thanhtoan_logo/cash.jpg" alt="tienmat_logo">
                                 </li>
                                 <li class="footer-item">
-                                    <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/internet-banking.jpg" alt="internetbanking_logo">
+                                    <img class="footer__logo-thanhtoan" src="../assets/Images/thanhtoan_logo/internet-banking.jpg" alt="internetbanking_logo">
                                 </li>
                             </ul>
                         </div>
@@ -160,10 +160,10 @@
                             <h3 class="footer__heading">Chứng nhận bảo mật</h3>
                             <ul class="footer-list-baomat">
                                 <li class="footer-list-item">
-                                    <img src="./assets/Images/baomat_logo/bocongthuong.png" alt="bocongthuong_logo" class="footer__logo-baomat--congthuong">
+                                    <img src="../assets/Images/baomat_logo/bocongthuong.png" alt="bocongthuong_logo" class="footer__logo-baomat--congthuong">
                                 </li>
                                 <li class="footer-list-item">
-                                    <img src="./assets/Images/baomat_logo/tinnhiem.png" alt="tinnhiem_logo" class="footer__logo-baomat">
+                                    <img src="../assets/Images/baomat_logo/tinnhiem.png" alt="tinnhiem_logo" class="footer__logo-baomat">
                                 </li>
                             </ul>
                         </div>
@@ -178,7 +178,7 @@
             </div>
         </div>
 </footer>
-    <script src="dulieu/data.js"></script>
+    <script src="../dulieu/data.js"></script>
     <script>
 const urlParams = new URLSearchParams(window.location.search);
 const query = urlParams.get('query');
@@ -201,7 +201,7 @@ function displaySearchResults(page = 1) {
         productItem.classList.add('product-item');
         productItem.innerHTML = `
             <a href="product_details.html?id=${product.id}">
-                <img src="./assets/Images/products/${product.image}" alt="${product.name}">
+                <img src="../assets/Images/products/${product.image}" alt="${product.name}">
                 <h3 style="font-size:1.6rem";>${product.name}</h3>
                 <p style="font-size:1.4rem";><strong>${product.price} VND</strong></p>
             </a>

@@ -13,12 +13,18 @@
     <link rel="stylesheet" href="./assets/css/body_code/containner.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/body_code_mobile/header_new.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/footer_mobile.css">
     <link rel="stylesheet" href="./assets/css/body_code/middle.css">
     <link rel="stylesheet" href="./assets/css/body_code/style.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/middle_mobile.css">
     <link rel="icon" type="./Images/png" href="./assets/Images/favicon.png">
-    <link href="./assets/bootstrap.min.css" rel="stylesheet">
-
     <title>Trang Sản phẩm</title>
+
+     <!-- Bootstrap Css -->
+     <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+     <!-- Bootstrap Js -->
+     <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -28,16 +34,17 @@
         </div>
 
         <div class="header__search">
-            <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
+            <form action="product_base/search_results.html" method="GET" class="header__search-main" id="searchForm">
                 <input type="text" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
                 <button type="submit" class="search-button"><i
                         class="header__find-button fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
-
         <div class="header__info">
             <ul>
-                <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                <a href="cart-page.html">
+                    <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                </a>
 
                 <!-- Nút tài khoản -->
 
@@ -57,8 +64,6 @@
                 </li>
             </ul>
         </div>
-
-
 
     </header>
     <header class="header-mobile">
@@ -81,6 +86,16 @@
                 <div class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></div>
             </form>
         </div>
+        <!-- <div class="container_products-left-mb">
+        <div class="nav-left-mb">
+            <ul>
+                <li><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
+                <li><a href="#" onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
+                <li><a href="#" onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
+                <li><a href="#" onclick="filterProducts(''); return false;">Tất cả sản phẩm</a></li>
+            </ul>
+        </div>
+    </div> -->
     </header>
     <div class="product-main">
         <div class="slide">
@@ -192,7 +207,7 @@
                     </ul>
                 </div>
                 <div class="grid_col-2-4">
-                    <h3 class="footer__heading">Chấp nhận thanh toán qua</h3>
+                    <h3 class="footer__heading">Thanh toán qua</h3>
                     <ul class="footer-list-thanhtoan">
                         <li class="footer-item">
                             <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/visa.jpg"
@@ -351,11 +366,6 @@
         </div>
     </div>
 
-
-
-
-
-
     <script>
 
         function checkform() {
@@ -419,9 +429,9 @@
                 const productItem = document.createElement('div');
                 productItem.classList.add('product-item');
                 productItem.innerHTML = `
-            <a href="product_details.html?id=${product.id}">
+            <a href="product_base/product_details.html?id=${product.id}">
                 <img src="./assets/Images/products/${product.image}" alt="${product.name}">
-                <h3 style="font-size:1.6rem";>${product.name}</h3>
+                <h3 style="font-size:1.6rem;line-height: 1.4;">${product.name}</h3>
                 <p style="font-size:1.4rem";><strong>${product.price} VND</strong></p>
             </a>
         `;
@@ -509,7 +519,7 @@
             searchButton.addEventListener('click', () => {
                 const query = document.getElementById('search-input').value.trim();
                 if (query) {
-                    window.location.href = `search_results.html?query=${encodeURIComponent(query)}`;
+                    window.location.href = `/product_base/search_results.html?query=${encodeURIComponent(query)}`;
                 } else {
                     alert('Vui lòng nhập từ khóa tìm kiếm!');
                 }

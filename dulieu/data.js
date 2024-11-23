@@ -67,7 +67,7 @@ var products = [
     {
         "id": "7",
         "name": "Qu\u1ea1t l\u1eedng Asia Turbo One",
-        "description": "\u00f9a h\u00e8 mang \u0111\u1ebfn nh\u1eefng \u0111\u1ee3t n\u1eafng gay g\u1eaft khi\u1ebfn \u0111\u1ea7u \u00f3c c\u0103ng th\u1eb3ng, tinh th\u1ea7n l\u00e0m vi\u1ec7c c\u0169ng gi\u1ea3m s\u00fat \u0111\u00e1ng k\u1ec3. Th\u1eddi \u0111i\u1ec3m n\u00e0y th\u00ec chi\u1ebfc qu\u1ea1t \u0111i\u1ec7n ch\u00ednh l\u00e0 ng\u01b0\u1eddi b\u1ea1n \u0111\u1ed3ng h\u00e0nh t\u1ed1t nh\u1ea5t cho b\u1ea1n v\u00e0 c\u1ea3 gia \u0111\u00ecnh.",
+        "description": "M\u00f9a h\u00e8 mang \u0111\u1ebfn nh\u1eefng \u0111\u1ee3t n\u1eafng gay g\u1eaft khi\u1ebfn \u0111\u1ea7u \u00f3c c\u0103ng th\u1eb3ng, tinh th\u1ea7n l\u00e0m vi\u1ec7c c\u0169ng gi\u1ea3m s\u00fat \u0111\u00e1ng k\u1ec3. Th\u1eddi \u0111i\u1ec3m n\u00e0y th\u00ec chi\u1ebfc qu\u1ea1t \u0111i\u1ec7n ch\u00ednh l\u00e0 ng\u01b0\u1eddi b\u1ea1n \u0111\u1ed3ng h\u00e0nh t\u1ed1t nh\u1ea5t cho b\u1ea1n v\u00e0 c\u1ea3 gia \u0111\u00ecnh.",
         "price": "529.000",
         "image": "quatlung_3.png",
         "brand": "Asia",
@@ -107,7 +107,7 @@ var products = [
         "id": "12",
         "name": "Qu\u1ea1t h\u01a1i n\u01b0\u1edbc Coex (\u0110i\u1ec1u khi\u1ec3n t\u1eeb xa)",
         "description": "Qu\u1ea1t \u0111i\u1ec1u h\u00f2a Coex c\u00f3 \u0111\u1ed9ng c\u01a1 l\u00e0m b\u1eb1ng \u0111\u1ed3ng nguy\u00ean ch\u1ea5t, gi\u00fap m\u00e1y ho\u1ea1t \u0111\u1ed9ng b\u1ec1n b\u1ec9. Th\u00e2n m\u00e1y l\u00e0m b\u1eb1ng nh\u1ef1a ABS b\u1ec1n \u0111\u1eb9p, b\u1ec1 m\u1eb7t s\u00e1ng b\u00f3ng, h\u1ea1n ch\u1ebf b\u00e1m b\u1ee5i, d\u1ec5 d\u00e0ng v\u1ec7 sinh. S\u1ea3n ph\u1ea9m c\u00f3 ki\u1ec3u d\u00e1ng sang tr\u1ecdng, k\u00edch th\u01b0\u1edbc nh\u1ecf g\u1ecdn, ti\u1ebft ki\u1ec7m di\u1ec7n t\u00edch, ph\u00f9 h\u1ee3p v\u1edbi nhi\u1ec1u kh\u00f4ng gian kh\u00e1c nhau.",
-        "price": "8.900.000",
+        "price": "100.000.000",
         "image": "quat-dieu-hoa-coex-ca-7124a-dieu-khien-tu-xa_6b6ef392.png",
         "brand": "Coex",
         "type": "Qu\u1ea1t h\u01a1i n\u01b0\u1edbc",
@@ -183,41 +183,15 @@ var products = [
     },
     {
         "id": "18",
-        "name": "Qu\u1ea1t l\u1eedng Coex",
-        "description": "Qu\u1ea1t Coex c\u00f3 thi\u1ebft k\u1ebf nh\u1ecf g\u1ecdn ti\u1ebft ki\u1ec7m di\u1ec7n t\u00edch. L\u1ed3ng qu\u1ea1t ch\u1eafc ch\u1eafn, \u0111an kh\u00edt an to\u00e0n, d\u1ec5 d\u00e0ng v\u1ec7 sinh. \u0110\u1ed9ng c\u01a1 \u0111\u1ed3ng, ho\u1ea1t \u0111\u1ed9ng \u00eam v\u00e0 b\u1ec1n b\u1ec9. Tr\u1ee5c quay b\u1eb1ng v\u00f2ng bi v\u1eadn h\u00e0nh \u00eam \u00e1i \u0111\u1ed9 b\u1ec1n cao. \r\n\r\n",
-        "price": "1.390.000",
-        "image": "quat-tich-dien-coex---cf-7114r_eb554245.png",
-        "brand": "Coex",
-        "type": "Qu\u1ea1t l\u1eedng",
-        "power": "24",
-        "speed": "3",
-        "highlight": "Quay \u0111\u1ea3o chi\u1ec1u, gi\u00f3 t\u1ea3n \u0111\u1ec1u\r\nTh\u1eddi gian s\u1ea1c \u0111\u1ea7y 12 - 15 gi\u1edd\r\nDung l\u01b0\u1ee3ng pin l\u1edbn, ho\u1ea1t \u0111\u1ed9ng li\u00ean t\u1ee5c trong 5 - 16 gi\u1edd t\u00f9y t\u1ed1c \u0111\u1ed9",
-        "origin": "Trung Qu\u1ed1c"
-    },
-    {
-        "id": "20",
         "name": "123",
         "description": "123",
-        "price": "123",
-        "image": "quat-dieu-hoa-sunhouse-shd7734-05I3uT.png",
+        "price": "15.123",
+        "image": "qut-trn-5-canh-panasonic-f-60ufn-den-ledco-diu-khin---malaysia_16852b8b.jpg",
         "brand": "123",
         "type": "Qu\u1ea1t l\u1eedng",
         "power": "123",
         "speed": "123",
-        "highlight": "123",
+        "highlight": "3123",
         "origin": "123"
-    },
-    {
-        "id": "21",
-        "name": "hoang",
-        "description": "ddz",
-        "price": "2.000.000",
-        "image": "hoinuoc_2.png",
-        "brand": "seko",
-        "type": "Qu\u1ea1t l\u1eedng",
-        "power": "50",
-        "speed": "3",
-        "highlight": "ya",
-        "origin": "trung"
     }
 ];

@@ -303,7 +303,7 @@ html {
 #account- {
     position: relative;
     cursor: pointer;
-
+}
 
 .dropdown-content::before {
     content: '';

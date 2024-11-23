@@ -41,4 +41,13 @@
     {
         display:none;
     }
+    .product
+    {
+        margin-top:135px;
+    }
+    .container__product-content-tinhtrang h1
+    {
+        line-height: 1.2;
+        font-size:2.9rem;
+    }
 }

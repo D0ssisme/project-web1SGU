@@ -447,7 +447,9 @@
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho bảng lọc */
     display: none; /* Ẩn bảng lọc ban đầu */
-    margin-top: 30px;
+    margin-top: 28px;
+    margin-left:25px;
+    width:40%;
 }
 
 .loc {
@@ -463,7 +465,10 @@
     margin-bottom: 15px;
     color: #333;
 }
-
+.container_products-left-mb
+{
+    display:none;
+}
 #price-filter-form label,
 #price-filter-form input,
 #price-filter-form select {

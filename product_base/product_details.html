@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/body_code/header.css">
-    <link rel="stylesheet" href="./assets/css/body_code/footer.css">
-    <link rel="stylesheet" href="./assets/css/body_code/containner.css">
-    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css">
-    <link rel="stylesheet" href="./assets/css/body_code_mobile/header_mobile.css">
-    <link rel="stylesheet" href="./assets/css/body_code_mobile/container_mobile.css">
-    <link rel="icon" type="./Images/png" href="./assets/Images/favicon.png">
-    <link href="./assets/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/body_code/header.css">
+    <link rel="stylesheet" href="../assets/css/body_code/footer.css">
+    <link rel="stylesheet" href="../assets/css/body_code/containner.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/body_code_mobile/container_mobile.css">
+    <link rel="stylesheet" href="../assets/css/body_code_mobile/header_new.css">
+    <link rel="stylesheet" href="../assets/css/body_code_mobile/footer_mobile.css">
+    <link rel="stylesheet" href="../assets/css/body_code_mobile/product-detail_mb.css">
+    <link rel="icon" type="../Images/png" href="../assets/Images/favicon.png">
 </head>
 
 <body style="margin:0;">
@@ -24,10 +25,8 @@
         <!------------------------------------header------------------------------------->
         <header class="header">
             <div class="header__logo">
-                <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo"
+                <a href="../index.html"><img src="../assets/Images/fan_logo.png" alt="logo"
                         class="header__logo-desktop"></a>
-                <a href="index.html"><img src="./assets/Images/favicon.png" alt="logo_mini"
-                        class="header__logo-mobile"></a>
             </div>
 
             <div class="header__search">
@@ -41,27 +40,36 @@
 
             <div class="header__info">
                 <ul>
-                    <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
-
-                    <!-- Nút tài khoản -->
-
-                    <li onclick="showForm('login')" id="account-" class="header__user"><i
-                            class="header__info-usericon fa-regular fa-user"></i></li>
-                    <li id="account-button" class="header__info-login">
-                        <span id="account-link" class="header__info-mobile">
-                            <a href="#" onclick="showForm('login')">Tài Khoản</a>
-                        </span>
-
-                        <!-- Menu Dropdown -->
-                        <div id="dropdown-menu" class="dropdown-content" style="display: none;">
-                            <a href="#">Thông tin cá nhân</a>
-                            <a href="#">Đơn hàng của tôi</a>
-                            <a href="#" id="logout-button" onclick="logout(event)">Đăng Xuất</a>
-                        </div>
-                    </li>
+                    <a href="../cart-page.html">
+                        <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                    </a>
+                    <li class="header__user"><i class="header__info-usericon fa-regular fa-user"></i></li>
+                    <li class="header__info-login"><span class="header__info-mobile"><a href="">Đăng nhập</a> / <a
+                                href="">Đăng ký</a></span></li>
                 </ul>
             </div>
 
+        </header>
+        <header class="header-mobile">
+            <div class="header_mobile-user">
+                <div class="header_img-logo">
+                    <a href="../index.html"><img src="../assets/Images/fan_logo.png" alt="logo"
+                            class="header__logo-desktop"></a>
+                </div>
+                <div class="header-options">
+                    <ul>
+                        <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                        <li class="header__info-login"><a href=""><i
+                                    class="header__info-usericon fa-regular fa-user"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header__search">
+                <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
+                    <input type="text" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
+                    <div class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></div>
+                </form>
+            </div>
         </header>
         <!------------------------------------------------------------------------------->
 
@@ -111,8 +119,8 @@
                                                     class="product-credit-card fa-regular fa-credit-card"></i></span></i>MUA
                                             NGAY</button>
                                     </div>
-                                    <button><i class="product-buttom fa-solid fa-cart-shopping"></i> THÊM VÀO GIỎ
-                                    </button>
+                                    <button onclick="addToCart(this)" id="addToCart"><i class="product-buttom fa-solid fa-cart-shopping"></i> THÊM
+                                        VÀO GIỎ </button>
                                 </div>
                             </div>
                             <div class="containter__product-right-buttom">
@@ -247,23 +255,23 @@
                         </ul>
                     </div>
                     <div class="grid_col-2-4">
-                        <h3 class="footer__heading">Chấp nhận thanh toán qua</h3>
+                        <h3 class="footer__heading">Thanh toán qua</h3>
                         <ul class="footer-list-thanhtoan">
                             <li class="footer-item">
-                                <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/visa.jpg"
+                                <img class="footer__logo-thanhtoan" src="../assets/Images/thanhtoan_logo/visa.jpg"
                                     alt="visa_logo">
                             </li>
                             <li class="footer-item">
-                                <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/mastercard.jpg"
+                                <img class="footer__logo-thanhtoan" src="../assets/Images/thanhtoan_logo/mastercard.jpg"
                                     alt="mastercard_logo">
                             </li>
                             <li class="footer-item">
-                                <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/cash.jpg"
+                                <img class="footer__logo-thanhtoan" src="../assets/Images/thanhtoan_logo/cash.jpg"
                                     alt="tienmat_logo">
                             </li>
                             <li class="footer-item">
                                 <img class="footer__logo-thanhtoan"
-                                    src="./assets/Images/thanhtoan_logo/internet-banking.jpg"
+                                    src="../assets/Images/thanhtoan_logo/internet-banking.jpg"
                                     alt="internetbanking_logo">
                             </li>
                         </ul>
@@ -272,11 +280,11 @@
                         <h3 class="footer__heading">Chứng nhận bảo mật</h3>
                         <ul class="footer-list-baomat">
                             <li class="footer-list-item">
-                                <img src="./assets/Images/baomat_logo/bocongthuong.png" alt="bocongthuong_logo"
+                                <img src="../assets/Images/baomat_logo/bocongthuong.png" alt="bocongthuong_logo"
                                     class="footer__logo-baomat--congthuong">
                             </li>
                             <li class="footer-list-item">
-                                <img src="./assets/Images/baomat_logo/tinnhiem.png" alt="tinnhiem_logo"
+                                <img src="../assets/Images/baomat_logo/tinnhiem.png" alt="tinnhiem_logo"
                                     class="footer__logo-baomat">
                             </li>
                         </ul>
@@ -293,193 +301,9 @@
             </div>
         </footer>
         <!------------------------------------------------------------------------------->
-
-
-
-
-
-        <div class="modall" id="registerForm" style="display: none;">
-            <div class="modal_overplay" id="overlay" onclick="closeFormOutside()">
-
-            </div>
-            <div class="modal_body">
-                <div class="modal_form">
-
-                    <div class="form__head">
-                        <h4 class="content2"><strong>Đăng Ký</strong></h4>
-                    </div>
-
-
-                    <div class="form__body">
-                        <div class="form__group">
-                            <input type="text" class="form__input" id="sdt" placeholder="Số Điện Thoại">
-                        </div>
-                        <div class="form__group">
-                            <input type="text" class="form__input" id="address" placeholder="Địa chỉ">
-                        </div>
-                        <div class="form__group">
-                            <input type="password" class="form__input" id="pass1" placeholder="Mật Khẩu">
-                        </div>
-                        <div class="form__group">
-                            <input type="password" class="form__input" id="pass2" placeholder="Nhập lại mật khẩu">
-                        </div>
-
-
-                        <div class="form__police">
-
-                            <p class="form__police-text">
-                                <input type="checkbox"> đồng ý với OnlyFan về
-                                <a href="" class="form__police-link">điều khoản dịch vụ </a>&
-                                <a href="" class="form__police-link">Chính sách bảo mật </a>
-                            </p>
-
-                        </div>
-
-                        <div class="control">
-                            <div class="d-grid gap-2">
-                                <button onclick="checkform()" type="submit" class="btn btn-danger btn-custom"
-                                    id="btbdk">
-
-                                    <h4 class="content">ĐĂNG KÝ</h4>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="haveacc">
-                            <p class="noacc">
-                                Bạn đã có tài khoản?
-                                <a href="#" onclick="showForm('login')">Đăng Nhập</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modall" id="loginForm" style="display:none ;">
-            <div class="modal_overplay" id="overlay" onclick="closeFormOutside()">
-
-            </div>
-            <div class="modal_body">
-                <div class="modal_form">
-
-                    <div class="form__head">
-                        <h4 class="content2"><strong>Đăng Nhập</strong></h4>
-
-                    </div>
-
-
-                    <div class="form__body">
-                        <div class="form__group">
-                            <input type="text" class="form__input" id="sdtlogin" placeholder="Số Điện Thoại">
-                        </div>
-
-                        <div class="form__group">
-
-                            <input type="password" class="form__input" id="passlogin" placeholder="Mật Khẩu">
-
-
-                        </div>
-
-
-
-                        <div class="form__forgot">
-
-                            <p>
-
-                                <a href="" class="forgot_pass">Quên Mật Khẩu ?</a>
-
-                            </p>
-
-                        </div>
-
-                        <div class="control">
-                            <div class="d-grid gap-2">
-                                <button onclick="checkformlogin()" type="submit" class="btn btn-danger btn-custom"
-                                    id="btbdk">
-
-                                    <h4 class="content">ĐĂNG NHẬP</h4>
-                                </button>
-                            </div>
-                        </div>
-
-
-                        <div class="haveacc">
-                            Bạn chưa có tài khoản?
-                            <a href="#" onclick="showForm('register')">Đăng Ký</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <script>
-
-            function checkform() {
-                var sdt = document.getElementById("sdt");
-                var address = document.getElementById("address");
-                var pass1 = document.getElementById("pass1");
-                var pass2 = document.getElementById("pass2");
-                if (sdt.value === "") {
-
-                    alert("vui lòng nhập số điện thoại !");
-                    sdt.focus();
-                    return false;
-                }
-                else {
-                    var phonePattern = /^[0-9]+$/;
-                    if (!phonePattern.test(sdt.value)) {
-                        alert("Số điện thoại phải là số!");
-                        sdt.focus();
-                        return false;
-                    }
-                }
-                if (address.value === "") {
-                    alert("vui lòng nhập địa chỉ !");
-                    return false;
-                }
-                if (pass1.value === "") {
-                    alert("vui lòng nhập mật khẩu !");
-                    return false;
-                }
-                if (pass2.value != "") {
-                    if (pass2.value != pass1.value) {
-                        alert("mật khẩu không trùng khớp !");
-                        return false;
-                    }
-
-                }
-                else {
-                    alert("vui lòng nhập mật khẩu !");
-                    return false;
-                }
-            }
-        </script>
-
-
-
-
     </div>
-    <script src="assets/js/formlogin.js"></script>
- 
-    <script src="./assets/js/product.js"></script>
-    <script src="./assets/js/product-content.js"></script>
+    <script src="../assets/js/product.js"></script>
+    <script src="../assets/js/product-content.js"></script>
 </body>
 
 </html>

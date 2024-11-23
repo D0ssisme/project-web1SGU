@@ -10,41 +10,38 @@
     .header-mobile{
         display: block;
     }
-    /* Header tổng thể */
     .header-mobile {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0 5%;
         background-color: #2478f4;
-        height: 145px;
+        height: 168px;
         z-index: 1000;
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
     }
-
-    /* Phần logo và icons (hàng đầu tiên) */
     .header_mobile-user {
         display: flex;
-        justify-content: center; /* Căn giữa theo chiều ngang */
-        align-items: center; /* Căn giữa theo chiều dọc */
+        justify-content: center; 
+        align-items: center;
         width: 100%;
-        gap: 15px; /* Khoảng cách giữa logo và icons */
+        gap: 15px; 
         padding:10px 10px 5px 10px;
     }
 
     .header_img-logo {
-        width: 300px; /* Tăng chiều rộng */
-        height: auto; /* Đảm bảo tỷ lệ hình ảnh */
+        width: 300px; 
+        height: auto;
     }
 
     .header_img-logo img {
-        width: 70%; /* Hình ảnh chiếm toàn bộ chiều rộng của container */
-        height: auto; /* Đảm bảo hình ảnh giữ nguyên tỷ lệ */
-        object-fit: contain; /* Đảm bảo không bị méo */
-        max-height: 80px; /* Giới hạn chiều cao tối đa nếu cần */
+        width: 70%; 
+        height: auto; 
+        object-fit: contain; 
+        max-height: 80px; 
     }
 
     .header_mobile-user ul {
@@ -60,8 +57,6 @@
         align-items: center;
         justify-content: center;
     }
-
-    /* Thanh tìm kiếm (hàng thứ hai) */
     .header__search {
         width: 100%;
         padding: 0;
@@ -71,9 +66,8 @@
         display: flex;
         width: 100%;
         max-width: 600px;
-        margin: 0 auto; /* Căn giữa theo chiều ngang */
+        margin: 0 auto; 
     }
-
     .header__search-main input[type="text"] {
         flex: 1;
         padding: 10px;
@@ -106,7 +100,7 @@
     }
 
     .header__info-usericon {
-        margin-left: 20px;
+        margin-left: 3px;
     }
 
     .header__info-usericon,
@@ -126,5 +120,34 @@
     .header__info-usericon:hover
     {
         color: rgba(255, 255, 255, 0.7);
+    }
+    #filter-box
+    {
+        width:100%;
+        margin-left:-1px;
+    }
+    .container_products-left-mb
+    {
+        display: block;
+    }
+    .nav-left-mb ul
+    {
+        list-style:none;
+        display: flex;
+        padding: 0;
+        gap:20px;
+    }
+    .nav-left-mb li
+    {
+        font-size:1.4rem;
+        }
+    .nav-left-mb a
+    {
+        color: lightgray;
+    }
+    .nav-left-mb a:hover
+    {
+        color: rgba(255, 255, 255, 0.7);
+
     }
 }
