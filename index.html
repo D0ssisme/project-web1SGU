@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/bootstrap.min.css">
+
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/body_code/header.css">
     <link rel="stylesheet" href="./assets/css/body_code/footer.css">
@@ -37,7 +39,9 @@
 
         <div class="header__info">
             <ul>
-                <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                <a href="cart-page.html">
+                    <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                </a>
 
                 <!-- Nút tài khoản -->
 
@@ -68,7 +72,9 @@
                 </div>
                 <div class="header-options">
                     <ul>
-                        <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                        <a href="cart-page.html">
+                            <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                        </a>
         
                         <!-- Nút tài khoản -->
         
@@ -153,7 +159,7 @@
                     </div>
                 </div>
                 <div id="product-list" class="product-list"></div>
-                <div id="pagination" class="pagination"></div>
+                <div id="pagination" class="pagination d-block"></div>
             </div>
         </div>
 
