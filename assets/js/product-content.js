@@ -26,32 +26,41 @@ function loadProduct() {
                 document.getElementById('productOrigin').textContent = `${product.origin}`;
             }
             document.getElementById('addToCart').onclick = () => {
-                const quantityInput = document.getElementById('quantity');
-                const quantity = parseInt(quantityInput.value);
+                if (localStorage.getItem('isLoggedIn') === 'true') {
+                    const quantityInput = document.getElementById('quantity');
+                    const quantity = parseInt(quantityInput.value);
 
-                if (quantity <= 0 || isNaN(quantity)) {
-                    alert('Vui lòng nhập số lượng hợp lệ!');
+                    if (quantity <= 0 || isNaN(quantity)) {
+                        alert('Vui lòng nhập số lượng hợp lệ!');
+                        return;
+                    }
+
+                    // Lấy danh sách giỏ hàng từ localStorage
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    // Kiểm tra sản phẩm đã tồn tại trong giỏ
+                    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+                    if (existingProductIndex !== -1) {
+                        // Nếu sản phẩm đã tồn tại, tăng số lượng
+                        cart[existingProductIndex].quantity += quantity;
+                    } else {
+                        // Nếu chưa có, thêm sản phẩm mới
+                        cart.push({ ...product, quantity });
+                    }
+
+                    // Lưu lại giỏ hàng vào localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+
+                    alert(`${product.name} đã được thêm vào giỏ hàng!`);
+                }
+                else {
+                    alert('Vui lòng đăng nhập trước khi mua hàng!');
+                    showForm('login');
                     return;
                 }
+            }
 
-                 // Lấy danh sách giỏ hàng từ localStorage
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-                // Kiểm tra sản phẩm đã tồn tại trong giỏ
-                const existingProductIndex = cart.findIndex(item => item.id === product.id);
-                if (existingProductIndex !== -1) {
-                    // Nếu sản phẩm đã tồn tại, tăng số lượng
-                    cart[existingProductIndex].quantity += quantity;
-                } else {
-                    // Nếu chưa có, thêm sản phẩm mới
-                    cart.push({ ...product, quantity });
-                }
-
-                // Lưu lại giỏ hàng vào localStorage
-                localStorage.setItem('cart', JSON.stringify(cart));
-                
-                alert(`${product.name} đã được thêm vào giỏ hàng!`);
-            };
         })
         .catch(error => console.error('Error:', error));
 }

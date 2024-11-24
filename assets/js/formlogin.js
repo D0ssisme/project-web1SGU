@@ -157,6 +157,9 @@ function checkformlogin() {
                 localStorage.setItem('sdt', user.sdt);
                 closeFormOutside();
                 checkLoginStatus();
+
+                // Tải lại trang sau khi đăng nhập thành công
+                location.reload();  // Tải lại trang để cập nhật giỏ hàng
             } else {
                 alert("Sai thông tin đăng nhập !");
             }

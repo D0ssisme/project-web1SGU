@@ -27,8 +27,7 @@
 <body>
     <header class="header">
         <div class="header__logo">
-            <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo"
-                    class="header__logo-desktop"></a>
+            <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo" class="header__logo-desktop"></a>
         </div>
 
         <div class="header__search">
@@ -66,29 +65,30 @@
     </header>
     <header class="header-mobile">
         <div class="header_mobile-user">
-                <div class="header_img-logo">
-                    <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo" class="header__logo-desktop"></a>
-                </div>
-                <div class="header-options">
-                    <ul>
-                        <a href="cart-page.html">
-                            <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
-                        </a>
-        
-                        <!-- Nút tài khoản -->
-        
-                        <li onclick="showForm('login')" id="account-" class="header__user"><i
-                                class="header__info-usericon fa-regular fa-user"></i></li>
-                        <li id="account-button" class="header__info-login">
-                            <!-- Menu Dropdown -->
-                            <div id="dropdown-menu" class="dropdown-content" style="display: none;">
-                                <a href="info.html">Thông tin cá nhân</a>
-                                <a href="history.html">Đơn hàng của tôi</a>
-                                <a href="#" id="logout-button" onclick="logout(event)">Đăng Xuất</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="header_img-logo">
+                <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo"
+                        class="header__logo-desktop"></a>
+            </div>
+            <div class="header-options">
+                <ul>
+                    <a href="cart-page.html">
+                        <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                    </a>
+
+                    <!-- Nút tài khoản -->
+
+                    <li onclick="showForm('login')" id="account-" class="header__user"><i
+                            class="header__info-usericon fa-regular fa-user"></i></li>
+                    <li id="account-button" class="header__info-login">
+                        <!-- Menu Dropdown -->
+                        <div id="dropdown-menu" class="dropdown-content" style="display: none;">
+                            <a href="info.html">Thông tin cá nhân</a>
+                            <a href="history.html">Đơn hàng của tôi</a>
+                            <a href="#" id="logout-button" onclick="logout(event)">Đăng Xuất</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="header__search">
             <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
@@ -110,10 +110,10 @@
         <div class="d-flex justify-content-between mb-5">
             <div id="totalCart"></div>
 
-            <div class="payment-button">
-                <button type="button" class="btn btn-primary me-5 px-4 py-3 fs-5" data-bs-toggle="modal"
+            <div id="payment-button">
+                <button type="button" class="btn btn-primary me-5 px-4 py-3 fs-5" id="payBankBtn" data-bs-toggle="modal"
                     data-bs-target="#qr-image">Thanh toán bằng chuyển khoản</button>
-                <button type="button" class="btn btn-primary me-5 px-4 py-3 fs-5" id="cashDeli" data-bs-toggle="modal"
+                <button type="button" class="btn btn-primary me-5 px-4 py-3 fs-5" id="payCashBtn" data-bs-toggle="modal"
                     data-bs-target="#cash">Thanh toán khi nhận hàng</button>
             </div>
             <!-- Modal thanh toán bằng chuyển khoản -->
@@ -143,26 +143,26 @@
                         <!-- Modal Body -->
                         <div class="modal-body fs-4 p-4">
                             <div class="input-group mb-3">
-                                <label for="username" class="form-label">Họ và tên</label>
+                                <label for="username" class="form-label">Tài khoản</label>
                                 <div class="input-group">
-                                    <input id="username" type="text" class="form-control mx-1" value="Username"
-                                        aria-label="Username" disabled>
+                                    <input id="username" type="text" class="form-control mx-1" aria-label="Username"
+                                        disabled>
                                 </div>
                             </div>
 
                             <div class="input-group mb-3">
                                 <label for="email" class="form-label">Email </label>
                                 <div class="input-group">
-                                    <input id="email" type="email" class="form-control mx-1" value="Email?"
-                                        aria-label="email" placeholder="Email của bạn" required>
+                                    <input id="email" type="email" class="form-control mx-1" aria-label="email"
+                                        placeholder="Email của bạn" required>
                                 </div>
                             </div>
 
                             <div class="input-group mb-3">
                                 <label for="phone" class="form-label">Số điện thoại </label>
                                 <div class="input-group">
-                                    <input id="phone" type="text" class="form-control mb-3" value="0123xxxx"
-                                        aria-label="phone" placeholder="0xxx-xxx-xxx" maxlength="10" size="10" required>
+                                    <input id="phone" type="text" class="form-control mb-3" aria-label="phone"
+                                        placeholder="0xxx-xxx-xxx" maxlength="10" size="10" required>
                                 </div>
                             </div>
 
@@ -174,7 +174,7 @@
                         <!-- Modal Footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary fs-4" data-bs-dismiss="modal">Đóng</button>
-                            <button type="button" class="btn btn-primary fs-4" id="confirmPayment">Xác nhận</button>
+                            <button type="submit" class="btn btn-primary fs-4" id="confirmPayment">Xác nhận</button>
                         </div>
                     </div>
                 </div>
@@ -217,12 +217,56 @@
 
 
             <script>
-                const billUser = document.getElementById('billUsername');
-                billUser.innerHTML = document.getElementById('username').value;
-                const billEmail = document.getElementById('billEmail');
-                billEmail.innerHTML = document.getElementById('email').value;
-                const billPhone = document.getElementById('billPhone');
-                billPhone.innerHTML = document.getElementById('phone').value;
+                // Hàm tìm người dùng qua số điện thoại (sdt)
+                const phoneNum = localStorage.getItem('sdt'); // Lấy số điện thoại từ localStorage
+                console.log('Sdt', phoneNum);
+                function findUserByPhone(phoneNumber) {
+                    fetch('user.json')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Không thể tải file JSON');
+                            }
+                            return response.json();
+                        })
+                        .then(users => {
+                            // Tìm người dùng với số điện thoại chính xác
+                            const user = users.find(usr => usr.sdt === phoneNumber);
+
+                            if (user) {
+                                // Nếu tìm thấy người dùng, hiển thị thông tin vào các ô input
+                                document.getElementById('username').value = user.sdt; // Hiển thị số điện thoại
+                                document.getElementById('email').value = user.email || ''; // Giả sử có email hoặc để trống
+                                document.getElementById('phone').value = user.password; // Sử dụng số điện thoại làm thông tin liên hệ
+
+                                console.log('Thông tin người dùng:', user); // In ra để kiểm tra thông tin người dùng
+
+                                const billUser = document.getElementById('billUsername');
+                                billUser.innerHTML = document.getElementById('username').value;
+                                const billEmail = document.getElementById('billEmail');
+                                billEmail.innerHTML = document.getElementById('email').value;
+                                const billPhone = document.getElementById('billPhone');
+                                billPhone.innerHTML = document.getElementById('phone').value;
+
+                                // Lắng nghe sự kiện thay đổi giá trị email và phone và cập nhật thông tin hóa đơn
+                                document.getElementById('email').addEventListener('input', function () {
+                                    billEmail.innerHTML = document.getElementById('email').value;
+                                });
+
+                                document.getElementById('phone').addEventListener('input', function () {
+                                    billPhone.innerHTML = document.getElementById('phone').value;
+                                });
+                            } else {
+                                alert('Không tìm thấy người dùng với số điện thoại này!');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Lỗi khi lấy dữ liệu:', error);
+                        });
+                }
+
+
+                // Giả sử người dùng đã đăng nhập và bạn có số điện thoại
+                findUserByPhone(phoneNum); // Tìm người dùng theo số điện thoại và cập nhật thông tin
 
 
                 document.getElementById('confirmPayment').addEventListener('click', function () {
@@ -501,107 +545,133 @@
         </div>
     </div>
 
-    
+    <script src="assets/js/formlogin.js"></script>
+    <script src="assets/js/xulilogin.js"></script>
+    <script src="user.json"></script>
+
+
     <script>
         // Lấy danh sách giỏ hàng từ localStorage
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         const cartDiv = document.getElementById('cart');
         const totalCartProduct = document.getElementById('totalCart');
 
-        // Hàm hiển thị giỏ hàng
-        function renderCart() {
-            if (cart.length === 0) {
-                cartDiv.innerHTML = '<p>Giỏ hàng trống.</p>';
-                totalCartProduct.innerHTML = ''; // Xóa tổng cộng khi giỏ hàng trống
-            } else {
-                cartDiv.innerHTML = cart.map((item, index) => {
-                    // Chuyển price từ chuỗi dạng "12.000" thành số
-                    const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
+        if (isUserLoggedIn()) {  // Kiểm tra đăng nhập đúng cách
+            // Hàm hiển thị giỏ hàng
+            function renderCart() {
+                if (cart.length === 0) {
+                    cartDiv.innerHTML = '<p>Giỏ hàng trống.</p>';
+                    totalCartProduct.innerHTML = ''; // Xóa tổng cộng khi giỏ hàng trống
+                } else {
+                    cartDiv.innerHTML = cart.map((item, index) => {
+                        // Chuyển price từ chuỗi dạng "12.000" thành số
+                        const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
 
-                    // Tính tổng giá từng sản phẩm
-                    const itemTotal = item.quantity * priceNumber;
+                        // Tính tổng giá từng sản phẩm
+                        const itemTotal = item.quantity * priceNumber;
 
-                    return `
-                        <div class="d-flex position-relative my-4 bg-secondary-subtle p-4 rounded">
-                            <img src="/assets/Images/products/${item.image}" 
-                                 class="flex-shrink-0 me-3" 
-                                 width="100px" 
-                                 height="100px" 
-                                 alt="${item.name}">
-                            <div>
-                                <h5 class="mt-0">${item.name}</h5>
-                                <p>
-                                    <span class="space-item-masp">Mã sản phẩm: </span>MKD0${item.id}<br>
-                                </p>
-                                <a href="product_details.html?id=${item.id}">Xem chi tiết</a>
-                            </div>
-                            <div class="ms-auto">
-                                <p class="text-end fw-bold me-3">
-                                    <i class="fa-solid fa-money-bill-wave"></i>
-                                    Tổng: <span class="item-total">${itemTotal.toLocaleString()} VNĐ</span>
-                                </p>
-                                <div class="quantity-display mt-1 ms-4">
-                                    <div class="quantity-control my-4">
-                                        <button class="quantity-btn btn px-2 fs-3 py-0 bg-light" onclick="updateQuantity(${index}, -1)">-</button>
-                                        <span class="product-quantity fw-bold">${item.quantity}</span>
-                                        <button class="quantity-btn btn px-2 fs-3 py-0 bg-light" onclick="updateQuantity(${index}, 1)">+</button>
-                                    </div>
-                                </div>
-                                <button class="btn btn-danger btn-sm float-end" onclick="removeFromCart(${index})">
-                                    <i class="fa-solid fa-trash"></i> Xóa
-                                </button>
-                            </div>
+                        return `
+                    <div class="d-flex position-relative my-4 bg-secondary-subtle p-4 rounded">
+                        <img src="/assets/Images/products/${item.image}" 
+                            class="flex-shrink-0 me-3" 
+                            width="100px" 
+                            height="100px" 
+                            alt="${item.name}">
+                        <div>
+                            <h5 class="mt-0">${item.name}</h5>
+                            <p>
+                                <span class="space-item-masp">Mã sản phẩm: </span>MKD0${item.id}<br>
+                            </p>
+                            <a href="product_details.html?id=${item.id}">Xem chi tiết</a>
                         </div>
-                    `;
-                }).join('');
-
-                // Hiển thị tổng giá toàn bộ giỏ hàng
-                const total = cart.reduce((sum, item) => {
-                    const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
-                    return sum + priceNumber * item.quantity;
-                }, 0);
-
-                totalCartProduct.innerHTML = `
-                    <div class="text-end mt-4">
-                        <h5 class="ms-5 text-uppercase fw-bold fs-3">Tổng cộng: <span class="total-price">${total.toLocaleString()} VNĐ</span></h5>
+                        <div class="ms-auto">
+                            <p class="text-end fw-bold me-3">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                                Tổng: <span class="item-total">${itemTotal.toLocaleString()} VNĐ</span>
+                            </p>
+                            <div class="quantity-display mt-1 ms-4">
+                                <div class="quantity-control my-4">
+                                    <button class="quantity-btn btn px-2 fs-3 py-0 bg-light" onclick="updateQuantity(${index}, -1)">-</button>
+                                    <span class="product-quantity fw-bold">${item.quantity}</span>
+                                    <button class="quantity-btn btn px-2 fs-3 py-0 bg-light" onclick="updateQuantity(${index}, 1)">+</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-danger btn-sm float-end" onclick="removeFromCart(${index})">
+                                <i class="fa-solid fa-trash"></i> Xóa
+                            </button>
+                        </div>
                     </div>
                 `;
+                    }).join('');
+
+                    // Hiển thị tổng giá toàn bộ giỏ hàng
+                    const total = cart.reduce((sum, item) => {
+                        const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
+                        return sum + priceNumber * item.quantity;
+                    }, 0);
+
+                    totalCartProduct.innerHTML = `
+                <div class="text-end mt-4">
+                    <h5 class="ms-5 text-uppercase fw-bold fs-3">Tổng cộng: <span class="total-price">${total.toLocaleString()} VNĐ</span></h5>
+                </div>
+            `;
+                }
             }
-        }
 
+            // Cập nhật số lượng sản phẩm
+            function updateQuantity(index, change) {
+                cart[index].quantity += change;
 
-        // Cập nhật số lượng sản phẩm
-        function updateQuantity(index, change) {
-            cart[index].quantity += change;
+                // Đảm bảo số lượng tối thiểu là 1
+                if (cart[index].quantity < 1) {
+                    cart[index].quantity = 1;
+                }
 
-            // Đảm bảo số lượng tối thiểu là 1
-            if (cart[index].quantity < 1) {
-                cart[index].quantity = 1;
+                // Lưu lại giỏ hàng vào localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                // Cập nhật giao diện
+                renderCart();
             }
 
-            // Lưu lại giỏ hàng vào localStorage
-            localStorage.setItem('cart', JSON.stringify(cart));
+            // Xóa sản phẩm khỏi giỏ hàng
+            function removeFromCart(index) {
+                if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?')) {
+                    cart.splice(index, 1); // Xóa sản phẩm theo chỉ số
+                    localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật localStorage
+                    renderCart(); // Cập nhật giao diện
+                }
+            }
 
-            // Cập nhật giao diện
+            // Gọi hàm hiển thị khi tải trang
             renderCart();
+
+
+
+
+        } else {
+            // Nếu chưa đăng nhập, hiển thị thông báo và mở form đăng nhập
+            cartDiv.innerHTML = '<p>Giỏ hàng trống.</p>';
         }
 
-        // Xóa sản phẩm khỏi giỏ hàng
-        function removeFromCart(index) {
-            if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?')) {
-                cart.splice(index, 1); // Xóa sản phẩm theo chỉ số
-                localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật localStorage
-                renderCart(); // Cập nhật giao diện
-            }
+        // Hàm kiểm tra đăng nhập
+        function isUserLoggedIn() {
+            return localStorage.getItem('isLoggedIn') === 'true';
         }
 
-        // Gọi hàm hiển thị khi tải trang
-        renderCart();
+
+        // Lấy các nút thanh toán
+        const payBankBtn = document.getElementById('payBankBtn');
+        const payCashBtn = document.getElementById('payCashBtn');
+
+        // Thiết lập lại data-bs-target nếu người dùng chưa đăng nhập
+        if (!isUserLoggedIn()) {
+            payBankBtn.setAttribute('data-bs-target', ''); // Đặt data-bs-target rỗng
+            payCashBtn.setAttribute('data-bs-target', ''); // Đặt data-bs-target rỗng
+        }
+
+
 
     </script>
-
-
-    <script src="assets/js/formlogin.js"></script>
-    <script src="assets/js/xulilogin.js"></script>
 
 </body>
