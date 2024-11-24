@@ -447,9 +447,13 @@
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho bảng lọc */
     display: none; /* Ẩn bảng lọc ban đầu */
+<<<<<<< HEAD
     margin-top: 28px;
     margin-left:25px;
     width:40%;
+=======
+    margin-top: 30px;
+>>>>>>> 3a3cdee (update code cua hoang)
 }
 
 .loc {
@@ -465,10 +469,14 @@
     margin-bottom: 15px;
     color: #333;
 }
+<<<<<<< HEAD
 .container_products-left-mb
 {
     display:none;
 }
+=======
+
+>>>>>>> 3a3cdee (update code cua hoang)
 #price-filter-form label,
 #price-filter-form input,
 #price-filter-form select {

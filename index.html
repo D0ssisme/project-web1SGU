@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./assets/css/body_code/footer.css">
     <link rel="stylesheet" href="./assets/css/body_code/containner.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="./assets/css/body_code_mobile/header_new.css">
     <link rel="stylesheet" href="./assets/css/body_code_mobile/footer_mobile.css">
     <link rel="stylesheet" href="./assets/css/body_code/middle.css">
@@ -25,6 +26,15 @@
 
      <!-- Bootstrap Js -->
      <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+=======
+    <link rel="stylesheet" href="./assets/css/body_code/middle.css">
+    <link rel="stylesheet" href="./assets/css/body_code/style.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/header_new.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/footer_mobile.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/middle_mb.css">
+    <link rel="icon" type="./Images/png" href="./assets/Images/favicon.png">
+    <title>Trang Sản phẩm</title>
+>>>>>>> 3a3cdee (update code cua hoang)
 </head>
 
 <body>
@@ -34,17 +44,28 @@
         </div>
 
         <div class="header__search">
+<<<<<<< HEAD
             <form action="product_base/search_results.html" method="GET" class="header__search-main" id="searchForm">
+=======
+            <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
+>>>>>>> 3a3cdee (update code cua hoang)
                 <input type="text" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
                 <button type="submit" class="search-button"><i
                         class="header__find-button fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
+<<<<<<< HEAD
         <div class="header__info">
             <ul>
                 <a href="cart-page.html">
                     <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
                 </a>
+=======
+
+        <div class="header__info">
+            <ul>
+                <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+>>>>>>> 3a3cdee (update code cua hoang)
 
                 <!-- Nút tài khoản -->
 
@@ -57,14 +78,20 @@
 
                     <!-- Menu Dropdown -->
                     <div id="dropdown-menu" class="dropdown-content" style="display: none;">
+<<<<<<< HEAD
                         <a href="./assets/html/info.html">Thông tin cá nhân</a>
                         <a href="./assets/html/history.html">Đơn hàng của tôi</a>
+=======
+                        <a href="#">Thông tin cá nhân</a>
+                        <a href="#">Đơn hàng của tôi</a>
+>>>>>>> 3a3cdee (update code cua hoang)
                         <a href="#" id="logout-button" onclick="logout(event)">Đăng Xuất</a>
                     </div>
                 </li>
             </ul>
         </div>
 
+<<<<<<< HEAD
     </header>
     <header class="header-mobile">
         <div class="header_mobile-user">
@@ -79,6 +106,34 @@
                                 class="header__info-usericon fa-regular fa-user"></i></a></li>
                 </ul>
             </div>
+=======
+
+
+    </header>
+    <header class="header-mobile">
+        <div class="header_mobile-user">
+                <div class="header_img-logo">
+                    <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo" class="header__logo-desktop"></a>
+                </div>
+                <div class="header-options">
+                    <ul>
+                        <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+        
+                        <!-- Nút tài khoản -->
+        
+                        <li onclick="showForm('login')" id="account-" class="header__user"><i
+                                class="header__info-usericon fa-regular fa-user"></i></li>
+                        <li id="account-button" class="header__info-login">
+                            <!-- Menu Dropdown -->
+                            <div id="dropdown-menu" class="dropdown-content" style="display: none;">
+                                <a href="#">Thông tin cá nhân</a>
+                                <a href="#">Đơn hàng của tôi</a>
+                                <a href="#" id="logout-button" onclick="logout(event)">Đăng Xuất</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+>>>>>>> 3a3cdee (update code cua hoang)
         </div>
         <div class="header__search">
             <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
@@ -86,6 +141,7 @@
                 <div class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></div>
             </form>
         </div>
+<<<<<<< HEAD
         <!-- <div class="container_products-left-mb">
         <div class="nav-left-mb">
             <ul>
@@ -96,6 +152,18 @@
             </ul>
         </div>
     </div> -->
+=======
+        <div class="container_products-left-mb">
+            <div class="nav-left-mb">
+                <ul>
+                    <li><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
+                    <li><a href="#" onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
+                    <li><a href="#" onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
+                    <li><a href="#" onclick="filterProducts(''); return false;">Tất cả</a></li>
+                </ul>
+            </div>
+        </div>
+>>>>>>> 3a3cdee (update code cua hoang)
     </header>
     <div class="product-main">
         <div class="slide">
@@ -113,7 +181,11 @@
                         <li><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
                         <li><a href="#" onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
                         <li><a href="#" onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
+<<<<<<< HEAD
                         <li><a href="#" onclick="filterProducts(''); return false;">Tất cả sản phẩm</a></li>
+=======
+                        <li><a href="#" onclick="filterProducts(''); return false;">Tất cả</a></li>
+>>>>>>> 3a3cdee (update code cua hoang)
                     </ul>
                 </div>
             </div>
@@ -148,7 +220,11 @@
                     </div>
                 </div>
                 <div id="product-list" class="product-list"></div>
+<<<<<<< HEAD
                 <div id="pagination" class="pagination d-block"></div>
+=======
+                <div id="pagination" class="pagination"></div>
+>>>>>>> 3a3cdee (update code cua hoang)
             </div>
         </div>
 
@@ -366,6 +442,14 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 3a3cdee (update code cua hoang)
     <script>
 
         function checkform() {
@@ -429,9 +513,15 @@
                 const productItem = document.createElement('div');
                 productItem.classList.add('product-item');
                 productItem.innerHTML = `
+<<<<<<< HEAD
             <a href="product_base/product_details.html?id=${product.id}">
                 <img src="./assets/Images/products/${product.image}" alt="${product.name}">
                 <h3 style="font-size:1.6rem;line-height: 1.4;">${product.name}</h3>
+=======
+            <a href="product_details.html?id=${product.id}">
+                <img src="./assets/Images/products/${product.image}" alt="${product.name}">
+                <h3 style="font-size:1.6rem";>${product.name}</h3>
+>>>>>>> 3a3cdee (update code cua hoang)
                 <p style="font-size:1.4rem";><strong>${product.price} VND</strong></p>
             </a>
         `;
@@ -519,7 +609,7 @@
             searchButton.addEventListener('click', () => {
                 const query = document.getElementById('search-input').value.trim();
                 if (query) {
-                    window.location.href = `/product_base/search_results.html?query=${encodeURIComponent(query)}`;
+                    window.location.href = `search_results.html?query=${encodeURIComponent(query)}`;
                 } else {
                     alert('Vui lòng nhập từ khóa tìm kiếm!');
                 }

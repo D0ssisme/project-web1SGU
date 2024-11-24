@@ -3,10 +3,16 @@ function getProductId() {
     return urlParams.get('id');
 }
 
+<<<<<<< HEAD
 
 function loadProduct() {
     const productId = getProductId();
     fetch('../dulieu/data.js')
+=======
+function loadProduct() {
+    const productId = getProductId();
+    fetch('dulieu/data.js')
+>>>>>>> 3a3cdee (update code cua hoang)
         .then(response => response.text())
         .then(data => {
             const products = JSON.parse(data.replace('var products = ', '').slice(0, -1));
@@ -14,7 +20,11 @@ function loadProduct() {
             if (product) {
                 document.getElementById('productId').textContent = `MKD0${product.id}`;
                 document.getElementById('productId2').textContent = `MKD0${product.id}`;
+<<<<<<< HEAD
                 document.getElementById('productImage').src = `../assets/Images/products/${product.image}`;
+=======
+                document.getElementById('productImage').src = `./assets/Images/products/${product.image}`;
+>>>>>>> 3a3cdee (update code cua hoang)
                 document.getElementById('productName1').textContent = product.name;
                 document.getElementById('productName2').textContent = product.name;
                 document.getElementById('productDescription').textContent = product.description;
@@ -26,6 +36,7 @@ function loadProduct() {
                 document.getElementById('productHighlight').textContent = `${product.highlight}`;
                 document.getElementById('productOrigin').textContent = `${product.origin}`;
             }
+<<<<<<< HEAD
 
             document.getElementById('addToCart').onclick = () => {
                 const quantityInput = document.getElementById('quantity');
@@ -55,11 +66,21 @@ function loadProduct() {
                 alert(`${product.name} đã được thêm vào giỏ hàng!`);
             };
 
+=======
+>>>>>>> 3a3cdee (update code cua hoang)
         })
         .catch(error => console.error('Error:', error));
 }
 
+<<<<<<< HEAD
 window.onload = loadProduct;
+=======
+
+window.onload = function () {
+    checkLoginStatus(); // Kiểm tra trạng thái đăng nhập khi trang tải xong
+    loadProduct();
+};
+>>>>>>> 3a3cdee (update code cua hoang)
 
 
 const searchButton = document.getElementById('search-button');
@@ -67,7 +88,11 @@ if (searchButton) {
     searchButton.addEventListener('click', () => {
         const query = document.getElementById('search-input').value.trim();
         if (query) {
+<<<<<<< HEAD
             window.location.href = `product_base/search_results.html?query=${encodeURIComponent(query)}`;
+=======
+            window.location.href = `search_results.html?query=${encodeURIComponent(query)}`;
+>>>>>>> 3a3cdee (update code cua hoang)
         } else {
             alert('Vui lòng nhập từ khóa tìm kiếm!');
         }

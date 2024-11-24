@@ -150,4 +150,29 @@
 .header__find-button
 {
     font-size:2.3rem;
+<<<<<<< HEAD
+=======
+}
+.d-grid button
+{
+    background-color: red;
+    cursor: pointer;
+    border: solid 0;
+    border-radius: 5px;
+    color: #fff;
+}
+.d-grid button:hover
+{
+    background-color: rgb(185, 66, 66);
+}
+.forgot_pass
+{
+    text-decoration: underline;
+    color: #4c6efd;
+}
+.haveacc a
+{
+    text-decoration: underline;
+    color: #4c6efd;
+>>>>>>> 3a3cdee (update code cua hoang)
 }
