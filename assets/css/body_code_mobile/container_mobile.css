@@ -1,0 +1,44 @@
+
+@media screen and (max-width:680px) 
+{
+    .container__product-content-left {
+        width: 100%;
+    }
+    .container__product-content-right
+    {
+        width: 90%;
+    }
+    .container__product-content
+    {
+        display:block;
+    }
+
+    .container__product-buttom
+    {
+    display:block;
+    }
+    .container__product-slideshow {
+        max-width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .slide-image 
+    {
+        width: 100%;
+        height: 465px;
+        object-fit: cover;
+        display: none;
+    }
+    .containter__product-right-buttom
+    {
+        margin-right:15px;
+    }
+    .containter__product-right-buttom-content-one-title-item
+    {
+        margin:0 15px;
+    }
+    .container__top
+    {
+        display:none;
+    }
+}

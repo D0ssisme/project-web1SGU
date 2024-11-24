@@ -1,0 +1,335 @@
+h2, h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+form, table {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"], input[type="number"], textarea, input[type="file"],select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"], button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right:20px;
+}
+.huy-edit
+{
+    border-radius: 4px;
+    margin-top:4px;
+    padding:10px;
+    width:88px;
+    font-size:14px;
+}
+input[type="submit"]:hover, button:hover {
+    background-color: #4cae4c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+.pagination-admin {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pagination-admin button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.pageInfo
+{
+    font-size:16px;
+}
+.pagination-admin button:hover {
+    background-color: #0056b3;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+.modal-content h4 {
+    margin-bottom: 15px;
+}
+
+/* .toast-admin {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+    position: fixed;
+    top: 20px; 
+    right: 20px; 
+    background-color: #4caf50; 
+    color: white; 
+    padding: 16px;
+    border-radius: 4px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 14px; 
+}
+
+.toast-admin.show {
+    visibility: visible;
+    opacity: 1;
+} */
+
+
+.toast-admin {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: white; /* Màu chữ mặc định */
+    padding: 16px;
+    border-radius: 4px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    background-color: #0056b3;
+}
+
+.toast-admin.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Màu cho các trạng thái */
+.toast-success {
+    background-color: #4caf50; /* Màu xanh lá */
+}
+
+.toast-error {
+    background-color: #f44336; /* Màu đỏ */
+}
+
+
+button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+#notification {
+    display: none;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.display_product {
+    display: flex; 
+    justify-content: space-between;
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+.left-section, .right-section {
+    width: 48%; 
+    box-sizing: border-box; 
+}
+
+.left-section input, .right-section input, .left-section textarea, .right-section textarea {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.left-section label, .right-section label {
+    display: block;
+    margin-bottom: 8px;
+}
+.distance
+{
+    margin-top:20px;
+}
+.button-distance
+{
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    margin-top:10px;
+}
+#confirmDeleteBtn
+{
+    background-color: rgb(222, 47, 47);
+}
+#confirmDeleteBtn:hover
+{
+    background-color: rgb(181, 50, 50);;
+}
+.phanloai {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding:20px;
+    justify-content: center;
+}
+
+.phanloai_sp {
+    list-style: none; 
+    padding: 0; 
+    display: flex; 
+    transform: translateY(30%);
+}
+
+.phanloai_sp li {
+    margin:0; 
+    font-size:17px;
+}
+.li-space
+{
+    margin:0 0 0 10px;
+}
+.phanloai_sp a {
+    text-decoration: none; 
+    color: #333; 
+    font-weight: bold; 
+    padding: 5px 10px; 
+    border-radius: 4px; 
+    transition: background-color 0.3s; 
+}
+
+.phanloai_sp a:hover {
+    background-color: #ddd;
+}
+button.edit-btn {
+    background-color: #007bff;
+    color: white; 
+    border: none;
+    padding: 5px 10px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    transition: background-color 0.3s;
+    height:40px;
+    width:62px;
+    transform: translateX(39%);
+    font-size: 15px;
+}
+button.edit-btn:hover {
+background-color: darkblue;
+}
+button.delete-btn {
+    background-color: red;
+    color: white;
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    transform: translateX(50%);
+    font-size: 14px;
+
+}
+
+button.delete-btn:hover {
+    background-color: darkred;
+}
+td.description {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    max-width: 150px; 
+}
+td.name {
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    max-width: 100px;
+}
+.admin_input-products label
+{
+    font-size:16px;
+}
+.spacejam
+{
+    margin-top:11px;
+}
