@@ -6,9 +6,12 @@
   {
       "sdt": "0912345678",
       "password": "mypassword"
+<<<<<<< HEAD
   },
   {
     "sdt":"0786026878",
     "password":"thinh2014"
+=======
+>>>>>>> 3a3cdee (update code cua hoang)
   }
 ]

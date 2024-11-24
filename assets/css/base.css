@@ -303,7 +303,11 @@ html {
 #account- {
     position: relative;
     cursor: pointer;
+<<<<<<< HEAD
 }
+=======
+
+>>>>>>> 3a3cdee (update code cua hoang)
 
 .dropdown-content::before {
     content: '';
