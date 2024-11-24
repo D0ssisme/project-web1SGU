@@ -22,6 +22,44 @@
   <!-- Custom Theme Style -->
   <link href="../build/css/custom.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .color {
+        color: #2679f3 !important;
+    }
+
+    .button {
+
+        background-color: #d42220;
+        color: #ffffff;
+        border: none !important;
+
+    }
+
+    .button:hover {
+        background-color: #d42220;
+        color: #ffffff;
+    }
+
+    .dt-length {
+        display: none;
+    }
+
+    div.dt-container .dt-paging .dt-paging-button.current,
+    div.dt-container .dt-paging .dt-paging-button.current:hover {
+        background-color: #2679f3 !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
+
+    .mt {
+        margin-top: 10px !important;
+    }
+    .btn-success{
+      color:white !important;
+      
+      background-color: #87CB16 !important;
+    }
+</style>
 </head>
 
 <body class="nav-md">
@@ -211,7 +249,305 @@
 
       <!-- page content -->
       <div class="right_col" role="main">
+          
 
+        <div style="">
+          <h3 class="color" style="font-weight:500">Quản lý tải khoản</h3>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              Thêm tải khoản
+          </button>
+      </div>
+      <div class="row" style="margin:4px 20px;">
+  
+  
+          <table id="myTable" class="display">
+              <thead>
+                  <tr>
+                      <th class="color">Mã</th>
+                      <th class="color">Tên người dùng</th>
+                      <th class="color">Họ tên người dùng</th>
+                      <th class="color">Địa chỉ</th>
+  
+                      <th class="color">Email</th>
+                      <th class="color">Vai trò</th>
+  
+                     
+                      <th class="color">Thao tác</th>
+  
+  
+                  </tr>
+              </thead>
+              <tbody>
+                      <tr>
+                          <td>01</td>
+                          <td>NguyenHuy</td>
+  
+                          <td>Nguyen Tuong Huy</td>
+                          <td>TPHCM</td>
+  
+                          <td>nguyentuonghuy@gmail.com
+                          <td>        
+                              Khách hàng cao cấp
+                          </td>
+                          
+                         
+                          <td>
+<!--                         
+                                      <a href="" class="btn button"
+                                          style="margin-left:10px;"><i class="fa-solid fa-user-lock"></i></a> -->
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;" data-target="#exampleModal2">
+                                          <i class="fa-solid fa-key"></i>
+                                                </button>
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;" data-target="#exampleModal1">
+                                      <i class="fa-solid fa-pen-to-square"></i>
+                                  </button>
+                          
+                          </td>
+  
+                      </tr>
+
+                      <tr>
+                        <td>02</td>
+                        <td>Dinhhung</td>
+
+                        <td>Nhu Dinh Hung</td>
+                        <td>TPHCM</td>
+
+                        <td>nhudinhhung@gmail.com
+                        <td>        
+                            Khách hàng
+                        </td>
+                        
+                       
+                        <td>
+                          
+<!--                         
+                                    <a href="" class="btn button"
+                                        style="margin-left:10px;"><i class="fa-solid fa-user-lock"></i></a> -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;" data-target="#exampleModal2">
+                                        <i class="fa-solid fa-key"></i>
+                                              </button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;" data-target="#exampleModal1">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                        
+                        </td>
+
+                    </tr>
+
+
+                    
+
+
+                          
+                    <tr>
+                      <td>03</td>
+                      <td>NguyenBao</td>
+
+                      <td>Nguyen Nguyen Bao</td>
+                      <td>TPHCM</td>
+
+                      <td>nguyenbao@gmail.com
+                      <td>        
+                          Quản lý
+                      </td>
+                      
+                     
+                      <td>
+
+                        <!--                         
+                                    <a href="" class="btn button"
+                                        style="margin-left:10px;"><i class="fa-solid fa-user-lock"></i></a> -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;" data-target="#exampleModal2">
+                                          <i class="fa-solid fa-key"></i>
+                                                </button>
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;" data-target="#exampleModal1">
+                                      <i class="fa-solid fa-pen-to-square"></i>
+                                  </button>
+                     
+  
+
+
+
+                                  
+              </tbody>
+          </table>
+  
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Thêm mới tài khoản</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <form action="" method="POST">
+
+                          <div class="modal-body">
+                              <div class="row">
+  
+                                  <div class="col-md-12">
+                                      <label for="">Tên người dùng</label>
+                                      <input type="text" class="form-control" placeholder="Nhập tên người dùng"
+                                          name="tennguoidung" required>
+                                  </div>
+                                  <div class="col-md-12 mt">
+                                      <label for="">Họ tên</label>
+                                      <input type="text" class="form-control" placeholder="Nhập họ tên người dùng"
+                                          name="hoten" required>
+                                  </div>
+                                  <div class="col-md-12 mt">
+                                    <label for="">Địa chỉ</label>
+                                    <input type="text" class="form-control" placeholder="Nhập địa chỉ người dùng"
+                                        name="address" required>
+                                </div>
+                                  <div class="col-md-12 mt">
+                                      <label for="">Email</label>
+                                      <input type="email" class="form-control" placeholder="Nhập email người dùng"
+                                          name="email" required>
+                                  </div>
+                                  <div class="col-md-12 mt">
+                                      <label for="">Password</label>
+                                      <input type="password" class="form-control" placeholder="Nhập mật khẩu người dùng"
+                                          name="password" required>
+                                  </div>
+                                  <div class="col-md-12 mt">
+                                      <label for="">Vai trò người dùng</label>
+                                      <select class="form-control" name="role_id" id="" required>
+                                          <option value="1">Quản lý</option>
+                                          <option value="2">Nhân viên</option>
+                                          <option value="3">Khách hàng</option>
+                                          <option value="4">Khách hàng cao cấp</option>
+                                      </select>
+                                  </div>
+  
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                              <button type="submit" class="btn btn-info" style=".btn-custom {
+                                background-color: #00BFFF; /* Màu xanh da trời */
+                                color: white; /* Màu chữ */
+                                border: none; /* Bỏ viền */
+                            }
+                        
+                            .btn-custom:hover {
+                                background-color: #1E90FF; /* Màu khi hover */
+                            }" >Lưu thông tin</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Khóa tài khoản</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="lockUserForm">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12 mt">
+                                    <label for="">Trạng thái người dùng</label>
+                                    <select class="form-control" name="trangthai" required>
+                                        <option value="khóa">Khóa</option>
+                                        <option value="Đang sử dụng">Đang sử dụng</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                          <button type="submit" class="btn btn-info" style=".btn-custom {
+                            background-color: #00BFFF; /* Màu xanh da trời */
+                            color: white; /* Màu chữ */
+                            border: none; /* Bỏ viền */
+                        }
+                    
+                        .btn-custom:hover {
+                            background-color: #1E90FF; /* Màu khi hover */
+                        }">Lưu thông tin</button>
+                      </div>
+                  </form>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Sửa tài khoản</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="accountForm">
+        
+                        <div class="modal-body">
+                            <div class="row">
+        
+                                <div class="col-md-12">
+                                    <label for="">Tên người dùng</label>
+                                    <input type="text" class="form-control" placeholder="Nhập tên người dùng"
+                                        name="tennguoidung" required>
+                                </div>
+                                <div class="col-md-12 mt">
+                                    <label for="">Họ tên</label>
+                                    <input type="text" class="form-control" placeholder="Nhập họ tên người dùng"
+                                        name="hoten" required>
+                                </div>
+                                <div class="col-md-12 mt">
+                                    <label for="">Địa chỉ</label>
+                                    <input type="text" class="form-control" placeholder="Nhập địa chỉ người dùng"
+                                        name="address" required>
+                                </div>
+                                <div class="col-md-12 mt">
+                                    <label for="">Email</label>
+                                    <input type="email" class="form-control" placeholder="Nhập email người dùng"
+                                        name="email" required>
+                                </div>
+                                <div class="col-md-12 mt">
+                                    <label for="">Password</label>
+                                    <input type="password" class="form-control" placeholder="Nhập mật khẩu người dùng"
+                                        name="password" required>
+                                </div>
+                                <div class="col-md-12 mt">
+                                    <label for="">Vai trò người dùng</label>
+                                    <select class="form-control" name="role_id" id="" required>
+                                        <option value="1">Quản lý</option>
+                                        <option value="2">Nhân viên</option>
+                                        <option value="3">Khách hàng</option>
+                                        <option value="4">Khách hàng cao cấp</option>
+                                    </select>
+                                </div>
+        
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                            <button type="submit" class="btn btn-info" style=".btn-custom {
+                              background-color: #00BFFF; /* Màu xanh da trời */
+                              color: white; /* Màu chữ */
+                              border: none; /* Bỏ viền */
+                          }
+                      
+                          .btn-custom:hover {
+                              background-color: #1E90FF; /* Màu khi hover */
+                          }">Lưu thông tin</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+  
 
       </div>
       <!-- /page content -->
@@ -243,3 +579,103 @@
 </body>
 
 </html>
+
+<script>
+  document.querySelector("form").addEventListener("submit", function(event){
+      // Ngăn chặn hành động gửi form 
+      event.preventDefault();
+  
+      // Lấy dữ liệu
+      const formData = new FormData(event.target);
+      const dataObject = {};
+      formData.forEach((value, key) => {
+          dataObject[key] = value;
+      });
+  
+      // Chuyển đổi thành chuỗi JSON
+      const jsonData = JSON.stringify(dataObject, null, 2);
+  
+      // Tạo Blob từ chuỗi JSON
+      const blob = new Blob([jsonData], { type: "application/json" });
+  
+      // Tạo URL cho Blob
+      const url = URL.createObjectURL(blob);
+  
+      // Tạo một liên kết tải file
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "thong-tin-user.json";
+      document.body.appendChild(a);
+      a.click();
+  
+      // Xóa liên kết
+      setTimeout(() => {
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+      }, 0);
+  });
+  </script>
+
+<script>
+  document.getElementById('accountForm').onsubmit = function(event) {
+      event.preventDefault(); // Ngăn việc gửi form theo kiểu mặc định
+
+      // Lấy giá trị từ form
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+      
+      // Chuyển đổi thành JSON
+      const jsonData = JSON.stringify(data);
+
+      // Tạo một blob với dữ liệu JSON
+      const blob = new Blob([jsonData], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+
+      // Tạo một link để tải file
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'account_data.json'; // Tên file khi tải xuống
+      document.body.appendChild(a);
+      a.click(); // Tự động nhấp vào link để tải file
+      document.body.removeChild(a); // Xóa link khỏi DOM
+
+  }
+</script>
+<script>
+  document.getElementById('lockUserForm').addEventListener('submit', function(event) {
+      // Ngăn chặn hành động gửi form 
+      event.preventDefault();
+  
+      // Lấy dữ liệu
+      const formData = new FormData(event.target);
+      const dataObject = {};
+      formData.forEach((value, key) => {
+          dataObject[key] = value;
+      });
+  
+      // Chuyển đổi thành chuỗi JSON
+      const jsonData = JSON.stringify(dataObject, null, 2);
+  
+      // Tạo Blob từ chuỗi JSON
+      const blob = new Blob([jsonData], { type: "application/json" });
+  
+      // Tạo URL cho Blob
+      const url = URL.createObjectURL(blob);
+  
+      // Tạo một liên kết tải file
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "thong-tin-user.json";
+      document.body.appendChild(a);
+      a.click();
+  
+      // Xóa liên kết
+      setTimeout(() => {
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+      }, 0);
+  });
+</script>
+
+
+  
