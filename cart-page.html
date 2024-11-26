@@ -273,57 +273,80 @@
                     // Lấy hóa đơn modal (billDiv)
                     const billDiv = document.getElementById('billDiv');
                     const billProducts = document.getElementById('billProducts');
-
+                
                     // Tạo danh sách sản phẩm từ giỏ hàng
+                    let currentInvoice = {};
                     if (cart.length === 0) {
                         billProducts.innerHTML = '<p>Không có sản phẩm nào trong hóa đơn.</p>';
                     } else {
                         const productList = cart.map(item => {
                             const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
                             const itemTotal = item.quantity * priceNumber;
-
-                            return `
-                                <div class="d-flex justify-content-between my-3 bg-secondary-subtle p-4 rounded">
-                                    <div>
-                                        <h6>${item.name}</h6>
-                                        <p>Mã sản phẩm: ${item.id}</p>
-                                        <p>Số lượng: ${item.quantity}</p>
-                                    </div>
-                                    <p class="fw-bold">${itemTotal.toLocaleString()} VNĐ</p>
-                                </div>
-                            `;
-                        }).join('');
-
+                
+                            return {
+                                name: item.name,
+                                id: item.id,
+                                quantity: item.quantity,
+                                total: itemTotal,
+                            };
+                        });
+                
+                        // Tạo hóa đơn hiện tại
+                        const total = cart.reduce((sum, item) => {
+                            const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
+                            return sum + item.quantity * priceNumber;
+                        }, 0);
+                
+                        currentInvoice = {
+                            id: `HD-${Date.now()}`, // Tạo mã hóa đơn duy nhất
+                            products: productList,
+                            total: total,
+                            date: new Date().toLocaleString(), // Thời gian tạo hóa đơn
+                            status: 'Chưa xử lý', // Trạng thái hóa đơn mới là "Chưa xử lý"
+                        };
+                
+                        // Lưu hóa đơn vào localStorage
+                        const invoices = JSON.parse(localStorage.getItem('invoices')) || [];
+                        invoices.push(currentInvoice);
+                        localStorage.setItem('invoices', JSON.stringify(invoices));
+                
                         // Hiển thị danh sách sản phẩm vào `billProducts`
+                        const productHtml = productList.map(item => `
+                            <div class="d-flex justify-content-between my-3 bg-secondary-subtle p-4 rounded">
+                                <div>
+                                    <h6>${item.name}</h6>
+                                    <p>Mã sản phẩm: ${item.id}</p>
+                                    <p>Số lượng: ${item.quantity}</p>
+                                </div>
+                                <p class="fw-bold">${item.total.toLocaleString()} VNĐ</p>
+                            </div>
+                        `).join('');
+                
                         billProducts.innerHTML = `
                             <div>
                                 <h4 class="text-primary mb-3">Danh sách sản phẩm</h4>
-                                ${productList}
+                                ${productHtml}
                             </div>
                         `;
                     }
-
-                    // Hiển thị tổng giá
-                    const total = cart.reduce((sum, item) => {
-                        const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
-                        return sum + item.quantity * priceNumber;
-                    }, 0);
-
-                    document.getElementById('billTotal').textContent = `${total.toLocaleString()} VNĐ`;
-
+                
+                    document.getElementById('billTotal').textContent = `${currentInvoice.total?.toLocaleString()} VNĐ`;
+                
                     // Đóng modal nhập thông tin và mở modal hóa đơn
                     const cashModal = bootstrap.Modal.getInstance(document.getElementById('cash'));
                     cashModal.hide();
                     const billModal = new bootstrap.Modal(document.getElementById('billModal'));
                     billModal.show();
-
+                
                     // Xóa giỏ hàng sau khi xác nhận
                     cart = []; // Làm rỗng mảng giỏ hàng
                     localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật localStorage
-
+                
                     // Làm mới giao diện giỏ hàng
                     renderCart();
                 });
+                
+                
 
             </script>
 
