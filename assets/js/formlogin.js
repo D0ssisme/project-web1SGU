@@ -15,18 +15,6 @@ function closeFormOutside() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 window.onload = function () {
     checkLoginStatus(); // Kiểm tra trạng thái đăng nhập khi trang tải xong
 };
@@ -174,6 +162,7 @@ function closeFormOutside() {
     document.getElementById('loginForm').style.display = 'none';
     document.getElementById('registerForm').style.display = 'none';
 }
+
 
 
 

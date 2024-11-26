@@ -51,7 +51,7 @@
             </div>
             <div class="profile_info">
               <span>Xin chào ,</span>
-              <h2>Mạnh Dũng Đz</h2>
+              <h2 id="username-display">admin</h2>
             </div>
           </div>
 
@@ -110,9 +110,12 @@
           <nav class="nav navbar-nav">
             <ul class=" navbar-right">
               <li class="nav-item dropdown open" style="padding-left: 15px;">
+
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                   data-toggle="dropdown" aria-expanded="false">
-                  <img src="../images/bed488561c6ab56101466edec05c5b16.jpg" alt="">Mạnh Dũng
+                  <img src="../images/bed488561c6ab56101466edec05c5b16.jpg" alt="">
+                  <span id="username-display">admin</span>
+
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="javascript:;"> Profile</a>
@@ -902,14 +905,23 @@
       </div>
 
       <footer>
-				<div class="pull-right">
-					<a href="#">From onlyfans with love</a> 
-				</div>
-				<div class="clearfix"></div>
-			</footer>
+        <div class="pull-right">
+          <a href="#">From onlyfans with love</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
 
     </div>
   </div>
+  <script>
+    // Kiểm tra và hiển thị tên người dùng từ localStorage
+    window.onload = function () {
+      var username = localStorage.getItem('username');
+      if (username) {
+        document.getElementById('username-display').textContent = username; // Cập nhật tên người dùng
+      }
+    }
+  </script>
 
   <script src="../vendors/jquery/dist/jquery.min.js"></script>
   <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
