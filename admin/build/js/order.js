@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
         filteredInvoices = invoices.filter(invoice => invoice.status === 'Đã xử lý');
     }
 
+    // Sắp xếp đơn hàng theo thời gian (ngày tạo) mặc định, đơn hàng mới hơn sẽ ở trên
+    filteredInvoices.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sắp xếp giảm dần theo ngày
+
     // Hàm lọc đơn hàng theo ngày
     const filterByDate = () => {
         const startDate = document.getElementById('startDate').value;
@@ -131,6 +134,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         modalContent.innerHTML = `
             <h5>Mã đơn hàng: ${invoice.id}</h5>
+            <p>Tài khoản: ${invoice.userId || '---'}</p>
+            <p>Email: ${invoice.email || '---'}</p>
+            <p>Địa chỉ: ${invoice.address || '---'}</p>
             <p>Ngày: ${invoice.date}</p>
             <h6>Tổng tiền: ${invoice.total.toLocaleString()} VNĐ</h6>
             <h4 class="text-primary">Chi tiết sản phẩm</h4>
