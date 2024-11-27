@@ -41,11 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_FILES['editImage']) && $_FILES['editImage']['error'] == 0) {
         $imageName = $_FILES['editImage']['name'];
         $imageTmp = $_FILES['editImage']['tmp_name'];
-        $imageUploadPath = $_SERVER['DOCUMENT_ROOT'] . '/testnua/assets/Images/products/' . basename($imageName);
+        $imageUploadPath = $_SERVER['DOCUMENT_ROOT'] . '/project-web1sgu/assets/Images/products/' . basename($imageName);
 
         // Kiểm tra thư mục uploads có tồn tại không, nếu không thì tạo mới
-        if (!file_exists($_SERVER['DOCUMENT_ROOT'] . '/testnua/assets/Images/products/')) {
-            mkdir($_SERVER['DOCUMENT_ROOT'] . '/testnua/assets/Images/products/', 0777, true);
+        if (!file_exists($_SERVER['DOCUMENT_ROOT'] . '/project-web1sgu/assets/Images/products/')) {
+            mkdir($_SERVER['DOCUMENT_ROOT'] . '/project-web1sgu/assets/Images/products/', 0777, true);
         }
 
         // Kiểm tra loại file (chỉ cho phép ảnh)
