@@ -100,7 +100,7 @@
 
     <!-- Product List in Cart Page -->
     <main style="margin-top: 160px;">
-        <h2 class="py-4 px-5 my-4 border-bottom border-secondary">Giỏ hàng</h2>
+        <h2 class="py-4 px-5 mb-4 fs-1 border-bottom border-secondary">Giỏ hàng của bạn</h2>
 
         <!-- Trang sản phẩm trong giỏ hàng -->
         <div id="cart" class="cart-container my-5 mx-5"></div>
@@ -112,7 +112,7 @@
 
             <div id="payment-button">
                 <button type="button" class="btn btn-primary me-5 px-4 py-3 fs-5" id="payBankBtn" data-bs-toggle="modal"
-                    data-bs-target="#qr-image">Thanh toán bằng chuyển khoản</button>
+                    data-bs-target="#cashBanking">Thanh toán bằng chuyển khoản</button>
                 <button type="button" class="btn btn-primary me-5 px-4 py-3 fs-5" id="payCashBtn" data-bs-toggle="modal"
                     data-bs-target="#cash">Thanh toán khi nhận hàng</button>
             </div>
@@ -121,16 +121,82 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header py-4git">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                            <h1 class="modal-title fs-5" id="modalTitle"></h1>
                             <button type="button" class="btn-close me-1 fs-3" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
-                        <img class="img-fluid" src="/assets/Images/bank_QR.jpg">
+                        <div class="modal-body">
+                            <img class="img-fluid" src="/assets/Images/bank_QR.jpg">
+                        </div>
+                        <!-- Modal Footer -->
+                        <div class="modal-footer justify-content-between">
+                            <div class="form-check align-items-center">
+                                <input class="form-check-input border border-info mx-2" type="checkbox" id="termsCheckbox" style="width:12px; height:12px; transform:scale(1.5);">
+                                <label class="form-check-label fs-4 ms-2" for="termsCheckbox">
+                                    Tôi xác nhận đã thanh toán
+                                </label>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-secondary fs-4" data-bs-dismiss="modal">Đóng</button>
+                                <button type="submit" class="btn btn-primary fs-4" id="finalConfirm" disabled>Xác nhận</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Cập nhật thông tin người dùng trước khi thanh toán -->
+            <!-- Cập nhật thông tin người dùng trước khi thanh toán bằng chuyển khoản -->
+            <div class="modal fade" id="cashBanking" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header p-4">
+                            <h1 class="modal-title fs-2" id="exampleModalLabel">Cập nhật thông tin</h1>
+                            <button type="button" class="btn-close fs-3" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <!-- Modal Body -->
+                        <div class="modal-body fs-4 p-4">
+                            <div class="input-group mb-3">
+                                <label for="username" class="form-label">Tài khoản</label>
+                                <div class="input-group">
+                                    <input id="username" type="text" class="form-control mx-1" aria-label="Username"
+                                        disabled>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label for="email" class="form-label">Email </label>
+                                <div class="input-group">
+                                    <input id="email" type="email" class="form-control mx-1" aria-label="email"
+                                        placeholder="Email của bạn">
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label for="phone" class="form-label">Địa chỉ </label>
+                                <div class="input-group">
+                                    <input id="address" type="text" class="form-control mb-3" aria-label="address"
+                                        placeholder="Nhập địa chỉ của bạn!" required>
+                                </div>
+                            </div>
+
+                            <div class="input-group my-3">
+                                <span class="input-group-text">Lời nhắn</span>
+                                <textarea class="form-control" id="message" aria-label="With textarea"></textarea>
+                            </div>
+                        </div>
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary fs-4" data-bs-dismiss="modal">Đóng</button>
+                            <button type="submit" class="btn btn-primary fs-4" id="confirmPayment2">Xác nhận</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cập nhật thông tin người dùng trước khi thanh toán bằng tiền mặt -->
             <div class="modal fade" id="cash" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -154,15 +220,15 @@
                                 <label for="email" class="form-label">Email </label>
                                 <div class="input-group">
                                     <input id="email" type="email" class="form-control mx-1" aria-label="email"
-                                        placeholder="Email của bạn" required>
+                                        placeholder="Email của bạn">
                                 </div>
                             </div>
 
                             <div class="input-group mb-3">
-                                <label for="phone" class="form-label">Số điện thoại </label>
+                                <label for="phone" class="form-label">Địa chỉ </label>
                                 <div class="input-group">
-                                    <input id="phone" type="text" class="form-control mb-3" aria-label="phone"
-                                        placeholder="0xxx-xxx-xxx" maxlength="10" size="10" required>
+                                    <input id="address" type="text" class="form-control mb-3" aria-label="address"
+                                        placeholder="Nhập địa chỉ của bạn!" required>
                                 </div>
                             </div>
 
@@ -195,9 +261,9 @@
 
                             <!-- Thông tin khách hàng -->
                             <div class="mb-4">
-                                <p>Họ và tên: <span id="billUsername">---</span></p>
+                                <p>Tài khoản: <span id="billUsername">---</span></p>
                                 <p>Email: <span id="billEmail">---</span></p>
-                                <p>Số điện thoại: <span id="billPhone">---</span></p>
+                                <p>Địa chỉ: <span id="billAddress">---</span></p>
                             </div>
                             <!-- Danh sách sản phẩm -->
                             <div id="billProducts">
@@ -215,140 +281,6 @@
                 </div>
             </div>
 
-
-            <script>
-                // Hàm tìm người dùng qua số điện thoại (sdt)
-                const phoneNum = localStorage.getItem('sdt'); // Lấy số điện thoại từ localStorage
-                console.log('Sdt', phoneNum);
-                function findUserByPhone(phoneNumber) {
-                    fetch('user.json')
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Không thể tải file JSON');
-                            }
-                            return response.json();
-                        })
-                        .then(users => {
-                            // Tìm người dùng với số điện thoại chính xác
-                            const user = users.find(usr => usr.sdt === phoneNumber);
-
-                            if (user) {
-                                // Nếu tìm thấy người dùng, hiển thị thông tin vào các ô input
-                                document.getElementById('username').value = user.sdt; // Hiển thị số điện thoại
-                                document.getElementById('email').value = user.email || ''; // Giả sử có email hoặc để trống
-                                document.getElementById('phone').value = user.password; // Sử dụng số điện thoại làm thông tin liên hệ
-
-                                console.log('Thông tin người dùng:', user); // In ra để kiểm tra thông tin người dùng
-
-                                const billUser = document.getElementById('billUsername');
-                                billUser.innerHTML = document.getElementById('username').value;
-                                const billEmail = document.getElementById('billEmail');
-                                billEmail.innerHTML = document.getElementById('email').value;
-                                const billPhone = document.getElementById('billPhone');
-                                billPhone.innerHTML = document.getElementById('phone').value;
-
-                                // Lắng nghe sự kiện thay đổi giá trị email và phone và cập nhật thông tin hóa đơn
-                                document.getElementById('email').addEventListener('input', function () {
-                                    billEmail.innerHTML = document.getElementById('email').value;
-                                });
-
-                                document.getElementById('phone').addEventListener('input', function () {
-                                    billPhone.innerHTML = document.getElementById('phone').value;
-                                });
-                            } else {
-                                alert('Không tìm thấy người dùng với số điện thoại này!');
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Lỗi khi lấy dữ liệu:', error);
-                        });
-                }
-
-
-                // Giả sử người dùng đã đăng nhập và bạn có số điện thoại
-                findUserByPhone(phoneNum); // Tìm người dùng theo số điện thoại và cập nhật thông tin
-
-
-                document.getElementById('confirmPayment').addEventListener('click', function () {
-                    // Lấy hóa đơn modal (billDiv)
-                    const billDiv = document.getElementById('billDiv');
-                    const billProducts = document.getElementById('billProducts');
-                
-                    // Tạo danh sách sản phẩm từ giỏ hàng
-                    let currentInvoice = {};
-                    if (cart.length === 0) {
-                        billProducts.innerHTML = '<p>Không có sản phẩm nào trong hóa đơn.</p>';
-                    } else {
-                        const productList = cart.map(item => {
-                            const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
-                            const itemTotal = item.quantity * priceNumber;
-                
-                            return {
-                                name: item.name,
-                                id: item.id,
-                                quantity: item.quantity,
-                                total: itemTotal,
-                            };
-                        });
-                
-                        // Tạo hóa đơn hiện tại
-                        const total = cart.reduce((sum, item) => {
-                            const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
-                            return sum + item.quantity * priceNumber;
-                        }, 0);
-                
-                        currentInvoice = {
-                            id: `HD-${Date.now()}`, // Tạo mã hóa đơn duy nhất
-                            products: productList,
-                            total: total,
-                            date: new Date().toLocaleString(), // Thời gian tạo hóa đơn
-                            status: 'Chưa xử lý', // Trạng thái hóa đơn mới là "Chưa xử lý"
-                        };
-                
-                        // Lưu hóa đơn vào localStorage
-                        const invoices = JSON.parse(localStorage.getItem('invoices')) || [];
-                        invoices.push(currentInvoice);
-                        localStorage.setItem('invoices', JSON.stringify(invoices));
-                
-                        // Hiển thị danh sách sản phẩm vào `billProducts`
-                        const productHtml = productList.map(item => `
-                            <div class="d-flex justify-content-between my-3 bg-secondary-subtle p-4 rounded">
-                                <div>
-                                    <h6>${item.name}</h6>
-                                    <p>Mã sản phẩm: ${item.id}</p>
-                                    <p>Số lượng: ${item.quantity}</p>
-                                </div>
-                                <p class="fw-bold">${item.total.toLocaleString()} VNĐ</p>
-                            </div>
-                        `).join('');
-                
-                        billProducts.innerHTML = `
-                            <div>
-                                <h4 class="text-primary mb-3">Danh sách sản phẩm</h4>
-                                ${productHtml}
-                            </div>
-                        `;
-                    }
-                
-                    document.getElementById('billTotal').textContent = `${currentInvoice.total?.toLocaleString()} VNĐ`;
-                
-                    // Đóng modal nhập thông tin và mở modal hóa đơn
-                    const cashModal = bootstrap.Modal.getInstance(document.getElementById('cash'));
-                    cashModal.hide();
-                    const billModal = new bootstrap.Modal(document.getElementById('billModal'));
-                    billModal.show();
-                
-                    // Xóa giỏ hàng sau khi xác nhận
-                    cart = []; // Làm rỗng mảng giỏ hàng
-                    localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật localStorage
-                
-                    // Làm mới giao diện giỏ hàng
-                    renderCart();
-                });
-                
-                
-
-            </script>
 
 
     </main>
@@ -571,7 +503,7 @@
     <script src="assets/js/formlogin.js"></script>
     <script src="assets/js/xulilogin.js"></script>
     <script src="user.json"></script>
-    <!-- <script src="assets/js/checkCart.js"></script> -->
+    <script src="assets/js/paymentProcess.js"></script>
 
 
 
@@ -598,16 +530,16 @@
                         return `
                     <div class="d-flex position-relative my-4 bg-secondary-subtle p-4 rounded">
                         <img src="/assets/Images/products/${item.image}" 
-                            class="flex-shrink-0 me-3" 
+                            class="flex-shrink-0 me-3 rounded" 
                             width="100px" 
                             height="100px" 
                             alt="${item.name}">
                         <div>
-                            <h5 class="mt-0">${item.name}</h5>
+                            <h5 class="mt-0 fs-4">${item.name}</h5>
                             <p>
                                 <span class="space-item-masp">Mã sản phẩm: </span>MKD0${item.id}<br>
                             </p>
-                            <a href="product_details.html?id=${item.id}">Xem chi tiết</a>
+                            <a href="product_details.html?id=${item.id}" class="text-decoration-none icon-link fs-4">Xem chi tiết</a>
                         </div>
                         <div class="ms-auto">
                             <p class="text-end fw-bold me-3">
