@@ -36,13 +36,17 @@ a
     border: 1px solid #ddd;
     padding: 15px;
     text-align: center;
+    border-radius:5px;
 }
 
 .product-item img {
     width: 100%;
     height: auto;
+    transition: transform 0.2s;
 }
-
+.product-item img:hover {
+    transform: translateY(-5px);
+}
 .pagination {
     text-align: center;
     padding-bottom:10px;
