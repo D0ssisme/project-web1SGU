@@ -62,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$new_id', '$name', '$description', '$price', '$image', '$brand', '$type', '$power', '$speed', '$highlight', '$origin')";
     
     if ($conn->query($sql) === TRUE) {
-        echo "Thêm sản phẩm thành công!<br>";
     } else {
         echo "Lỗi: " . $sql . "<br>" . $conn->error . "<br>";
     }

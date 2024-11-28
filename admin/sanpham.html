@@ -9,26 +9,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/admin/admin.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="../assets/css/admin/admin_mobile/sanpham_mb.css">
 	<link rel="stylesheet" href="../assets/css/base.css">
 	<title>Web admin onlyfans </title>
 	<!-- Bootstrap -->
-	<link href="./vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Font Awesome -->
-	<link href="./vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<!-- NProgress -->
-	<link href="./vendors/nprogress/nprogress.css" rel="stylesheet">
-	<!-- iCheck -->
-	<link href="./vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-	<!-- bootstrap-wysiwyg -->
-	<link href="./vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
-	<!-- Select2 -->
-	<link href="./vendors/select2/dist/css/select2.min.css" rel="stylesheet">
-	<!-- Switchery -->
-	<link href="./vendors/switchery/dist/switchery.min.css" rel="stylesheet">
-	<!-- starrr -->
-	<link href="./vendors/starrr/dist/starrr.css" rel="stylesheet">
-	<!-- bootstrap-daterangepicker -->
-	<link href="./vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+		<link href="./vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font Awesome -->
+		<link href="./vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<!-- NProgress -->
+		<link href="./vendors/nprogress/nprogress.css" rel="stylesheet">
+		<!-- iCheck -->
+		<link href="./vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+		<!-- bootstrap-wysiwyg -->
+		<link href="./vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+		<!-- Select2 -->
+		<link href="./vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+		<!-- Switchery -->
+		<link href="./vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+		<!-- starrr -->
+		<link href="./vendors/starrr/dist/starrr.css" rel="stylesheet">
+		<!-- bootstrap-daterangepicker -->
+		<link href="./vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
 	<!-- Custom Theme Style -->
 	<link href="./build/css/custom.min.css" rel="stylesheet">
@@ -143,7 +144,7 @@
 							<li class="nav-item dropdown open" style="padding-left: 15px;">
 								<a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
 									id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-									<img src="../images/bed488561c6ab56101466edec05c5b16.jpg" alt="">Mạnh Dũng
+									<img src="./images/bed488561c6ab56101466edec05c5b16.jpg" alt="">Mạnh Dũng
 								</a>
 								<div class="dropdown-menu dropdown-usermenu pull-right"
 									aria-labelledby="navbarDropdown">
@@ -285,7 +286,7 @@
 								</ul>
 							</div>        
 							<h3>Danh Sách Sản Phẩm</h3>
-							<table id="productTable">
+							<table id="productTable" class="table_desktop">
 								<thead>
 									<tr>
 										<th style="width:30px;">ID</th>
@@ -433,7 +434,7 @@
             event.preventDefault();
             const formData = new FormData(this);
 
-            fetch('../dulieu/insert_product.php', {
+            fetch('../database/insert_product.php', {
                 method: 'POST',
                 body: formData
             })
@@ -448,7 +449,7 @@
         });
 
         function loadProducts() {
-            fetch('../dulieu/data.js')
+            fetch('../database/data.js')
                 .then(response => response.text())
                 .then(data => {
                     products = JSON.parse(data.replace('var products = ', '').slice(0, -1));
@@ -518,7 +519,7 @@
 
         document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
             if (productIdToDelete) {
-                fetch('../dulieu/delete_product.php', {
+                fetch('../database/delete_product.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -581,7 +582,7 @@
         window.onload = loadProducts;
 
         function editProduct(productId) {
-    fetch('../dulieu/data.js')
+    fetch('../database/data.js')
         .then(response => response.text())
         .then(data => {
             const products = JSON.parse(data.replace('var products = ', '').slice(0, -1));
@@ -623,7 +624,7 @@ document.getElementById('editProductForm').addEventListener('submit', function(e
         console.log(pair[0] + ', ' + pair[1]);
     }
 
-    fetch('../dulieu/update_product.php', {
+    fetch('../database/update_product.php', {
         method: 'POST',
         body: formData
     })
