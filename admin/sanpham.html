@@ -317,24 +317,25 @@
 										<div class="left-section">
 											<label for="editId">ID Sản Phẩm:</label>
 											<input type="text" id="editId" name="editId" readonly>
-							
+						
 											<label for="editName">Tên Sản Phẩm:</label>
 											<input type="text" id="editName" name="editName" required>
-							
+						
 											<label for="editDescription">Mô Tả:</label>
 											<textarea id="editDescription" name="editDescription" required></textarea>
-							
+						
 											<label for="editPrice">Giá:</label>
 											<input type="number" id="editPrice" name="editPrice" required min="0">
-							
+						
 											<label for="editImage">Hình Ảnh:</label>
 											<input type="file" id="editImage" name="editImage" accept="image/*">
+											<img id="imagePreview" style="max-width:120px; display:none;" alt="Hình ảnh sản phẩm">
 										</div>
-							
+						
 										<div class="right-section">
 											<label for="editBrand">Thương Hiệu:</label>
 											<input type="text" id="editBrand" name="editBrand">
-							
+						
 											<label for="editType">Loại:</label>
 											<select id="editType" name="editType">
 												<option value="Quạt lửng">Quạt Lửng</option>
@@ -342,16 +343,15 @@
 												<option value="Quạt hơi nước">Quạt Hơi Nước</option>
 											</select>
 											
-							
 											<label for="editPower">Công Suất:</label>
 											<input type="number" id="editPower" name="editPower" min="1">
-							
+						
 											<label for="editSpeed">Tốc Độ:</label>
 											<input type="number" id="editSpeed" name="editSpeed" min="1">
-								
+											
 											<label for="editHighlight">Nổi Bật:</label>
 											<textarea id="editHighlight" name="editHighlight"></textarea>
-								
+						
 											<label for="editOrigin">Xuất Xứ:</label>
 											<input type="text" id="editOrigin" name="editOrigin">
 										</div>
@@ -364,8 +364,7 @@
 								</form>
 							</div>
 						</div>
-					
-						<div id="confirmDeleteModal" class="modal">
+							<div id="confirmDeleteModal" class="modal">
 							<div class="modal-content" style="text-align: center;">
 								<h4>Bạn có chắc chắn muốn xóa sản phẩm này?</h4>
 								<button id="confirmDeleteBtn">Xóa</button>
@@ -581,7 +580,7 @@
 
         window.onload = loadProducts;
 
-        function editProduct(productId) {
+		function editProduct(productId) {
     fetch('../database/data.js')
         .then(response => response.text())
         .then(data => {
@@ -609,11 +608,31 @@
                     }
                 });
 
+                // Thêm phần tử hình ảnh hiện tại vào modal
+                const editImageField = document.getElementById('editImage');
+                const currentImage = product.image ? `/project-web1sgu/assets/Images/products/${product.image}` : 'default-image-path.jpg'; // Thay thế default-image-path.jpg bằng ảnh mặc định nếu không có hình
+                const imagePreview = document.getElementById('imagePreview');
+
+                if (imagePreview) {
+                    imagePreview.src = currentImage; // Cập nhật hình ảnh hiện tại
+                    imagePreview.style.display = 'block'; // Hiển thị hình ảnh
+                } else {
+                    // Nếu không có phần tử img, tạo nó và thêm vào DOM
+                    const imgElement = document.createElement('img');
+                    imgElement.id = 'imagePreview';
+                    imgElement.src = currentImage;
+                    imgElement.alt = 'Hình ảnh sản phẩm';
+                    imgElement.style.maxWidth = '150px';
+                    imgElement.style.display = 'block'; // Hiển thị hình ảnh
+                    editImageField.insertAdjacentElement('afterend', imgElement); // Thêm ảnh vào sau input
+                }
+
                 document.getElementById('editProductModal').style.display = 'flex';
             }
         })
         .catch(error => console.error('Error:', error));
 }
+
 
 document.getElementById('editProductForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -652,6 +671,7 @@ document.getElementById('editProductForm').addEventListener('submit', function(e
 function closeEditModal() {
     document.getElementById('editProductModal').style.display = 'none';
 }
+
 
 function filterProducts(selectedType = '') {
     filteredProducts = products.filter(product => {
