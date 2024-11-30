@@ -239,6 +239,37 @@ button:hover {
 #confirmDeleteBtn
 {
     background-color: rgb(222, 47, 47);
+    width:40%;
+    border-radius:5px;
+    font-size:16px;
+}
+#cancelDeleteBtn
+{
+    width:40%;
+    border-radius:5px;
+    font-size:16px;
+}
+.form_xacnhan
+{
+    justify-content: center;
+    align-items: center;
+}
+.space-power
+{
+    margin-top:11px;
+}
+.remove_img
+{
+    margin-top: 20px;
+    border-radius:4px;
+    justify-self: center;
+    align-items: center;
+    background-color: red;
+}
+.remove_img:hover
+{
+    background-color: rgb(181, 50, 50);;
+
 }
 #confirmDeleteBtn:hover
 {

@@ -39,17 +39,12 @@
                 <a href="cart-page.html" id="cartIcon">
                     <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
                 </a>
-
-                <!-- Nút tài khoản -->
-
                 <li onclick="showForm('login')" id="account-" class="header__user"><i
                         class="header__info-usericon fa-regular fa-user"></i></li>
                 <li id="account-button" class="header__info-login">
                     <span id="account-link" class="header__info-mobile">
                         <a href="#" onclick="showForm('login')">Tài Khoản</a>
                     </span>
-
-                    <!-- Menu Dropdown -->
                     <div id="dropdown-menu" class="dropdown-content" style="display: none;">
                         <a href="info.html">Thông tin cá nhân</a>
                         <a href="history.html">Đơn hàng của tôi</a>
@@ -72,13 +67,9 @@
                         <a href="cart-page.html" id="cartIcon">
                             <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
                         </a>
-        
-                        <!-- Nút tài khoản -->
-        
                         <li onclick="showForm('login')" id="account-" class="header__user"><i
                                 class="header__info-usericon fa-regular fa-user"></i></li>
                         <li id="account-button" class="header__info-login">
-                            <!-- Menu Dropdown -->
                             <div id="dropdown-menu" class="dropdown-content" style="display: none;">
                                 <a href="#">Thông tin cá nhân</a>
                                 <a href="#">Đơn hàng của tôi</a>
@@ -494,13 +485,13 @@
         }
 
         document.getElementById('min-price').addEventListener('input', (event) => {
-    const value = event.target.value.replace(/[^\d]/g, ''); // Loại bỏ ký tự không phải số
-    event.target.value = Number(value).toLocaleString('vi-VN'); // Hiển thị số theo chuẩn VN
+    const value = event.target.value.replace(/[^\d]/g, ''); 
+    event.target.value = Number(value).toLocaleString('vi-VN'); 
 });
 
 document.getElementById('max-price').addEventListener('input', (event) => {
-    const value = event.target.value.replace(/[^\d]/g, ''); // Loại bỏ ký tự không phải số
-    event.target.value = Number(value).toLocaleString('vi-VN'); // Hiển thị số theo chuẩn VN
+    const value = event.target.value.replace(/[^\d]/g, ''); 
+    event.target.value = Number(value).toLocaleString('vi-VN');
 });
         function filterProducts(selectedType = '') {
             // Lấy giá tối thiểu và tối đa từ các trường nhập liệu

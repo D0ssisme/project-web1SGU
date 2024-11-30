@@ -30,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $speed = $_POST['editSpeed'] ?? '';
     $highlight = $_POST['editHighlight'] ?? '';
     $origin = $_POST['editOrigin'] ?? '';
-    
+    $removeImage = $_POST['removeImage'] ?? false;
+
     // Lấy ảnh cũ từ cơ sở dữ liệu nếu có
     $existingImage = null;
     $result = $conn->query("SELECT image FROM sanpham WHERE id = $id");
@@ -40,10 +41,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Xử lý upload hình ảnh nếu có ảnh mới
-    $image = $existingImage;  // Mặc định sử dụng ảnh cũ
+    $image = $existingImage; // Mặc định sử dụng ảnh cũ
 
-    if (isset($_FILES['editImage']) && $_FILES['editImage']['error'] == 0) {
-        // Xử lý ảnh mới
+    if ($removeImage === 'true') {
+        // Nếu người dùng yêu cầu gỡ ảnh, đặt ảnh trong cơ sở dữ liệu thành NULL
+        $image = null;
+    } elseif (isset($_FILES['editImage']) && $_FILES['editImage']['error'] == 0) {
+        // Xử lý ảnh mới nếu không gỡ ảnh
         $imageName = $_FILES['editImage']['name'];
         $imageTmp = $_FILES['editImage']['tmp_name'];
         $imageUploadPath = $_SERVER['DOCUMENT_ROOT'] . '/project-web1sgu/assets/Images/products/' . basename($imageName);
@@ -62,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Di chuyển ảnh vào thư mục upload
         if (move_uploaded_file($imageTmp, $imageUploadPath)) {
-            $image = basename($imageName);  // Cập nhật ảnh mới
+            $image = basename($imageName); // Cập nhật ảnh mới
         } else {
             echo json_encode(['error' => 'Lỗi khi tải ảnh lên.']);
             exit;
@@ -70,13 +74,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Cập nhật thông tin sản phẩm
-    if ($image) {
-        // Nếu có ảnh mới, cập nhật ảnh
+    if ($image !== null) {
+        // Nếu có ảnh (hoặc không gỡ ảnh), cập nhật đầy đủ
         $stmt = $conn->prepare("UPDATE sanpham SET name = ?, description = ?, price = ?, image = ?, brand = ?, type = ?, power = ?, speed = ?, highlight = ?, origin = ? WHERE id = ?");
         $stmt->bind_param("ssdsssssssi", $name, $description, $price, $image, $brand, $type, $power, $speed, $highlight, $origin, $id);
     } else {
-        // Nếu không có ảnh mới, chỉ cập nhật thông tin khác
-        $stmt = $conn->prepare("UPDATE sanpham SET name = ?, description = ?, price = ?, brand = ?, type = ?, power = ?, speed = ?, highlight = ?, origin = ? WHERE id = ?");
+        // Nếu gỡ ảnh, đặt cột image thành NULL
+        $stmt = $conn->prepare("UPDATE sanpham SET name = ?, description = ?, price = ?, image = NULL, brand = ?, type = ?, power = ?, speed = ?, highlight = ?, origin = ? WHERE id = ?");
         $stmt->bind_param("ssdssssssi", $name, $description, $price, $brand, $type, $power, $speed, $highlight, $origin, $id);
     }
 
@@ -102,6 +106,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ghi lại dữ liệu sản phẩm vào file data.js
     file_put_contents('data.js', 'var products = ' . json_encode($products, JSON_PRETTY_PRINT) . ';');
 }
-
 $conn->close();
 ?>

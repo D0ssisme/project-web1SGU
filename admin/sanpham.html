@@ -244,7 +244,7 @@
 								<input type="number" id="price" name="price" required min="0">
 							
 								<label for="image">Hình Ảnh:</label>
-								<input type="file" id="image" name="image" accept="image/*" required>
+								<input type="file" id="image" name="image" accept="image/*">
 							
 								<label for="brand">Hãng:</label>
 								<input type="text" id="brand" name="brand" required>
@@ -282,7 +282,7 @@
 									<li><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
 									<li class="li-space"><a href="#" onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
 									<li class="li-space"><a href="#" onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
-									<li class="li-space"><a href="#" onclick="filterProducts(''); return false;">Tất cả sản phẩm</a></li>
+									<li class="li-space"><a href="#" onclick="filterProducts(''); return false;">Tất cả</a></li>
 								</ul>
 							</div>        
 							<h3>Danh Sách Sản Phẩm</h3>
@@ -330,6 +330,7 @@
 											<label for="editImage">Hình Ảnh:</label>
 											<input type="file" id="editImage" name="editImage" accept="image/*">
 											<img id="imagePreview" style="max-width:120px; display:none;" alt="Hình ảnh sản phẩm">
+											<button type="button" id="removeImageButton" style="display:none;" onclick="removeImage()" class="remove_img">Gỡ Ảnh</button>
 										</div>
 						
 										<div class="right-section">
@@ -343,7 +344,7 @@
 												<option value="Quạt hơi nước">Quạt Hơi Nước</option>
 											</select>
 											
-											<label for="editPower">Công Suất:</label>
+											<label for="editPower" class="space-power">Công Suất:</label>
 											<input type="number" id="editPower" name="editPower" min="1">
 						
 											<label for="editSpeed">Tốc Độ:</label>
@@ -365,7 +366,7 @@
 							</div>
 						</div>
 							<div id="confirmDeleteModal" class="modal">
-							<div class="modal-content" style="text-align: center;">
+							<div class="modal-content form_xacnhan" style="text-align: center;">
 								<h4>Bạn có chắc chắn muốn xóa sản phẩm này?</h4>
 								<button id="confirmDeleteBtn">Xóa</button>
 								<button id="cancelDeleteBtn">Hủy</button>
@@ -542,14 +543,6 @@
             productIdToDelete = null;
         }
 
-        // function showToast(message) {
-        //     const toast = document.getElementById('toast-admin');
-        //     toast.textContent = message;
-        //     toast.classList.add('show');
-        //     setTimeout(() => {
-        //         toast.classList.remove('show');
-        //     }, 3000);
-        // }
 		function showToast(message, type) {
     const toast = document.getElementById('toast-admin');
 
@@ -626,6 +619,13 @@
                     imgElement.style.display = 'block'; // Hiển thị hình ảnh
                     editImageField.insertAdjacentElement('afterend', imgElement); // Thêm ảnh vào sau input
                 }
+				if (imagePreview && product.image) {
+    imagePreview.src = `/project-web1sgu/assets/Images/products/${product.image}`;
+    imagePreview.style.display = 'block';
+
+    const removeImageButton = document.getElementById('removeImageButton');
+    removeImageButton.style.display = 'block';
+}
 
                 document.getElementById('editProductModal').style.display = 'flex';
             }
@@ -672,6 +672,33 @@ function closeEditModal() {
     document.getElementById('editProductModal').style.display = 'none';
 }
 
+function removeImage() {
+    const imagePreview = document.getElementById('imagePreview');
+    const removeImageButton = document.getElementById('removeImageButton');
+
+    // Ẩn ảnh và nút gỡ ảnh
+    imagePreview.src = '';
+    imagePreview.style.display = 'none';
+    removeImageButton.style.display = 'none';
+
+    // Thêm hidden input để đánh dấu việc gỡ ảnh
+    let removeImageInput = document.getElementById('removeImageInput');
+    if (!removeImageInput) {
+        removeImageInput = document.createElement('input');
+        removeImageInput.type = 'hidden';
+        removeImageInput.id = 'removeImageInput';
+        removeImageInput.name = 'removeImage';
+        removeImageInput.value = 'true';
+        document.getElementById('editProductForm').appendChild(removeImageInput);
+    }
+}
+
+// Hiển thị nút "Gỡ Ảnh" khi có ảnh
+const imagePreview = document.getElementById('imagePreview');
+if (imagePreview && imagePreview.src) {
+    const removeImageButton = document.getElementById('removeImageButton');
+    removeImageButton.style.display = 'block';
+}
 
 function filterProducts(selectedType = '') {
     filteredProducts = products.filter(product => {

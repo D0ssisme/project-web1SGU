@@ -1,18 +1,5 @@
 var products = [
     {
-        "id": "1",
-        "name": "Qu\u1ea1t l\u1eedng Senko",
-        "description": "Qu\u1ea1t l\u1eedng Senko L1638 thi\u1ebft k\u1ebf \u0111\u1eb9p m\u1eaft, t\u00f9y ch\u1ec9nh \u0111\u01b0\u1ee3c chi\u1ec1u cao qu\u1ea1t, l\u00e0m m\u00e1t v\u1edbi 3 c\u00e1nh qu\u1ea1t c\u00f3 c\u00f4ng su\u1ea5t 47W, v\u1eadn h\u00e0nh \u00eam \u00e1i v\u1edbi \u0111\u1ed9ng c\u01a1 b\u1ea1c thau \u0111\u01b0\u1ee3c l\u00e0m t\u1eeb ch\u1ea5t li\u1ec7u 100% d\u00e2y \u0111\u1ed3ng, b\u1ec1n b\u1ec9, \u00edt hao m\u00f2n.",
-        "price": "299.000",
-        "image": "quatlung_2.png",
-        "brand": "Senko",
-        "type": "Qu\u1ea1t l\u1eedng",
-        "power": "47",
-        "speed": "3",
-        "highlight": "Qu\u1ea1t l\u1eedng Senko L1638 thi\u1ebft k\u1ebf \u0111\u1eb9p m\u1eaft, t\u00f9y ch\u1ec9nh \u0111\u01b0\u1ee3c chi\u1ec1u cao qu\u1ea1t, l\u00e0m m\u00e1t v\u1edbi 3 c\u00e1nh qu\u1ea1t c\u00f3 c\u00f4ng su\u1ea5t 47W, v\u1eadn h\u00e0nh \u00eam \u00e1i v\u1edbi \u0111\u1ed9ng c\u01a1 b\u1ea1c thau \u0111\u01b0\u1ee3c l\u00e0m t\u1eeb ch\u1ea5t li\u1ec7u 100% d\u00e2y \u0111\u1ed3ng, b\u1ec1n b\u1ec9, \u00edt hao m\u00f2n.",
-        "origin": "Vi\u1ec7t Nam"
-    },
-    {
         "id": "2",
         "name": "Qu\u1ea1t h\u01a1i n\u01b0\u1edbc Coex cao c\u1ea5p",
         "description": "C\u00f4ng su\u1ea5t 130W t\u1ea1o l\u01b0u l\u01b0\u1ee3ng gi\u00f3 5000 m\u00b3\/h, ph\u00f9 h\u1ee3p v\u1edbi di\u1ec7n t\u00edch l\u00e0m m\u00e1t 35 - 50 m2.\r\n\u0110a ch\u1ee9c n\u0103ng L\u00c0M M\u00c1T - T\u1ea0O \u1ea8M - T\u1ea0O ION L\u00c0M S\u1ea0CH KH\u00d4NG KH\u00cd\r\n3 t\u1ed1c \u0111\u1ed9 gi\u00f3 b\u00ecnh th\u01b0\u1eddng, t\u1ef1 nhi\u00ean v\u00e0 ch\u1ebf \u0111\u1ed9 gi\u00f3 nh\u1eb9 khi ng\u1ee7 ",
@@ -146,26 +133,13 @@ var products = [
         "id": "16",
         "name": "Qu\u1ea1t h\u01a1i n\u01b0\u1edbc Coex t\u1ea1o \u1ea9m-Ion",
         "description": "GI\u1ea2I PH\u00c1P L\u00c0M M\u00c1T T\u1ed0I \u01afU\r\nQu\u1ea1t \u0111i\u1ec1u h\u00f2a Coex ho\u1ea1t \u0111\u1ed9ng d\u1ef1a tr\u00ean nguy\u00ean l\u00fd bay h\u01a1i n\u01b0\u1edbc t\u1ef1 nhi\u00ean. Kh\u00f4ng kh\u00ed n\u00f3ng sau khi \u0111i qua t\u1ea5m l\u00e0m m\u00e1t s\u1ebd cho ra lu\u1ed3ng gi\u00f3 m\u00e1t . D\u1ef1a tr\u00ean nguy\u00ean l\u00fd \u0111\u00f3, s\u1ea3n ph\u1ea9m c\u00f3 kh\u1ea3 n\u0103ng l\u00e0m m\u00e1t tr\u00ean di\u1ec7n r\u1ed9ng, ti\u1ebft ki\u1ec7m \u0111i\u1ec7n n\u0103ng hi\u1ec7u qu\u1ea3 h\u01a1n c\u00e1c s\u1ea3n ph\u1ea9m th\u00f4ng th\u01b0\u1eddng.\u0110\u1eb7c bi\u1ec7t, Qu\u1ea1t \u0111i\u1ec1u h\u00f2a Coex l\u00e0m m\u00e1t hi\u1ec7u qu\u1ea3 v\u1edbi nh\u1eefng kh\u00f4ng gian m\u00e0 qu\u1ea1t m\u00e1t th\u00f4ng th\u01b0\u1eddng hay \u0111i\u1ec1u h\u00f2a kh\u00f4ng th\u1ec3 ph\u00e1t huy hi\u1ec7u qu\u1ea3 l\u00e0m m\u00e1t.",
-        "price": "2.999.000",
-        "image": "qut-diu-hoa-coex-ca-7121_736c3782.jpg",
+        "price": "100.000",
+        "image": null,
         "brand": "Coex",
         "type": "Qu\u1ea1t h\u01a1i n\u01b0\u1edbc",
         "power": "200",
         "speed": "3",
         "highlight": "C\u00f4ng su\u1ea5t 200W t\u1ea1o l\u01b0u l\u01b0\u1ee3ng gi\u00f3 5000 m\u00b3\/h, ph\u00f9 h\u1ee3p v\u1edbi di\u1ec7n t\u00edch l\u00e0m m\u00e1t 35 - 50 m2.\r\n\u0110a ch\u1ee9c n\u0103ng L\u00c0M M\u00c1T - T\u1ea0O \u1ea8M - T\u1ea0O ION L\u00c0M S\u1ea0CH KH\u00d4NG KH\u00cd\r\n\u0110\u1ed9 \u1ed3n th\u1ea5p d\u01b0\u1edbi m\u1ee9c \u226465dB kh\u00f4ng g\u00e2y ti\u1ebfng \u1ed3n \r\nT\u1ea5m l\u00e0m m\u00e1t ch\u1ea5t li\u1ec7u g\u1ed7 s\u1ed3i \u00e9p, l\u00e0m m\u00e1t hi\u1ec7u qu\u1ea3 v\u00e0 b\u1ea3o v\u1ec7 m\u00f4i tr\u01b0\u1eddng.",
         "origin": "Trung Qu\u1ed1c"
-    },
-    {
-        "id": "17",
-        "name": "Qu\u1ea1t h\u01a1i n\u01b0\u1edbc Sunhouse",
-        "description": "M\u00e1y l\u00e0m m\u00e1t kh\u00f4ng kh\u00ed SUNHOUSE ho\u1ea1t \u0111\u1ed9ng d\u1ef1a tr\u00ean nguy\u00ean l\u00fd bay h\u01a1i n\u01b0\u1edbc t\u1ef1 nhi\u00ean. Kh\u00f4ng kh\u00ed n\u00f3ng sau khi \u0111i qua t\u1ea5m l\u00e0m m\u00e1t s\u1ebd cho ra lu\u1ed3ng gi\u00f3 m\u00e1t . D\u1ef1a tr\u00ean nguy\u00ean l\u00fd \u0111\u00f3, s\u1ea3n ph\u1ea9m c\u00f3 kh\u1ea3 n\u0103ng l\u00e0m m\u00e1t tr\u00ean di\u1ec7n r\u1ed9ng, ti\u1ebft ki\u1ec7m \u0111i\u1ec7n n\u0103ng hi\u1ec7u qu\u1ea3 h\u01a1n c\u00e1c s\u1ea3n ph\u1ea9m th\u00f4ng th\u01b0\u1eddng.",
-        "price": "100.000.000",
-        "image": "quat-dieu-hoa-sunhouse-shd7734-05I3uT.png",
-        "brand": "Sunhouse",
-        "type": "Qu\u1ea1t h\u01a1i n\u01b0\u1edbc",
-        "power": "150",
-        "speed": "3",
-        "highlight": "Gi\u1ea3i ph\u00e1p l\u00e0m m\u00e1t t\u1ed1i \u01b0u v\u00e0 ti\u1ebft ki\u1ec7m \u0111i\u1ec7n cho kh\u00f4ng gian m\u1edf (l\u00ean \u0111\u1ebfn 35m2)\r\nGi\u00f3 m\u00e1t t\u1ef1 nhi\u00ean, th\u00e2n thi\u1ec7n v\u1edbi s\u1ee9c kh\u1ecfe\r\n3 m\u1eb7t l\u1ea5y gi\u00f3, l\u01b0u l\u01b0\u1ee3ng gi\u00f3 c\u1ef1c l\u1edbn \u2013 l\u00ean \u0111\u1ebfn 4.000m3\/gi\u1edd",
-        "origin": "hanf"
     }
 ];
