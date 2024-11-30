@@ -128,18 +128,5 @@ var products = [
         "speed": "5",
         "highlight": "Phong c\u00e1ch Hi\u1ec7n \u0111\u1ea1i, Th\u00e2n qu\u1ea1t M\u00e0u n\u00e2u t\u1ed1i (Oil Rubbed Bronze\/Toned Brass)\r\nC\u00e1nh qu\u1ea1t C\u00e1nh Composite. \r\nS\u1ea3i c\u00e1nh 142 cm\r\n\u0110\u1ed9ng c\u01a1 DC Motor 38WL\u01b0u l\u01b0\u1ee3ng gi\u00f3 5996 CFM\r\n\u0110\u00e8n G9 Max 60W\u0110i\u1ec1u khi\u1ec3n Remote ch\u00ednh h\u00e3ng",
         "origin": "Trung Qu\u1ed1c"
-    },
-    {
-        "id": "16",
-        "name": "Qu\u1ea1t h\u01a1i n\u01b0\u1edbc Coex t\u1ea1o \u1ea9m-Ion",
-        "description": "GI\u1ea2I PH\u00c1P L\u00c0M M\u00c1T T\u1ed0I \u01afU\r\nQu\u1ea1t \u0111i\u1ec1u h\u00f2a Coex ho\u1ea1t \u0111\u1ed9ng d\u1ef1a tr\u00ean nguy\u00ean l\u00fd bay h\u01a1i n\u01b0\u1edbc t\u1ef1 nhi\u00ean. Kh\u00f4ng kh\u00ed n\u00f3ng sau khi \u0111i qua t\u1ea5m l\u00e0m m\u00e1t s\u1ebd cho ra lu\u1ed3ng gi\u00f3 m\u00e1t . D\u1ef1a tr\u00ean nguy\u00ean l\u00fd \u0111\u00f3, s\u1ea3n ph\u1ea9m c\u00f3 kh\u1ea3 n\u0103ng l\u00e0m m\u00e1t tr\u00ean di\u1ec7n r\u1ed9ng, ti\u1ebft ki\u1ec7m \u0111i\u1ec7n n\u0103ng hi\u1ec7u qu\u1ea3 h\u01a1n c\u00e1c s\u1ea3n ph\u1ea9m th\u00f4ng th\u01b0\u1eddng.\u0110\u1eb7c bi\u1ec7t, Qu\u1ea1t \u0111i\u1ec1u h\u00f2a Coex l\u00e0m m\u00e1t hi\u1ec7u qu\u1ea3 v\u1edbi nh\u1eefng kh\u00f4ng gian m\u00e0 qu\u1ea1t m\u00e1t th\u00f4ng th\u01b0\u1eddng hay \u0111i\u1ec1u h\u00f2a kh\u00f4ng th\u1ec3 ph\u00e1t huy hi\u1ec7u qu\u1ea3 l\u00e0m m\u00e1t.",
-        "price": "100.000",
-        "image": null,
-        "brand": "Coex",
-        "type": "Qu\u1ea1t h\u01a1i n\u01b0\u1edbc",
-        "power": "200",
-        "speed": "3",
-        "highlight": "C\u00f4ng su\u1ea5t 200W t\u1ea1o l\u01b0u l\u01b0\u1ee3ng gi\u00f3 5000 m\u00b3\/h, ph\u00f9 h\u1ee3p v\u1edbi di\u1ec7n t\u00edch l\u00e0m m\u00e1t 35 - 50 m2.\r\n\u0110a ch\u1ee9c n\u0103ng L\u00c0M M\u00c1T - T\u1ea0O \u1ea8M - T\u1ea0O ION L\u00c0M S\u1ea0CH KH\u00d4NG KH\u00cd\r\n\u0110\u1ed9 \u1ed3n th\u1ea5p d\u01b0\u1edbi m\u1ee9c \u226465dB kh\u00f4ng g\u00e2y ti\u1ebfng \u1ed3n \r\nT\u1ea5m l\u00e0m m\u00e1t ch\u1ea5t li\u1ec7u g\u1ed7 s\u1ed3i \u00e9p, l\u00e0m m\u00e1t hi\u1ec7u qu\u1ea3 v\u00e0 b\u1ea3o v\u1ec7 m\u00f4i tr\u01b0\u1eddng.",
-        "origin": "Trung Qu\u1ed1c"
     }
 ];
