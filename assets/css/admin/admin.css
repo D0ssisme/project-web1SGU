@@ -322,7 +322,6 @@ button.edit-btn {
     transition: background-color 0.3s;
     height:40px;
     width:62px;
-    transform: translateX(39%);
     font-size: 15px;
 }
 button.edit-btn:hover {
@@ -336,9 +335,8 @@ button.delete-btn {
     border-radius: 4px; 
     cursor: pointer; 
     transition: background-color 0.3s; 
-    transform: translateX(50%);
     font-size: 14px;
-
+    margin-left:10px;
 }
 
 button.delete-btn:hover {
@@ -363,4 +361,8 @@ td.name {
 .spacejam
 {
     margin-top:11px;
+}
+.btn-delete-edit
+{
+    text-align: center;
 }

@@ -81,4 +81,12 @@
         margin-top:20px;
         border-radius: 5px;
     }
+    .edit-btn
+    {
+        transform: translateX(15%);
+    }
+    .delete-btn
+    {
+        transform: translateX(20%);
+    }
 }

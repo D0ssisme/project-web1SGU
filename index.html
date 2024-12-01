@@ -422,30 +422,36 @@
         let currentPage = 1;
         let filteredProducts = products; // Mảng sản phẩm đã lọc
 
-        // Hiển thị sản phẩm
         function displayProducts(page = 1) {
-            const startIndex = (page - 1) * productsPerPage;
-            const endIndex = page * productsPerPage;
-            const productList = document.getElementById('product-list');
-            productList.innerHTML = '';
+    const startIndex = (page - 1) * productsPerPage;
+    const endIndex = page * productsPerPage;
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = '';
 
-            const currentProducts = filteredProducts.slice(startIndex, endIndex); // Lấy sản phẩm từ mảng đã lọc
+    const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
-            currentProducts.forEach(product => {
-                const productItem = document.createElement('div');
-                productItem.classList.add('product-item');
-                productItem.innerHTML = `
+    currentProducts.forEach(product => {
+        const price = product.price 
+            ? parseFloat(product.price.toString().replace(/\./g, '').replace(/[^0-9]/g, '')) 
+            : 0; // Làm sạch giá trị price
+        const formattedPrice = Number(price).toLocaleString('vi-VN'); // Định dạng giá trị
+
+        const productItem = document.createElement('div');
+        productItem.classList.add('product-item');
+        productItem.innerHTML = `
             <a href="product_details.html?id=${product.id}">
                 <img src="./assets/Images/products/${product.image}" alt="${product.name}">
-                <h3 style="font-size:1.6rem";>${product.name}</h3>
-                <p style="font-size:1.4rem";><strong>${product.price} VND</strong></p>
+                <h3 style="font-size:1.6rem;line-height:20px;">${product.name}</h3>
+                <p style="font-size:1.4rem;"><strong>${formattedPrice} VND</strong></p>
             </a>
         `;
-                productList.appendChild(productItem);
-            });
+        productList.appendChild(productItem);
+    });
 
-            createPagination(page);
-        }
+    createPagination(page);
+}
+
+
 
         // Tạo phân trang
         function createPagination(currentPage) {
@@ -484,44 +490,58 @@
             pagination.appendChild(nextButton);
         }
 
-        document.getElementById('min-price').addEventListener('input', (event) => {
-    const value = event.target.value.replace(/[^\d]/g, ''); 
-    event.target.value = Number(value).toLocaleString('vi-VN'); 
+// Định dạng giá trị nhập liệu cho trường "Giá tối thiểu" và "Giá tối đa"
+document.getElementById('min-price').addEventListener('input', (event) => {
+    const value = event.target.value.replace(/[^\d]/g, ''); // Loại bỏ ký tự không phải số
+    event.target.value = Number(value).toLocaleString('vi-VN'); // Định dạng thành số kiểu Việt Nam
 });
 
 document.getElementById('max-price').addEventListener('input', (event) => {
-    const value = event.target.value.replace(/[^\d]/g, ''); 
-    event.target.value = Number(value).toLocaleString('vi-VN');
+    const value = event.target.value.replace(/[^\d]/g, ''); // Loại bỏ ký tự không phải số
+    event.target.value = Number(value).toLocaleString('vi-VN'); // Định dạng thành số kiểu Việt Nam
 });
-        function filterProducts(selectedType = '') {
-            // Lấy giá tối thiểu và tối đa từ các trường nhập liệu
-            const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
-            const maxPrice = parseFloat(document.getElementById('max-price').value) || Infinity;
-            const minPower = parseFloat(document.getElementById('min-power').value) || 0;
-            const maxPower = parseFloat(document.getElementById('max-power').value) || Infinity;
-            const speedType = parseFloat(document.getElementById('product-speed').value) || 0;
-            // Lấy loại quạt từ select (nếu có)
-            const typeFromSelect = document.getElementById('product-type').value;
 
-            // Lấy hãng từ trường nhập liệu
-            const brandFromInput = document.getElementById('product-brand').value.trim().toLowerCase();
+function filterProducts(selectedType = '') {
+    const minPrice = parseFloat(document.getElementById('min-price').value.replace(/\./g, '').replace(/[^0-9]/g, '')) || 0;
+    const maxPrice = parseFloat(document.getElementById('max-price').value.replace(/\./g, '').replace(/[^0-9]/g, '')) || Infinity;
 
-            // Lọc sản phẩm dựa trên loại, giá và hãng
-            filteredProducts = products.filter(product => {
-                const price = parseFloat(product.price);
-                const power = parseFloat(product.power);
-                const speed = parseFloat(product.speed);
-                const matchesType = selectedType ? product.type === selectedType : (typeFromSelect ? product.type === typeFromSelect : true); // Kiểm tra loại sản phẩm
-                const matchesPrice = price >= minPrice && price <= maxPrice; // Kiểm tra giá
-                const matchesBrand = brandFromInput ? product.brand.toLowerCase().includes(brandFromInput) : true; // Kiểm tra hãng
-                const matchesPower = power >= minPower && power <= maxPower;
-                const matchesSpeed = speed === speedType || speedType === 0;
-                return matchesType && matchesPrice && matchesBrand && matchesPower && matchesSpeed; // Trả về sản phẩm khớp cả ba điều kiện
-            });
+    console.log("Min Price:", minPrice);
+    console.log("Max Price:", maxPrice);
 
-            currentPage = 1; // Reset về trang đầu khi lọc
-            displayProducts(currentPage); // Hiển thị sản phẩm đã lọc
-        }
+    const minPower = parseFloat(document.getElementById('min-power').value) || 0;
+    const maxPower = parseFloat(document.getElementById('max-power').value) || Infinity;
+    const speedType = parseFloat(document.getElementById('product-speed').value) || 0;
+    const typeFromSelect = document.getElementById('product-type').value;
+    const brandFromInput = document.getElementById('product-brand').value.trim().toLowerCase();
+
+    console.log("Brand Input:", brandFromInput);
+    console.log("Type from Select:", typeFromSelect);
+
+    filteredProducts = products.filter(product => {
+        const price = parseFloat(product.price.toString().replace(/\./g, '').replace(/[^0-9]/g, ''));
+        const power = parseFloat(product.power);
+        const speed = parseFloat(product.speed);
+
+        const matchesType = selectedType 
+            ? product.type === selectedType 
+            : (typeFromSelect ? product.type === typeFromSelect : true);
+        const matchesPrice = price >= minPrice && price <= maxPrice;
+        const matchesBrand = brandFromInput ? product.brand.toLowerCase().includes(brandFromInput) : true;
+        const matchesPower = power >= minPower && power <= maxPower;
+        const matchesSpeed = speed === speedType || speedType === 0;
+
+        console.log(`Product: ${product.name}, Price: ${price}, MatchesPrice: ${matchesPrice}`);
+        return matchesType && matchesPrice && matchesBrand && matchesPower && matchesSpeed;
+    });
+
+    console.log("Filtered Products:", filteredProducts);
+
+    currentPage = 1;
+    displayProducts(currentPage);
+    document.getElementById('price-filter-form').reset();
+}
+
+
 
 
         // Hiển thị sản phẩm ban đầu
