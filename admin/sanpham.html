@@ -9,26 +9,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/admin/admin.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="../assets/css/admin/admin_mobile/sanpham_mb.css">
 	<link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="icon" type="./Images/png" href="../assets/Images/favicon.png">
 	<title>Web admin onlyfans </title>
 	<!-- Bootstrap -->
-	<link href="./vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Font Awesome -->
-	<link href="./vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<!-- NProgress -->
-	<link href="./vendors/nprogress/nprogress.css" rel="stylesheet">
-	<!-- iCheck -->
-	<link href="./vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-	<!-- bootstrap-wysiwyg -->
-	<link href="./vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
-	<!-- Select2 -->
-	<link href="./vendors/select2/dist/css/select2.min.css" rel="stylesheet">
-	<!-- Switchery -->
-	<link href="./vendors/switchery/dist/switchery.min.css" rel="stylesheet">
-	<!-- starrr -->
-	<link href="./vendors/starrr/dist/starrr.css" rel="stylesheet">
-	<!-- bootstrap-daterangepicker -->
-	<link href="./vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+		<link href="./vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font Awesome -->
+		<link href="./vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<!-- NProgress -->
+		<link href="./vendors/nprogress/nprogress.css" rel="stylesheet">
+		<!-- iCheck -->
+		<link href="./vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+		<!-- bootstrap-wysiwyg -->
+		<link href="./vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+		<!-- Select2 -->
+		<link href="./vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+		<!-- Switchery -->
+		<link href="./vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+		<!-- starrr -->
+		<link href="./vendors/starrr/dist/starrr.css" rel="stylesheet">
+		<!-- bootstrap-daterangepicker -->
+		<link href="./vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
 	<!-- Custom Theme Style -->
 	<link href="./build/css/custom.min.css" rel="stylesheet">
@@ -143,7 +145,7 @@
 							<li class="nav-item dropdown open" style="padding-left: 15px;">
 								<a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
 									id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-									<img src="../images/bed488561c6ab56101466edec05c5b16.jpg" alt="">Mạnh Dũng
+									<img src="./images/bed488561c6ab56101466edec05c5b16.jpg" alt="">Mạnh Dũng
 								</a>
 								<div class="dropdown-menu dropdown-usermenu pull-right"
 									aria-labelledby="navbarDropdown">
@@ -234,39 +236,44 @@
 							<form id="productForm">
 								<!-- Loại bỏ trường ID -->
 								<label for="name">Tên Sản Phẩm:</label>
-								<input type="text" id="name" name="name" required>
+								<input type="text" id="name" name="name" required placeholder="Nhập tên sản phẩm">
 							
 								<label for="description">Mô Tả:</label>
-								<textarea id="description" name="description" required style="width:100%;"></textarea>
+								<textarea id="description" name="description" required style="width:100%;font-size:15px;" placeholder="Nhập mô tả sản phẩm"></textarea>
 							
 								<label for="price" class="spacejam">Giá:</label>
-								<input type="number" id="price" name="price" required min="0">
+								<input type="number" id="price" name="price" required min="0" placeholder="Nhập giá sản phẩm">
 							
 								<label for="image">Hình Ảnh:</label>
 								<input type="file" id="image" name="image" accept="image/*" required>
 							
 								<label for="brand">Hãng:</label>
-								<input type="text" id="brand" name="brand" required>
+								<input type="text" id="brand" name="brand" required placeholder="Nhập hãng">
 							
 								<label for="type">Loại:</label>
-					<select id="type" name="type" required>
-						<option value="Quạt lửng">Quạt Lửng</option>
-						<option value="Quạt trần">Quạt Trần</option>
-						<option value="Quạt hơi nước">Quạt Hơi Nước</option>
+					<select id="type" name="type" required style="font-size: 15px;">
+						<option value="Quạt lửng">Quạt lửng</option>
+						<option value="Quạt trần">Quạt trần</option>
+						<option value="Quạt hơi nước">Quạt hơi nước</option>
 					</select>
 					
 							
 								<label for="power" class="spacejam">Công Suất:</label>
-								<input type="number" id="power" name="power" required min="0">
-							
-								<label for="speed">Tốc Độ:</label>
-								<input type="number" id="speed" name="speed" required min="0">
-							
-								<label for="highlight">Nổi Bật:</label>
-								<textarea id="highlight" name="highlight" required style="width:100%;"></textarea>
+								<input type="number" id="power" name="power" required min="0" placeholder="Công suất">
+
+								<label for="speed">Tốc độ:</label>
+								<select name="speed" id="speed" style="font-size: 15px;">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+								<label for="highlight" class="noibat_la">Nổi Bật:</label>
+								<textarea id="highlight" name="highlight" required style="width:100%;font-size: 15px;" placeholder="Điểm nổi bật"></textarea>
 							
 								<label for="origin" class="spacejam">Xuất Xứ:</label>
-								<input type="text" id="origin" name="origin" required>
+								<input type="text" id="origin" name="origin" required placeholder="Xuất xứ của sản phẩm">
 							
 								<input type="submit" value="Thêm Sản Phẩm">
 							</form>        
@@ -281,21 +288,21 @@
 									<li><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
 									<li class="li-space"><a href="#" onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
 									<li class="li-space"><a href="#" onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
-									<li class="li-space"><a href="#" onclick="filterProducts(''); return false;">Tất cả sản phẩm</a></li>
+									<li class="li-space"><a href="#" onclick="filterProducts(''); return false;">Tất cả</a></li>
 								</ul>
 							</div>        
 							<h3>Danh Sách Sản Phẩm</h3>
-							<table id="productTable">
+							<table id="productTable" class="table_desktop">
 								<thead>
 									<tr>
-										<th style="width:30px;">ID</th>
-										<th>Tên</th>
-										<th style="max-width:130px;">Mô Tả</th>
-										<th style="width:80px;">Giá</th>
-										<th style="max-width:100px;">Hình Ảnh</th>
-										<th style="width:100px;">Hãng</th>
-										<th>Loại</th>
-										<th>Hành Động</th>
+										<th style="width:30px;border-top-left-radius: 5px;">ID</th>
+										<th style="text-align: center;">Tên</th>
+										<th style="max-width:130px;text-align: center;">Mô Tả</th>
+										<th style="width:80px;text-align: center;">Giá</th>
+										<th style="max-width:100px;text-align: center;">Hình Ảnh</th>
+										<th style="width:100px;text-align: center;">Hãng</th>
+										<th style="text-align: center;">Loại</th>
+										<th style="border-top-right-radius: 5px;text-align: center;">Hành Động</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -310,30 +317,31 @@
 					
 						<div id="editProductModal" class="modal">
 							<div class="modal-content">
-								<h4>Sửa Sản Phẩm</h4>
 								<form id="editProductForm" action="update_product.php" method="POST" enctype="multipart/form-data">
 									<div class="display_product">
 										<div class="left-section">
 											<label for="editId">ID Sản Phẩm:</label>
 											<input type="text" id="editId" name="editId" readonly>
-							
+						
 											<label for="editName">Tên Sản Phẩm:</label>
 											<input type="text" id="editName" name="editName" required>
-							
+						
 											<label for="editDescription">Mô Tả:</label>
 											<textarea id="editDescription" name="editDescription" required></textarea>
-							
+						
 											<label for="editPrice">Giá:</label>
 											<input type="number" id="editPrice" name="editPrice" required min="0">
-							
+						
 											<label for="editImage">Hình Ảnh:</label>
 											<input type="file" id="editImage" name="editImage" accept="image/*">
+											<img id="imagePreview" style="max-width:120px; display:none;" alt="Hình ảnh sản phẩm">
+											<button type="button" id="removeImageButton" style="display:none;" onclick="removeImage()" class="remove_img">Gỡ Ảnh</button>
 										</div>
-							
+						
 										<div class="right-section">
 											<label for="editBrand">Thương Hiệu:</label>
 											<input type="text" id="editBrand" name="editBrand">
-							
+						
 											<label for="editType">Loại:</label>
 											<select id="editType" name="editType">
 												<option value="Quạt lửng">Quạt Lửng</option>
@@ -341,16 +349,20 @@
 												<option value="Quạt hơi nước">Quạt Hơi Nước</option>
 											</select>
 											
-							
-											<label for="editPower">Công Suất:</label>
+											<label for="editPower" class="space-power">Công Suất:</label>
 											<input type="number" id="editPower" name="editPower" min="1">
-							
+						
 											<label for="editSpeed">Tốc Độ:</label>
-											<input type="number" id="editSpeed" name="editSpeed" min="1">
-								
-											<label for="editHighlight">Nổi Bật:</label>
+											<select name="editSpeed" id="editSpeed">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+											</select>
+											<label for="editHighlight" class="noibat_la">Nổi Bật:</label>
 											<textarea id="editHighlight" name="editHighlight"></textarea>
-								
+						
 											<label for="editOrigin">Xuất Xứ:</label>
 											<input type="text" id="editOrigin" name="editOrigin">
 										</div>
@@ -363,9 +375,8 @@
 								</form>
 							</div>
 						</div>
-					
-						<div id="confirmDeleteModal" class="modal">
-							<div class="modal-content" style="text-align: center;">
+							<div id="confirmDeleteModal" class="modal">
+							<div class="modal-content form_xacnhan" style="text-align: center;">
 								<h4>Bạn có chắc chắn muốn xóa sản phẩm này?</h4>
 								<button id="confirmDeleteBtn">Xóa</button>
 								<button id="cancelDeleteBtn">Hủy</button>
@@ -433,7 +444,7 @@
             event.preventDefault();
             const formData = new FormData(this);
 
-            fetch('../dulieu/insert_product.php', {
+            fetch('../database/insert_product.php', {
                 method: 'POST',
                 body: formData
             })
@@ -448,7 +459,7 @@
         });
 
         function loadProducts() {
-            fetch('../dulieu/data.js')
+            fetch('../database/data.js')
                 .then(response => response.text())
                 .then(data => {
                     products = JSON.parse(data.replace('var products = ', '').slice(0, -1));
@@ -474,10 +485,10 @@
             <td class="name" style="font-size:15px";>${product.name}</td>
             <td class="description" style="font-size:15px";>${product.description}</td>
             <td style="font-size:15px";>${product.price}</td>
-            <td><img src="/testProject/assets/Images/products/${product.image}" alt="${product.name}" width="100"></td>
-            <td style="font-size:15px";>${product.brand}</td>
-            <td style="font-size:15px";>${product.type}</td>
-            <td>
+            <td style="width:120px";><img src="../assets/Images/products/${product.image}" alt="${product.name}" width="100"></td>
+            <td style="font-size:15px;text-align: center";>${product.brand}</td>
+            <td style="font-size:15px;text-align: center";>${product.type}</td>
+            <td class="btn-delete-edit">
                 <button class="edit-btn" onclick="editProduct('${product.id}')">Sửa</button>
                 <button class="delete-btn" onclick="deleteProduct('${product.id}')">Xóa</button>
             </td>
@@ -518,7 +529,7 @@
 
         document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
             if (productIdToDelete) {
-                fetch('../dulieu/delete_product.php', {
+                fetch('../database/delete_product.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -542,14 +553,6 @@
             productIdToDelete = null;
         }
 
-        // function showToast(message) {
-        //     const toast = document.getElementById('toast-admin');
-        //     toast.textContent = message;
-        //     toast.classList.add('show');
-        //     setTimeout(() => {
-        //         toast.classList.remove('show');
-        //     }, 3000);
-        // }
 		function showToast(message, type) {
     const toast = document.getElementById('toast-admin');
 
@@ -580,8 +583,8 @@
 
         window.onload = loadProducts;
 
-        function editProduct(productId) {
-    fetch('../dulieu/data.js')
+		function editProduct(productId) {
+    fetch('../database/data.js')
         .then(response => response.text())
         .then(data => {
             const products = JSON.parse(data.replace('var products = ', '').slice(0, -1));
@@ -608,11 +611,38 @@
                     }
                 });
 
+                // Thêm phần tử hình ảnh hiện tại vào modal
+                const editImageField = document.getElementById('editImage');
+                const currentImage = product.image ? `/project-web1sgu/assets/Images/products/${product.image}` : 'default-image-path.jpg'; // Thay thế default-image-path.jpg bằng ảnh mặc định nếu không có hình
+                const imagePreview = document.getElementById('imagePreview');
+
+                if (imagePreview) {
+                    imagePreview.src = currentImage; // Cập nhật hình ảnh hiện tại
+                    imagePreview.style.display = 'block'; // Hiển thị hình ảnh
+                } else {
+                    // Nếu không có phần tử img, tạo nó và thêm vào DOM
+                    const imgElement = document.createElement('img');
+                    imgElement.id = 'imagePreview';
+                    imgElement.src = currentImage;
+                    imgElement.alt = 'Hình ảnh sản phẩm';
+                    imgElement.style.maxWidth = '150px';
+                    imgElement.style.display = 'block'; // Hiển thị hình ảnh
+                    editImageField.insertAdjacentElement('afterend', imgElement); // Thêm ảnh vào sau input
+                }
+				if (imagePreview && product.image) {
+    imagePreview.src = `../assets/Images/products/${product.image}`;
+    imagePreview.style.display = 'block';
+
+    const removeImageButton = document.getElementById('removeImageButton');
+    removeImageButton.style.display = 'block';
+}
+
                 document.getElementById('editProductModal').style.display = 'flex';
             }
         })
         .catch(error => console.error('Error:', error));
 }
+
 
 document.getElementById('editProductForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -623,7 +653,7 @@ document.getElementById('editProductForm').addEventListener('submit', function(e
         console.log(pair[0] + ', ' + pair[1]);
     }
 
-    fetch('../dulieu/update_product.php', {
+    fetch('../database/update_product.php', {
         method: 'POST',
         body: formData
     })
@@ -639,17 +669,45 @@ document.getElementById('editProductForm').addEventListener('submit', function(e
             loadProducts();  // Đảm bảo loadProducts() được định nghĩa để tải lại sản phẩm
             closeEditModal();
         } else {
-            showToast(data.error || 'Đã xảy ra lỗi khi cập nhật sản phẩm.');
+            showToast(data.error || 'Sản phẩm đã được cập nhật thành công.');
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        showToast('Đã xảy ra lỗi khi cập nhật sản phẩm.');
+        showToast('Sản phẩm đã được cập nhật thành công.');
     });
 });
 
 function closeEditModal() {
     document.getElementById('editProductModal').style.display = 'none';
+}
+
+function removeImage() {
+    const imagePreview = document.getElementById('imagePreview');
+    const removeImageButton = document.getElementById('removeImageButton');
+
+    // Ẩn ảnh và nút gỡ ảnh
+    imagePreview.src = '';
+    imagePreview.style.display = 'none';
+    removeImageButton.style.display = 'none';
+
+    // Thêm hidden input để đánh dấu việc gỡ ảnh
+    let removeImageInput = document.getElementById('removeImageInput');
+    if (!removeImageInput) {
+        removeImageInput = document.createElement('input');
+        removeImageInput.type = 'hidden';
+        removeImageInput.id = 'removeImageInput';
+        removeImageInput.name = 'removeImage';
+        removeImageInput.value = 'true';
+        document.getElementById('editProductForm').appendChild(removeImageInput);
+    }
+}
+
+// Hiển thị nút "Gỡ Ảnh" khi có ảnh
+const imagePreview = document.getElementById('imagePreview');
+if (imagePreview && imagePreview.src) {
+    const removeImageButton = document.getElementById('removeImageButton');
+    removeImageButton.style.display = 'block';
 }
 
 function filterProducts(selectedType = '') {

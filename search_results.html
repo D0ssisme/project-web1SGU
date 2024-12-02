@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./assets/css/body_code_mobile/middle_mb.css">
     <link rel="stylesheet" href="./assets/css/body_code_mobile/footer_mobile.css">
     <link rel="icon" type="./Images/png" href="./assets/Images/mini_logo.png">
-    <title>Kết quả tìm kiếm</title>
+    <title>Trang tìm kiếm</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,8 +26,8 @@
 
         <div class="header__search">
             <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
-                <input type="text" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
-                <button type="submit" class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></button>
+                <div class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></div>
+                <input type="search" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
             </form>
         </div>
         <div class="header__info">
@@ -83,8 +83,8 @@
         </div>
         <div class="header__search">
             <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
-                <input type="text" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
                 <div class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></div>
+                <input type="search" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
             </form>
         </div>
         <div class="container_products-left-mb">
@@ -119,16 +119,16 @@
                         <h3>Lọc theo sản phẩm</h3>
                         <form id="price-filter-form">
                             <label for="min-price">Giá tối thiểu:</label>
-                            <input type="number" id="min-price" placeholder="0">
+                            <input type="text" id="min-price" placeholder="0">
                             <label for="max-price">Giá tối đa:</label>
-                            <input type="number" id="max-price" placeholder="999.999.999">
+                            <input type="text" id="max-price" placeholder="100.000.000">
                             <label for="product-brand">Chọn hãng:</label>
                             <input type="text" id="product-brand" placeholder="Hãng">
                             <label for="power-range">Công suất:</label>
                             <input type="number" id="min-power" placeholder="Tối thiểu">
                             <input type="number" id="max-power" placeholder="Tối đa">
                             <label for="product-speed">Tốc độ gió:</label>
-                            <input type="number" id="product-speed" placeholder="Tốc độ gió (1,2,3)">
+                            <input type="number" id="product-speed" placeholder="Tốc độ (1, 2, 3, 4 ,5)" min="1" max="5">   
                             <label for="product-type">Chọn loại quạt:</label>
                             <select id="product-type">
                                 <option value="">Tất cả</option>
@@ -352,7 +352,7 @@
         </div>
     </div>
 </div>
-    <script src="dulieu/data.js"></script>
+    <script src="database/data.js"></script>
     <script>
 const urlParams = new URLSearchParams(window.location.search);
 const query = urlParams.get('query');
@@ -376,7 +376,7 @@ function displaySearchResults(page = 1) {
         productItem.innerHTML = `
             <a href="product_details.html?id=${product.id}">
                 <img src="./assets/Images/products/${product.image}" alt="${product.name}">
-                <h3 style="font-size:1.6rem";>${product.name}</h3>
+                <h3 style="font-size:1.6rem;line-height:20px;">${product.name}</h3>
                 <p style="font-size:1.4rem";><strong>${product.price} VND</strong></p>
             </a>
         `;
@@ -422,6 +422,15 @@ function createPagination(currentPage) {
     pagination.appendChild(nextButton);
 }
 
+document.getElementById('min-price').addEventListener('input', (event) => {
+    const value = event.target.value.replace(/[^\d]/g, ''); // Loại bỏ ký tự không phải số
+    event.target.value = Number(value).toLocaleString('vi-VN'); // Định dạng thành số kiểu Việt Nam
+});
+
+document.getElementById('max-price').addEventListener('input', (event) => {
+    const value = event.target.value.replace(/[^\d]/g, ''); // Loại bỏ ký tự không phải số
+    event.target.value = Number(value).toLocaleString('vi-VN'); // Định dạng thành số kiểu Việt Nam
+});
 // Hàm xử lý tìm kiếm và lọc sản phẩm
 function handleSearch(query) {
     filteredProducts = products.filter(product =>
@@ -457,6 +466,7 @@ function handleSearch(query) {
         searchResults.innerHTML = '';
         pagination.innerHTML = '';
     }
+    document.getElementById('price-filter-form').reset();
 }
 
 // Lắng nghe sự kiện cho nút lọc

@@ -74,6 +74,7 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ cho bảng lọc */
         transition: top 0.3s ease-in-out; /* Hiệu ứng trượt mượt mà khi bảng lọc xuất hiện hoặc ẩn */
         margin-top: 30px;
+        width:50%;
     }
     
     #filter-box-search.show {

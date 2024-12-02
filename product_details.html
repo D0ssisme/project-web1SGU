@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project F</title>
+    <title>Chi tiết sản phẩm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -31,10 +31,8 @@
 
             <div class="header__search">
                 <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
-                    <input type="text" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
-                    <button type="submit" class="search-button">
-                        <i class="header__find-button fa-solid fa-magnifying-glass"></i>
-                    </button>
+                    <div class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></div>
+                    <input type="search" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
                 </form>
             </div>
             <div class="header__info">
@@ -62,14 +60,14 @@
                 </ul>
             </div>
         </header>
-        <header class="header-mobile">
+        <header class="header-mobile" style="height: 150px;">
             <div class="header_mobile-user">
                     <div class="header_img-logo">
                         <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo" class="header__logo-desktop"></a>
                     </div>
                     <div class="header-options">
                         <ul>
-                            <a href="cart-page.html" id="cartIcon">
+                            <a href="cart-page.html" id="cartIcon" style="text-decoration: none;">
                                 <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
                             </a>
             
@@ -90,8 +88,8 @@
             </div>
             <div class="header__search">
                 <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
-                    <input type="text" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
                     <div class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></div>
+                    <input type="search" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
                 </form>
             </div>
         </header>
@@ -132,24 +130,19 @@
                                 </div>
                                 <div class="container__product-soluong">
                                     <p>Số lượng :</p>
-                                    <button id="decrease" class="quantity-btn">-</button>
+                                    <button id="decrease" class="quantity-btn btn-decrease">-</button>
                                     <input type="number" id="quantity" min="1" value="1" max="5">
                                     <button id="increase" class="quantity-btn">+</button>
                                 </div>
 
                                 <div class="container__product-buttom-cart">
-                                    <div class="container__product-buttom-cart-muangay">
-                                        <button><span class="container__product-distance"><i
-                                                    class="product-credit-card fa-regular fa-credit-card"></i></span></i>MUA
-                                            NGAY</button>
-                                    </div>
                                     <button id="addToCart"><i class="product-buttom fa-solid fa-cart-shopping"></i> THÊM VÀO GIỎ
                                     </button>
                                 </div>
                             </div>
                             <div class="containter__product-right-buttom">
                                 <div class="container__product-right-buttom-top">
-                                    <i class="fa-solid fa-down-long"></i>
+                                    <i class="fas fa-angle-down"></i>
                                 </div>
                                 <div class="containter__product-right-buttom-content-one">
                                     <div class="containter__product-right-buttom-content-one-title">
@@ -160,10 +153,10 @@
                                             </div>
                                             <div
                                                 class="containter__product-right-buttom-content-one-title-item thongso">
-                                                <p>Thông số kỹ thuật</p>
+                                                <p>Thông số</p>
                                             </div>
                                             <div class="containter__product-right-buttom-content-one-title-item noibat">
-                                                <p>Điểm nổi bật</p>
+                                                <p>Nổi bật</p>
                                             </div>
                                         </div>
                                         <div class="container__product-right-content">
@@ -176,7 +169,7 @@
                                             </div>
                                             <div class="container__product-right-Thongso">
                                                 <table class="container__product-table">
-                                                    <span>Thông số chi tiết</span>
+                                                    <span style="text-align: center;">Thông số chi tiết</span>
                                                     <tr class="container__product-rows">
                                                         <td class="container__product-cols-indam">Thương hiệu : </td>
                                                         <td class="container__product-cols" id="productBrand"></td>
@@ -209,7 +202,7 @@
                                             </div>
                                             <div class="container__product-right-uudiem">
                                                 <ul class="container__product-right-ul">
-                                                    <span>Nổi bật</span>
+                                                    <span>Điểm nổi bật</span>
                                                     <li class="container__product-right-li" id="productHighlight"></li>
                                             </div>
                                         </div>

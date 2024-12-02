@@ -8,7 +8,6 @@ form, table {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
 }
 
 label {
@@ -29,7 +28,10 @@ input[type="text"], input[type="number"], textarea, input[type="file"],select{
 textarea {
     resize: vertical;
 }
-
+.noibat_la
+{
+    margin-top: 9px;
+}
 input[type="submit"], button {
     background-color: #5cb85c;
     color: white;
@@ -122,27 +124,6 @@ table img {
 .modal-content h4 {
     margin-bottom: 15px;
 }
-
-/* .toast-admin {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s ease-in-out;
-    position: fixed;
-    top: 20px; 
-    right: 20px; 
-    background-color: #4caf50; 
-    color: white; 
-    padding: 16px;
-    border-radius: 4px;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 14px; 
-}
-
-.toast-admin.show {
-    visibility: visible;
-    opacity: 1;
-} */
 
 
 .toast-admin {
@@ -239,6 +220,37 @@ button:hover {
 #confirmDeleteBtn
 {
     background-color: rgb(222, 47, 47);
+    width:40%;
+    border-radius:5px;
+    font-size:16px;
+}
+#cancelDeleteBtn
+{
+    width:40%;
+    border-radius:5px;
+    font-size:16px;
+}
+.form_xacnhan
+{
+    justify-content: center;
+    align-items: center;
+}
+.space-power
+{
+    margin-top:11px;
+}
+.remove_img
+{
+    margin-top: 20px;
+    border-radius:4px;
+    justify-self: center;
+    align-items: center;
+    background-color: red;
+}
+.remove_img:hover
+{
+    background-color: rgb(181, 50, 50);;
+
 }
 #confirmDeleteBtn:hover
 {
@@ -252,6 +264,8 @@ button:hover {
     background: #fff;
     padding:20px;
     justify-content: center;
+    margin-top:20px;
+    border-radius: 5px;
 }
 
 .phanloai_sp {
@@ -291,7 +305,6 @@ button.edit-btn {
     transition: background-color 0.3s;
     height:40px;
     width:62px;
-    transform: translateX(39%);
     font-size: 15px;
 }
 button.edit-btn:hover {
@@ -305,9 +318,8 @@ button.delete-btn {
     border-radius: 4px; 
     cursor: pointer; 
     transition: background-color 0.3s; 
-    transform: translateX(50%);
     font-size: 14px;
-
+    margin-left:10px;
 }
 
 button.delete-btn:hover {
@@ -332,4 +344,8 @@ td.name {
 .spacejam
 {
     margin-top:11px;
+}
+.btn-delete-edit
+{
+    text-align: center;
 }

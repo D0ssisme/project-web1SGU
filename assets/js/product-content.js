@@ -5,7 +5,7 @@ function getProductId() {
 
 function loadProduct() {
     const productId = getProductId();
-    fetch('dulieu/data.js')
+    fetch('database/data.js')
         .then(response => response.text())
         .then(data => {
             const products = JSON.parse(data.replace('var products = ', '').slice(0, -1));

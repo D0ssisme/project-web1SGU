@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="./Images/png" href="/assets/Images/favicon.png">
 
   <title>Web admin onlyfans </title>
 
@@ -108,10 +109,8 @@
                 <li><a href="index.html"><i class="fas fa-newspaper"></i> Bảng tin</a></li>
                 <li><a><i class="fas fa-box"></i> Quản lí sản phẩm <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="sanpham.html">Tất cả sản phẩm </a></li>
-                    <li><a href="themsanpham.html">Thêm sản phẩm </a></li>
-                    <li><a href="#">Danh mục</a></li>
-                    <li><a href="#">Từ khóa</a></li>
+                    <li><a href="../sanpham.html">Tất cả sản phẩm </a></li>
+
 
 
 
@@ -252,7 +251,7 @@
       <div class="right_col" role="main">
 
 
-        <div style="">
+        <div>
           <h3 class="color" style="font-weight:500">Quản lý tải khoản</h3>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Thêm tải khoản
@@ -589,16 +588,6 @@
 </body>
 
 </html>
-<script>
-  // Kiểm tra và hiển thị tên người dùng từ localStorage
-  window.onload = function () {
-    var username = localStorage.getItem('username');
-    if (username) {
-      document.getElementById('username-display').textContent = username;
-      document.getElementById('username-display1').textContent = username; // Cập nhật tên người dùng
-    }
-  }
-</script>
 
 <script>
   document.querySelector("form").addEventListener("submit", function (event) {
@@ -696,3 +685,7 @@
     }, 0);
   });
 </script>
+
+
+
+>>>>>>> 3246055b053dd15bb9115112ac8bd2b29aa4fe79

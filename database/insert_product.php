@@ -31,11 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $imageTmp = $_FILES['image']['tmp_name'];
 
         // Đặt đường dẫn tuyệt đối cho thư mục uploads
-        $imageUploadPath = $_SERVER['DOCUMENT_ROOT'] . '/testnua/assets/Images/products/' . $imageName;
+        $imageUploadPath = $_SERVER['DOCUMENT_ROOT'] . '/project-web1sgu/assets/Images/products/' . $imageName;
 
         // Kiểm tra nếu thư mục uploads không tồn tại thì tạo
-        if (!file_exists($_SERVER['DOCUMENT_ROOT'] . '/testnua/assets/Images/products/')) {
-            mkdir($_SERVER['DOCUMENT_ROOT'] . '/testnua/assets/Images/products/', 0777, true); // Tạo thư mục với quyền ghi
+        if (!file_exists($_SERVER['DOCUMENT_ROOT'] . '/project-web1sgu/assets/Images/products/')) {
+            mkdir($_SERVER['DOCUMENT_ROOT'] . '/project-web1sgu/assets/Images/products/', 0777, true); // Tạo thư mục với quyền ghi
         }
 
         // Di chuyển file ảnh từ thư mục tạm vào thư mục uploads
@@ -62,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$new_id', '$name', '$description', '$price', '$image', '$brand', '$type', '$power', '$speed', '$highlight', '$origin')";
     
     if ($conn->query($sql) === TRUE) {
-        echo "Thêm sản phẩm thành công!<br>";
     } else {
         echo "Lỗi: " . $sql . "<br>" . $conn->error . "<br>";
     }

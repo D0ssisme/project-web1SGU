@@ -22,6 +22,10 @@
         position: relative;
         overflow: hidden;
     }
+    .contaier__product-right-buttom-flex
+    {
+        gap:5px;
+    }
     .slide-image 
     {
         width: 100%;
@@ -40,5 +44,21 @@
     .container__top
     {
         display:none;
+    }
+    .product
+    {
+        margin-top:140px;
+    }
+    .container__product-content-tinhtrang h1
+    {
+        line-height: 35px;
+    }
+    .containter__product-right-buttom-content-one-title-item p
+    {
+        font-size:1.4rem;
+    }
+    #filter-box
+    {
+        width:100%;
     }
 }

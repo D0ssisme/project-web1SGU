@@ -2,6 +2,10 @@
 {
     display: none;
 }
+.container_products-left_mb
+{
+    display:none;
+}
 @media screen and (max-width: 500px) {
     .header
     {
@@ -16,20 +20,24 @@
         align-items: center;
         padding: 0 5%;
         background-color: #2478f4;
-        height: 168px;
+        height: 170px;
         z-index: 1000;
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
     }
+    .container_products-left_mb
+{
+    display:block;
+}
     .header_mobile-user {
         display: flex;
         justify-content: center; 
         align-items: center;
         width: 100%;
         gap: 15px; 
-        padding:10px 10px 5px 10px;
+        padding:10px 10px 0 10px;
     }
 
     .header_img-logo {
@@ -50,7 +58,6 @@
         margin: 0;
         padding: 0;
     }
-
     .header_mobile-user li {
         font-size: 20px;
         display: flex;
@@ -68,37 +75,49 @@
         max-width: 600px;
         margin: 0 auto; 
     }
+    .header__search-main input
+    {
+        padding: 10px 10px 10px 45px;
+
+    }
     .header__search-main input[type="text"] {
         flex: 1;
-        padding: 10px;
+        padding: 10px 10px 10px 30px;
         border: 1px solid #ccc;
         border-radius: 5px 5px 5px 5px;
         outline: none;
         font-size:1.5rem;
     }
 
-    .header__search-main .search-button {
+    .header__search-main {
         color: white;
         border: none;
-        padding: 10px 15px;
-        border-radius: 0 5px 5px 0;
+        padding: 10px 10px 0px 10px;
         cursor: pointer;
         display: flex;
         align-items: center;
     }
-    .header__find-button
-    {
-        font-size:1.4rem;
-        color:#757575 ;
-    }
     .search-button
     {
-        background-color: #fff;
+        color: white;
+        height:38px;
+        top:60%;
+        width: 45px;
     }
-    .header__search-main .search-button i {
+    .header__find-button
+    {
+        font-size: 1.7rem;
+        color:#757575 ;
+        margin-left: 17px;
+        margin-top:10px;
+    }
+    .header__search-main {
         font-size: 16px;
     }
-
+    .search-button i
+    {
+        font-size:1.9rem;
+    }
     .header__info-usericon {
         margin-left: 3px;
     }
@@ -111,11 +130,6 @@
     .header-options
     {
         margin-left:-30px;
-    }
-    .search-button:hover
-    {
-        background: none;   
-        cursor: text;
     }
     .header__info-usericon:hover
     {
