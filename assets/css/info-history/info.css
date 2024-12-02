@@ -22,6 +22,12 @@
             padding-top:20px;
             margin: 0 auto;
         }
+
+        .title h3
+        {
+            font-size: 14px;
+        }
+
         .chuathongtin
         {
         display: flex; /* dam bao can theo chieu ngang*/
@@ -258,6 +264,17 @@ margin-top:2px;
     box-sizing: border-box;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 /* lich su don hang */
 
 .sort-history
@@ -328,18 +345,21 @@ grid-row:1;
     background-color: #ffffff;
     border: 1px solid #9c9d9ec5;
     box-sizing: border-box;
-
     
 }
 
+.all-info-container-history-bottom th
+{
+    height: 5%;
+}
 
-table {
+.table {
     border-collapse: collapse;
     border-spacing: 0;
     border-radius: 10px;
   }
 
-  th
+th
   {
     border: 1px solid black;
     border-collapse: collapse;
@@ -349,16 +369,23 @@ table {
     border-radius: 10px;
   }
 
-  td
+td
   {
     border: 1px solid black;
     border-collapse: collapse;
   }
 
-  tr
+tr
   {
     height: 5%;
     text-align: center;
+  }
+
+
+  .all-info-container-history-bottom table
+  {
+    width: 100%;
+     height: 100%;
   }
 
   /*Mobile: width < 740px */
