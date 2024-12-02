@@ -31,7 +31,7 @@
 .container__product-content-right
 {
     width:70%;  
-    margin-left:30px;
+    margin-left:30px;   
 }
 
 .container__product-content
@@ -233,13 +233,15 @@
 {
     display:flex;
     border-bottom:2px solid #dddddd;
+    align-items: center;
+    justify-content: center;
+    gap: 50px   ;
 }
 .containter__product-right-buttom-content-one-title-item
 {
     padding: 6px;
     cursor: pointer;
-    margin-right:50px;
-    font-size:1.5rem;
+        font-size:1.5rem;
     background: lightgrey;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
@@ -281,15 +283,21 @@
 .container__product-right-Thongso span
 {
     font-size:2rem;
+    display: flex;
+    justify-content: center;
 }
 .container__product-right-Thongso
 {
     padding-top:10px;
 }
-
+.container__product-table
+{
+    display: flex;
+    justify-content: center;
+}
 .container__product-cols-indam,
 .container__product-cols {
-    padding: 9px;
+    padding: 9px 9px 9px 40px;
 }
 
 .container__product-right-ul
@@ -301,6 +309,8 @@
 .container__product-right-uudiem span
 {
     font-size:2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .container__product-right-li

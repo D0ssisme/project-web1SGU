@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./assets/css/body_code_mobile/footer_mobile.css">
     <link rel="stylesheet" href="./assets/css/body_code_mobile/middle_mb.css">
     <link rel="icon" type="./Images/png" href="./assets/Images/favicon.png">
-    <title>Trang Sản phẩm</title>
+    <title>Trang chủ</title>
 </head>
 
 <body>
@@ -97,14 +97,14 @@
         </div>
     </header>
     <div class="product-main">
-        <div class="slide">
-            <div class="slider-container">
-                <img src="./assets/Images/banner/Banner-quat-tran.png" alt="Image 1" class="slide-image">
-                <img src="./assets/Images/banner/banner-gioi-thieu.webp" alt="Image 2" class="slide-image">
-                <img src="./assets/Images/banner/banner-alaska-quat-lam-mat-02-scaled.webp" alt="Image 3"
-                    class="slide-image">
+            <div class="slide">
+                <div class="slider-container">
+                    <img src="./assets/Images/banner/Banner-quat-tran.png" alt="Image 1" class="slide-image">
+                    <img src="./assets/Images/banner/banner-gioi-thieu.webp" alt="Image 2" class="slide-image">
+                    <img src="./assets/Images/banner/banner-alaska-quat-lam-mat-02-scaled.webp" alt="Image 3"
+                        class="slide-image">
+                </div>
             </div>
-        </div>
         <div class="container_main">
             <div class="container_products-left">
                 <div class="nav-left">
@@ -127,14 +127,14 @@
                             <label for="min-price">Giá tối thiểu:</label>
                             <input type="text" id="min-price" placeholder="0">
                             <label for="max-price">Giá tối đa:</label>
-                            <input type="text" id="max-price" placeholder="999.999.999">
+                            <input type="text" id="max-price" placeholder="100.000.000">
                             <label for="product-brand">Chọn hãng:</label>
                             <input type="text" id="product-brand" placeholder="Hãng">
                             <label for="power-range">Công suất:</label>
                             <input type="number" id="min-power" placeholder="Tối thiểu">
                             <input type="number" id="max-power" placeholder="Tối đa">
                             <label for="product-speed">Tốc độ gió:</label>
-                            <input type="number" id="product-speed" placeholder="Tốc độ gió (1,2,3)">
+                            <input type="number" id="product-speed" min="1" max="5" placeholder="Tốc độ (1, 2, 3, 4, 5)">
                             <label for="product-type">Chọn loại quạt:</label>
                             <select id="product-type">
                                 <option value="">Tất cả</option>

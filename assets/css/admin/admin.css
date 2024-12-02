@@ -8,7 +8,6 @@ form, table {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
 }
 
 label {
@@ -29,7 +28,10 @@ input[type="text"], input[type="number"], textarea, input[type="file"],select{
 textarea {
     resize: vertical;
 }
-
+.noibat_la
+{
+    margin-top: 9px;
+}
 input[type="submit"], button {
     background-color: #5cb85c;
     color: white;
@@ -122,27 +124,6 @@ table img {
 .modal-content h4 {
     margin-bottom: 15px;
 }
-
-/* .toast-admin {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s ease-in-out;
-    position: fixed;
-    top: 20px; 
-    right: 20px; 
-    background-color: #4caf50; 
-    color: white; 
-    padding: 16px;
-    border-radius: 4px;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 14px; 
-}
-
-.toast-admin.show {
-    visibility: visible;
-    opacity: 1;
-} */
 
 
 .toast-admin {
@@ -283,6 +264,8 @@ button:hover {
     background: #fff;
     padding:20px;
     justify-content: center;
+    margin-top:20px;
+    border-radius: 5px;
 }
 
 .phanloai_sp {

@@ -117,19 +117,6 @@ var products = [
         "origin": "Malaysia"
     },
     {
-        "id": "15",
-        "name": "Qu\u1ea1t Tr\u1ea7n Luxuryfan Minka Arie Uchiwa",
-        "description": "D\u00f2ng qu\u1ea1t Uchiwa la\u0300 nh\u01b0\u0303ng m\u00e2\u0303u qua\u0323t tr\u1ea7n \u0111\u1eb7c bi\u1ec7t nh\u1ea5t c\u1ee7a th\u01b0\u01a1ng hi\u1ec7u Minka Aire \u2013 th\u01b0\u01a1ng hi\u1ec7u cu\u0309a My\u0303 \u0111i \u0111\u1ea7u trong s\u1ea3n xu\u1ea5t v\u00e0 ph\u00e2n ph\u1ed1i c\u00e1c m\u1eabu qu\u1ea1t tr\u1ea7n h\u00e0ng \u0111\u1ea7u th\u1ebf gi\u1edbi. Trong g\u00e2\u0300n 50 n\u0103m qua, c\u00f4ng ty cu\u0309a George Kovacs lu\u00f4n mang \u0111\u00ea\u0301n cho thi\u0323 tr\u01b0\u01a1\u0300ng nh\u01b0\u0303ng sa\u0309n ph\u00e2\u0309m \u0111\u00e2\u0323m ch\u00e2\u0301t sa\u0301ng ta\u0323o va\u0300 th\u01a1 m\u00f4\u0323ng.",
-        "price": "14.280.000",
-        "image": "qut-trn-luxuryfan-minka-arie-uchiwa-f824-25d-orbtb_b5b71fb5.jpg",
-        "brand": "LuxuryFan",
-        "type": "Qu\u1ea1t tr\u1ea7n",
-        "power": "38",
-        "speed": "5",
-        "highlight": "Phong c\u00e1ch Hi\u1ec7n \u0111\u1ea1i, Th\u00e2n qu\u1ea1t M\u00e0u n\u00e2u t\u1ed1i (Oil Rubbed Bronze\/Toned Brass)\r\nC\u00e1nh qu\u1ea1t C\u00e1nh Composite. \r\nS\u1ea3i c\u00e1nh 142 cm\r\n\u0110\u1ed9ng c\u01a1 DC Motor 38WL\u01b0u l\u01b0\u1ee3ng gi\u00f3 5996 CFM\r\n\u0110\u00e8n G9 Max 60W\u0110i\u1ec1u khi\u1ec3n Remote ch\u00ednh h\u00e3ng",
-        "origin": "Trung Qu\u1ed1c"
-    },
-    {
         "id": "16",
         "name": "Qu\u1ea1t l\u1eedng Midea",
         "description": "Qu\u1ea1t l\u1eedng v\u1edbi 3 c\u00e1nh qu\u1ea1t \u0111\u01b0\u1eddng k\u00ednh 40 cm t\u1ea1o lu\u1ed3ng gi\u00f3 tr\u1ea3i r\u1ed9ng, l\u00e0m m\u00e1t kh\u1eafp di\u1ec7n t\u00edch ph\u00f2ng.\r\nC\u00e1i qu\u1ea1t c\u00f3 l\u1ed3ng qu\u1ea1t ch\u1eafc ch\u1eafn, nan qu\u1ea1t \u0111an kh\u00edt an to\u00e0n khi ti\u1ebfp x\u00fac g\u1ea7n; thi\u1ebft k\u1ebf c\u00f3 th\u1ec3 th\u00e1o r\u1eddi v\u1ec7 sinh thu\u1eadn ti\u1ec7n.\r\n\r\n3 t\u1ed1c \u0111\u1ed9 gi\u00f3 \u0111i\u1ec1u khi\u1ec3n b\u1eb1ng n\u00fam v\u1eb7n ph\u00eda tr\u00ean c\u1ee5m motor.\r\n\u0110\u1ed9ng c\u01a1 b\u1ea1c thau v\u1eadn h\u00e0nh v\u1edbi c\u00f4ng su\u1ea5t 36 W.",
@@ -183,15 +170,41 @@ var products = [
     },
     {
         "id": "20",
-        "name": "Qu\u1ea1t Tr\u1ea7n Luxuryfan Minka Aire Supra",
-        "description": "Qu\u1ea1t tr\u1ea7n Minka Aire Supra l\u00e0 s\u1ea3n ph\u1ea9m ch\u1ee7 l\u1ef1c c\u1ee7a th\u01b0\u01a1ng hi\u1ec7u Minka Aire. Qu\u1ea1t tr\u1ea7n M\u1ef9 Minka Supra F568 AB \u0111\u01b0\u1ee3c m\u1ec7nh danh l\u00e0 n\u01a1i tr\u00ecnh di\u1ec5n c\u1ee7a nh\u1eefng c\u01a1n gi\u00f3 b\u1edfi \u0111\u01b0\u1ee3c l\u1ea5y c\u1ea3m h\u1ee9ng t\u1eeb ch\u1ee7 \u0111\u1ec1 \u201cNgh\u1ec7 thu\u1eadt c\u1ee7a gi\u00f3\u201d.",
-        "price": "4.080.000",
-        "image": "qut-trn-luxuryfan-minka-aire-supra-52-ab-f568-25ax-abdw_7d12e4bc.jpg",
-        "brand": "LuxuryFan",
-        "type": "Qu\u1ea1t tr\u1ea7n",
-        "power": "79",
-        "speed": "5",
-        "highlight": "Qu\u1ea1t tr\u1ea7n 5 c\u00e1nh cao c\u1ea5p\r\nC\u00e1nh g\u1ed7 Plywood, S\u1ea3i c\u00e1nh 132 cm\r\n\u0110\u1ed9ng c\u01a1\tAC Motor 79W\r\nL\u01b0u l\u01b0\u1ee3ng gi\u00f3 6589 CFM\r\n\u0110i\u1ec1u khi\u1ec3n D\u00e2y k\u00e9o\/Remote",
+        "name": "Qu\u1ea1t l\u1eedng \u0110i\u1ec7n c\u01a1",
+        "description": "Qu\u1ea1t l\u1eedng \u0110i\u1ec7n c\u01a1 c\u00f3 th\u1ec3 d\u1ec5 d\u00e0ng \u0111i\u1ec1u ch\u1ec9nh \u0111\u1ed9 cao b\u1eb1ng c\u00e1ch v\u1eb7n v\u00edt h\u00e3m \u0111\u1ec3 n\u00e2ng h\u1ea1 \u1ed1ng r\u00fat v\u00e0 h\u01b0\u1edbng quay b\u1eb1ng n\u00fat r\u00fat. Ngo\u00e0i ra, b\u1ea1n c\u00f3 th\u1ec3 t\u00f9y \u00fd \u0111i\u1ec1u ch\u1ec9nh g\u00f3c g\u1ee5c \u0111\u1ea7u qu\u1ea1t, gi\u00fap l\u00e0n gi\u00f3 m\u00e1t t\u1ea3n \u0111\u1ec1u kh\u1eafp ph\u00f2ng.",
+        "price": "469.000",
+        "image": "quat-lung-dien-co-qdm400-co-dk-5976WK.jpg",
+        "brand": "Vinawind",
+        "type": "Qu\u1ea1t l\u1eedng",
+        "power": "48",
+        "speed": "3",
+        "highlight": "Ph\u00edm b\u1ea5m 3 t\u1ed1c \u0111\u1ed9. N\u00fam r\u00fat chuy\u1ec3n h\u01b0\u1edbng. C\u01a1 c\u1ea5u chuy\u1ec3n h\u01b0\u1edbng k\u00e9p. \u0110i\u1ec1u khi\u1ec3n tu\u1ef3 \u00fd g\u00f3c g\u1ee5c \u0111\u1ea7u qu\u1ea1t",
+        "origin": "Vi\u1ec7t Nam"
+    },
+    {
+        "id": "21",
+        "name": "Qu\u1ea1t h\u01a1i n\u01b0\u1edbc \u0111i\u1ec7n t\u1eed Kangaroo",
+        "description": "Qu\u1ea1t \u0111i\u1ec1u h\u00f2a Kangaroo k\u1ebft c\u1ea5u ch\u1eafc ch\u1eafn, c\u1ee9ng c\u00e1p v\u1edbi 2 m\u00e0u n\u00e2u tr\u1eafng. C\u00f4ng su\u1ea5t l\u1edbn 200 W, ho\u1ea1t \u0111\u1ed9ng hi\u1ec7u qu\u1ea3 v\u1edbi ph\u1ea1m vi l\u00e0m m\u00e1t t\u1edbi 50 - 65 m\u00b2. B\u00ean d\u01b0\u1edbi th\u00e2n qu\u1ea1t thi\u1ebft k\u1ebf 4 b\u00e1nh xe nh\u1ecf cho vi\u1ec7c di chuy\u1ec3n, b\u1ea3o qu\u1ea3n qu\u1ea1t linh ho\u1ea1t m\u00e0 kh\u00f4ng c\u1ea7n khi\u00eang v\u00e1c n\u1eb7ng n\u1ec1.",
+        "price": "3.900.000",
+        "image": "qut-diu-hoa-coex-ca-7121_736c3782.jpg",
+        "brand": "Kangaroo",
+        "type": "Qu\u1ea1t h\u01a1i n\u01b0\u1edbc",
+        "power": "200",
+        "speed": "3",
+        "highlight": "Ho\u1ea1t \u0111\u1ed9ng v\u1edbi c\u00f4ng su\u1ea5t 200 W, t\u1ea1o l\u01b0u l\u01b0\u1ee3ng gi\u00f3 10000 m3\/h, ph\u1ea1m vi l\u00e0m m\u00e1t l\u1edbn t\u1eeb 50 - 65 m2.Dung t\u00edch b\u00ecnh ch\u1ee9a l\u1edbn 108 l\u00edt, th\u1eddi gian s\u1eed d\u1ee5ng h\u01a1n 16 ti\u1ebfng.Thang \u0111o hi\u1ec3n th\u1ecb m\u1ef1c n\u01b0\u1edbc, ti\u1ec7n quan s\u00e1t v\u00e0 ch\u00e2m n\u01b0\u1edbc.B\u1ea3ng \u0111i\u1ec1u khi\u1ec3n hi\u1ec7n \u0111\u1ea1i, t\u00f9y ch\u1ec9nh c\u00e1c ch\u1ee9c n\u0103ng.\u0110i\u1ec1u khi\u1ec3n t\u1eeb xa t\u00f9y ch\u1ec9nh ch\u1ee9c n\u0103ng kh\u00f4ng c\u1ea7n l\u1ea1i g\u1ea7n.",
         "origin": "Trung Qu\u1ed1c"
+    },
+    {
+        "id": "22",
+        "name": "Qu\u1ea1t tr\u1ea7n 5 c\u00e1nh Panasonic",
+        "description": "Qu\u1ea1t tr\u1ea7n Panasonic F-60WWK thi\u1ebft k\u1ebf tinh t\u1ebf, hi\u1ec7n \u0111\u1ea1i, s\u1eed d\u1ee5ng \u0111\u1ed9ng c\u01a1 b\u1ea1c \u0111\u1ea1n c\u00f3 \u0111\u1ed9 b\u1ec1n cao, c\u00f4ng su\u1ea5t ho\u1ea1t \u0111\u1ed9ng 76W, 5 c\u00e1nh qu\u1ea1t l\u00e0m m\u00e1t hi\u1ec7u qu\u1ea3 cho kh\u00f4ng gian l\u1edbn.",
+        "price": "4.990.000",
+        "image": "quat-tran-3-canh-coex-ccf---7113a-co-dieu-khien_87629938.png",
+        "brand": "Panasonic",
+        "type": "Qu\u1ea1t tr\u1ea7n",
+        "power": "76",
+        "speed": "5",
+        "highlight": "Thi\u1ebft k\u1ebf 5 c\u00e1nh qu\u1ea1t c\u00f3 \u0111\u01b0\u1eddng k\u00ednh 150 cm t\u1ea1o ra l\u00e0n gi\u00f3 m\u00e1t tr\u1ea3i r\u1ed9ng gi\u00fap xua tan kh\u00f4ng kh\u00ed oi b\u1ee9c trong ph\u00f2ng nhanh ch\u00f3ng. \r\nM\u1eabu qu\u1ea1t tr\u1ea7n n\u00e0y \u0111\u01b0\u1ee3c t\u00edch h\u1ee3p \u0111\u1ed9ng c\u01a1 b\u1ea1c \u0111\u1ea1n s\u1eed d\u1ee5ng b\u1ec1n b\u1ec9, v\u00f2ng bi tr\u01a1n b\u00f4i v\u0129nh vi\u1ec5n cho thi\u1ebft b\u1ecb ho\u1ea1t \u0111\u1ed9ng \u00eam \u00e1i, h\u1ea1n ch\u1ebf ti\u1ebfng \u1ed3n, kh\u00f4ng \u1ea3nh h\u01b0\u1edfng \u0111\u1ebfn ho\u1ea1t \u0111\u1ed9ng sinh ho\u1ea1t th\u01b0\u1eddng nh\u1eadt c\u1ee7a gia \u0111\u00ecnh.",
+        "origin": "Malaysia"
     }
 ];

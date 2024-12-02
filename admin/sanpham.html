@@ -236,39 +236,44 @@
 							<form id="productForm">
 								<!-- Loại bỏ trường ID -->
 								<label for="name">Tên Sản Phẩm:</label>
-								<input type="text" id="name" name="name" required>
+								<input type="text" id="name" name="name" required placeholder="Nhập tên sản phẩm">
 							
 								<label for="description">Mô Tả:</label>
-								<textarea id="description" name="description" required style="width:100%;"></textarea>
+								<textarea id="description" name="description" required style="width:100%;font-size:15px;" placeholder="Nhập mô tả sản phẩm"></textarea>
 							
 								<label for="price" class="spacejam">Giá:</label>
-								<input type="number" id="price" name="price" required min="0">
+								<input type="number" id="price" name="price" required min="0" placeholder="Nhập giá sản phẩm">
 							
 								<label for="image">Hình Ảnh:</label>
 								<input type="file" id="image" name="image" accept="image/*" required>
 							
 								<label for="brand">Hãng:</label>
-								<input type="text" id="brand" name="brand" required>
+								<input type="text" id="brand" name="brand" required placeholder="Nhập hãng">
 							
 								<label for="type">Loại:</label>
-					<select id="type" name="type" required>
-						<option value="Quạt lửng">Quạt Lửng</option>
-						<option value="Quạt trần">Quạt Trần</option>
-						<option value="Quạt hơi nước">Quạt Hơi Nước</option>
+					<select id="type" name="type" required style="font-size: 15px;">
+						<option value="Quạt lửng">Quạt lửng</option>
+						<option value="Quạt trần">Quạt trần</option>
+						<option value="Quạt hơi nước">Quạt hơi nước</option>
 					</select>
 					
 							
 								<label for="power" class="spacejam">Công Suất:</label>
-								<input type="number" id="power" name="power" required min="0">
-							
-								<label for="speed">Tốc Độ:</label>
-								<input type="number" id="speed" name="speed" required min="0">
-							
-								<label for="highlight">Nổi Bật:</label>
-								<textarea id="highlight" name="highlight" required style="width:100%;"></textarea>
+								<input type="number" id="power" name="power" required min="0" placeholder="Công suất">
+
+								<label for="speed">Tốc độ:</label>
+								<select name="speed" id="speed" style="font-size: 15px;">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+								<label for="highlight" class="noibat_la">Nổi Bật:</label>
+								<textarea id="highlight" name="highlight" required style="width:100%;font-size: 15px;" placeholder="Điểm nổi bật"></textarea>
 							
 								<label for="origin" class="spacejam">Xuất Xứ:</label>
-								<input type="text" id="origin" name="origin" required>
+								<input type="text" id="origin" name="origin" required placeholder="Xuất xứ của sản phẩm">
 							
 								<input type="submit" value="Thêm Sản Phẩm">
 							</form>        
@@ -290,14 +295,14 @@
 							<table id="productTable" class="table_desktop">
 								<thead>
 									<tr>
-										<th style="width:30px;">ID</th>
-										<th>Tên</th>
-										<th style="max-width:130px;">Mô Tả</th>
-										<th style="width:80px;">Giá</th>
-										<th style="max-width:100px;">Hình Ảnh</th>
-										<th style="width:100px;">Hãng</th>
-										<th>Loại</th>
-										<th>Hành Động</th>
+										<th style="width:30px;border-top-left-radius: 5px;">ID</th>
+										<th style="text-align: center;">Tên</th>
+										<th style="max-width:130px;text-align: center;">Mô Tả</th>
+										<th style="width:80px;text-align: center;">Giá</th>
+										<th style="max-width:100px;text-align: center;">Hình Ảnh</th>
+										<th style="width:100px;text-align: center;">Hãng</th>
+										<th style="text-align: center;">Loại</th>
+										<th style="border-top-right-radius: 5px;text-align: center;">Hành Động</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -312,7 +317,6 @@
 					
 						<div id="editProductModal" class="modal">
 							<div class="modal-content">
-								<h4>Sửa Sản Phẩm</h4>
 								<form id="editProductForm" action="update_product.php" method="POST" enctype="multipart/form-data">
 									<div class="display_product">
 										<div class="left-section">
@@ -349,9 +353,14 @@
 											<input type="number" id="editPower" name="editPower" min="1">
 						
 											<label for="editSpeed">Tốc Độ:</label>
-											<input type="number" id="editSpeed" name="editSpeed" min="1">
-											
-											<label for="editHighlight">Nổi Bật:</label>
+											<select name="editSpeed" id="editSpeed">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+											</select>
+											<label for="editHighlight" class="noibat_la">Nổi Bật:</label>
 											<textarea id="editHighlight" name="editHighlight"></textarea>
 						
 											<label for="editOrigin">Xuất Xứ:</label>
@@ -477,8 +486,8 @@
             <td class="description" style="font-size:15px";>${product.description}</td>
             <td style="font-size:15px";>${product.price}</td>
             <td style="width:120px";><img src="../assets/Images/products/${product.image}" alt="${product.name}" width="100"></td>
-            <td style="font-size:15px";>${product.brand}</td>
-            <td style="font-size:15px";>${product.type}</td>
+            <td style="font-size:15px;text-align: center";>${product.brand}</td>
+            <td style="font-size:15px;text-align: center";>${product.type}</td>
             <td class="btn-delete-edit">
                 <button class="edit-btn" onclick="editProduct('${product.id}')">Sửa</button>
                 <button class="delete-btn" onclick="deleteProduct('${product.id}')">Xóa</button>
