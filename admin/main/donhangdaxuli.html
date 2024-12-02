@@ -53,14 +53,13 @@
 
           <div class="profile clearfix">
             <div class="profile_pic">
-              <img src="../images/bed488561c6ab56101466edec05c5b16.jpg" alt="..." class="img-circle profile_img">
+              <img src="../images/admin1.jpg" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
               <span>Xin chào ,</span>
-              <h2>Mạnh Dũng Đz</h2>
+              <h2 id="username-display1">admin</h2>
             </div>
           </div>
-
           <!-- /menu profile quick info -->
 
           <br />
@@ -120,11 +119,12 @@
 
             <ul class=" navbar-right">
 
-
               <li class="nav-item dropdown open" style="padding-left: 15px;">
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                   data-toggle="dropdown" aria-expanded="false">
-                  <img src="../images/bed488561c6ab56101466edec05c5b16.jpg" alt="">Mạnh Dũng
+                  <img src="../images/admin1.jpg" alt="">
+                  <span id="username-display"></span>
+
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="javascript:;"> Profile</a>
@@ -132,6 +132,7 @@
                   <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                 </div>
               </li>
+
             </ul>
           </nav>
         </div>
@@ -207,7 +208,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="billModalLabel">Chi tiết đơn hàng</h5>
-          <button type="button" class="btn btn-close btn-light btn-outline-danger" data-bs-dismiss="modal" aria-label="Close">X</button>
+          <button type="button" class="btn btn-close btn-light btn-outline-danger" data-bs-dismiss="modal"
+            aria-label="Close">X</button>
         </div>
         <div class="modal-body" id="modalContent">
           <!-- Chi tiết đơn hàng sẽ được hiển thị tại đây -->
@@ -229,6 +231,16 @@
     <div class="clearfix"></div>
     <div id="notif-group" class="tabbed_notifications"></div>
   </div>
+  <script>
+    // Kiểm tra và hiển thị tên người dùng từ localStorage
+    window.onload = function () {
+      var username = localStorage.getItem('username');
+      if (username) {
+        document.getElementById('username-display').textContent = username;
+        document.getElementById('username-display1').textContent = username; // Cập nhật tên người dùng
+      }
+    }
+  </script>
 
 
   <script src="../vendors/jquery/dist/jquery.min.js"></script>

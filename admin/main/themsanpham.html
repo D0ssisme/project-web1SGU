@@ -60,11 +60,11 @@
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_pic">
-              <img src="../images/bed488561c6ab56101466edec05c5b16.jpg" alt="..." class="img-circle profile_img">
+              <img src="../images/admin1.jpg" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
               <span>Xin chào ,</span>
-              <h2>Mạnh Dũng Đz</h2>
+              <h2 id="username-display1">admin</h2>
             </div>
           </div>
           <!-- /menu profile quick info -->
@@ -110,7 +110,7 @@
 
           <!-- /menu footer buttons -->
           <div class="sidebar-footer hidden-small">
-           
+
             <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
               <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
@@ -130,11 +130,13 @@
               <li class="nav-item dropdown open" style="padding-left: 15px;">
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                   data-toggle="dropdown" aria-expanded="false">
-                  <img src="../images/bed488561c6ab56101466edec05c5b16.jpg" alt="">Mạnh Dũng
+                  <img src="../images/admin1.jpg" alt="">
+                  <span id="username-display"></span>
+
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="javascript:;"> Profile</a>
-                 
+
                   <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                 </div>
               </li>
@@ -215,15 +217,24 @@
 
       <!-- footer content -->
       <footer>
-				<div class="pull-right">
-					<a href="#">From onlyfans with love</a> 
-				</div>
-				<div class="clearfix"></div>
-			</footer>
+        <div class="pull-right">
+          <a href="#">From onlyfans with love</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
       <!-- /footer content -->
     </div>
   </div>
-
+  <script>
+    // Kiểm tra và hiển thị tên người dùng từ localStorage
+    window.onload = function () {
+      var username = localStorage.getItem('username');
+      if (username) {
+        document.getElementById('username-display').textContent = username;
+        document.getElementById('username-display1').textContent = username; // Cập nhật tên người dùng
+      }
+    }
+  </script>
   <!-- jQuery -->
   <script src="../vendors/jquery/dist/jquery.min.js"></script>
   <!-- Bootstrap -->
