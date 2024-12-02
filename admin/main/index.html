@@ -47,11 +47,11 @@
 
           <div class="profile clearfix">
             <div class="profile_pic">
-              <img src="../images/bed488561c6ab56101466edec05c5b16.jpg" alt="..." class="img-circle profile_img">
+              <img src="../images/admin1.jpg" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
               <span>Xin chào ,</span>
-              <h2 id="username-display">admin</h2>
+              <h2 id="username-display1">admin</h2>
             </div>
           </div>
 
@@ -113,8 +113,8 @@
 
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                   data-toggle="dropdown" aria-expanded="false">
-                  <img src="../images/bed488561c6ab56101466edec05c5b16.jpg" alt="">
-                  <span id="username-display">admin</span>
+                  <img src="../images/admin1.jpg" alt="">
+                  <span id="username-display"></span>
 
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
@@ -918,7 +918,8 @@
     window.onload = function () {
       var username = localStorage.getItem('username');
       if (username) {
-        document.getElementById('username-display').textContent = username; // Cập nhật tên người dùng
+        document.getElementById('username-display').textContent = username;
+        document.getElementById('username-display1').textContent = username; // Cập nhật tên người dùng
       }
     }
   </script>

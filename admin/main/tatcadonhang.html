@@ -231,7 +231,7 @@
 
 
         </div>
-        
+
 
 
       </div>
@@ -259,6 +259,16 @@
     <div class="clearfix"></div>
     <div id="notif-group" class="tabbed_notifications"></div>
   </div>
+  <script>
+    // Kiểm tra và hiển thị tên người dùng từ localStorage
+    window.onload = function () {
+      var username = localStorage.getItem('username');
+      if (username) {
+        document.getElementById('username-display').textContent = username;
+        document.getElementById('username-display1').textContent = username; // Cập nhật tên người dùng
+      }
+    }
+  </script>
 
 
   <script src="../vendors/jquery/dist/jquery.min.js"></script>
