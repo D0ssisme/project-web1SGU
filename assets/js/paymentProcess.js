@@ -1,6 +1,9 @@
-// Hàm tìm người dùng qua số điện thoại (sdt)
 const phoneNum = localStorage.getItem('sdt'); // Lấy số điện thoại từ localStorage
-console.log('Sdt', phoneNum);
+let paymentMethod = ''; // Biến kiểm tra phương thức thanh toán
+
+console.log('Sdt:', phoneNum);
+
+// Hàm tìm người dùng qua số điện thoại
 function findUserByPhone(phoneNumber) {
     fetch('../../user.json')
         .then(response => {
@@ -10,30 +13,11 @@ function findUserByPhone(phoneNumber) {
             return response.json();
         })
         .then(users => {
-            // Tìm người dùng với số điện thoại chính xác
             const user = users.find(usr => usr.sdt === phoneNumber);
 
             if (user) {
-                // Nếu tìm thấy người dùng, hiển thị thông tin vào các ô input
-                document.getElementById('username').value = user.sdt; // Hiển thị số điện thoại
-                document.getElementById('username2').value = user.sdt; // Hiển thị số điện thoại
-                document.getElementById('email').value = user.email || ''; // Giả sử có email hoặc để trống
-                document.getElementById('address').value = user.address || ''; // Hiển thị địa chỉ
-
-                console.log('Thông tin người dùng:', user); // In ra để kiểm tra thông tin người dùng
-
-                const billUser = document.getElementById('billUsername');
-                billUser.innerHTML = document.getElementById('username').value;
-
-
-                //  // Lắng nghe sự kiện thay đổi giá trị email và phone và cập nhật thông tin hóa đơn
-                //  document.getElementById('email').addEventListener('input', function () {
-                //      billEmail.innerHTML = document.getElementById('email').value;
-                //  });
-
-                //  document.getElementById('address').addEventListener('input', function () {
-                //      billAddress.innerHTML = document.getElementById('address').value;
-                //  });
+                updateUserInputs(user);
+                console.log('Thông tin người dùng:', user);
             } else {
                 alert('Không tìm thấy người dùng này!');
             }
@@ -43,138 +27,153 @@ function findUserByPhone(phoneNumber) {
         });
 }
 
-// Giả sử người dùng đã đăng nhập và bạn có số điện thoại
-findUserByPhone(phoneNum); // Tìm người dùng theo số điện thoại và cập nhật thông tin
+// Cập nhật thông tin vào các ô input
+function updateUserInputs(user) {
+    document.getElementById('username').value = user.sdt || '';
+    // document.getElementById('username2').value = user.sdt || '';
+    document.getElementById('email').value = user.email || '';
+    document.getElementById('address').value = user.address || '';
+    document.getElementById('billUsername').innerHTML = user.sdt || '---';
+}
 
 // Lưu thông tin người dùng vào localStorage
 function saveUserInfo() {
-    const userId = document.getElementById('username').value;  // Lấy userId
-    const email = document.getElementById('email').value || document.getElementById('email2').value;  // Lấy email từ cả 2 modal
-    const address = document.getElementById('address2').value || document.getElementById('address').value;  // Lấy địa chỉ từ cả 2 modal
-
-    // Lấy dữ liệu người dùng từ localStorage
-    const users = JSON.parse(localStorage.getItem('users')) || {}; 
+    const userId = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const address = document.getElementById('address').value;
 
     if (userId) {
-        // Lưu email và address vào localStorage
+        const users = JSON.parse(localStorage.getItem('users')) || {};
         users[userId] = { email, address };
-        localStorage.setItem('users', JSON.stringify(users));  // Cập nhật localStorage
+        localStorage.setItem('users', JSON.stringify(users));
     }
 }
 
-
-// Tải dữ liệu người dùng vào các modal khi mở
+// Tải thông tin người dùng vào modal
 function loadUserInfo() {
-    const userId = document.getElementById('username').value;  // Lấy userId từ input
-    const users = JSON.parse(localStorage.getItem('users')) || {};  // Lấy dữ liệu người dùng từ localStorage
-    const userInfo = users[userId] || {};  // Lấy thông tin người dùng từ localStorage, nếu không có thì sử dụng giá trị mặc định
+    const userId = document.getElementById('username').value;
+    const users = JSON.parse(localStorage.getItem('users')) || {};
+    const userInfo = users[userId] || {};
 
-    // Điền thông tin vào ô input của cả 2 modal
     document.getElementById('email').value = userInfo.email || '';
     document.getElementById('address').value = userInfo.address || '';
     document.getElementById('email2').value = userInfo.email || '';
     document.getElementById('address2').value = userInfo.address || '';
 }
 
-// Khi modal được mở, tải dữ liệu người dùng
-document.getElementById('cash').addEventListener('show.bs.modal', loadUserInfo);
-document.getElementById('cashBanking').addEventListener('show.bs.modal', loadUserInfo);
-
-
-// Lấy dữ liệu người dùng từ localStorage và hiển thị ở billModal
+// Tải thông tin vào modal hóa đơn
 function loadUserInfoForBillModal() {
-    const userId = document.getElementById('username').value;  // Lấy userId từ input
-    const users = JSON.parse(localStorage.getItem('users')) || {};  // Lấy dữ liệu người dùng từ localStorage
-    const userInfo = users[userId] || {};  // Lấy thông tin người dùng từ localStorage, nếu không có thì sử dụng giá trị mặc định
+    const userId = document.getElementById('username').value;
+    const users = JSON.parse(localStorage.getItem('users')) || {};
+    const userInfo = users[userId] || {};
 
-    // Hiển thị thông tin vào div hóa đơn (billModal)
     document.getElementById('billEmail').textContent = userInfo.email || '---';
     document.getElementById('billAddress').textContent = userInfo.address || '---';
 }
 
-// Khi modal hóa đơn được mở, tải thông tin người dùng
-document.getElementById('billModal').addEventListener('show.bs.modal', loadUserInfoForBillModal);
+//Xử lý nhập liệu form cập nhật thông tin người dùng trước khi thanh toán
+//Hàm kiểm tra định dạng email
+function validateEmail(email) {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+}
+
+// Hàm kiểm tra địa chỉ
+function validateAddress(address) {
+    return address.trim().length >= 5; // Địa chỉ tối thiểu 5 ký tự
+}
 
 
+// Xử lý thanh toán và hiển thị hóa đơn
+function confirmPayment() {
+    const email = document.getElementById('email').value;
+    const address = document.getElementById('address').value;
 
-// Xác nhận thanh toán bằng tiền mặt
-document.getElementById('confirmPayment').addEventListener('click', function () {
-    saveUserInfo();  // Lưu thông tin người dùng
-    createAndSaveInvoice();  // Xử lý hóa đơn
+    // Kiểm tra email
+    if (!validateEmail(email)) {
+        alert('Vui lòng nhập email hợp lệ (ví dụ: example@gmail.com)');
+        return;
+    }
 
-    // Đóng modal và hiển thị modal hóa đơn
-    const cashModal = bootstrap.Modal.getInstance(document.getElementById('cash'));
-    cashModal.hide();
+    // Kiểm tra địa chỉ
+    if (!validateAddress(address)) {
+        alert('Địa chỉ phải có ít nhất 5 ký tự!');
+        return;
+    }
+
+    // Lưu thông tin và tiếp tục thanh toán
+    saveUserInfo();
+    createAndSaveInvoice();
+
+    if (paymentMethod == 'bankMe') {
+        const cashModal = bootstrap.Modal.getInstance(document.getElementById('cash'));
+        cashModal.hide();
+
+        const qrModal = new bootstrap.Modal(document.getElementById('qr-image'));
+        qrModal.show();
+    }
+    else {
+        const cashModal = bootstrap.Modal.getInstance(document.getElementById('cash'));
+        cashModal.hide();
+
+        const billModal = new bootstrap.Modal(document.getElementById('billModal'));
+        billModal.show();
+
+        clearCart();
+        renderCart();
+    }
+
+}
+
+//Thanh toán bằng chuyển khoản
+document.getElementById('finalConfirm').addEventListener('click', function () {
+    const qrModal = bootstrap.Modal.getInstance(document.getElementById('qr-image'));
+    qrModal.hide();
+
     const billModal = new bootstrap.Modal(document.getElementById('billModal'));
     billModal.show();
 
-    
-    // Xóa giỏ hàng sau khi xác nhận
-    cart = []; // Làm rỗng mảng giỏ hàng
-    localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật localStorage
-
-    // Làm mới giao diện giỏ hàng
+    clearCart();
     renderCart();
-});
+})
 
-// Xác nhận thanh toán bằng chuyển khoản
-document.getElementById('confirmPayment2').addEventListener('click', function () {
-    saveUserInfo();  // Lưu thông tin người dùng
-    createAndSaveInvoice();  // Xử lý hóa đơn
+// Xóa giỏ hàng
+function clearCart() {
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
-    // Đóng modal và hiển thị QR modal
-    const cashModal = bootstrap.Modal.getInstance(document.getElementById('cashBanking'));
-    cashModal.hide();
-    const qrImage = new bootstrap.Modal(document.getElementById('qr-image'));
-    qrImage.show();
-});
-
-
-
-
+// Tạo hóa đơn và lưu trữ
 function createAndSaveInvoice() {
     const billProducts = document.getElementById('billProducts');
-    const userId = document.getElementById('username').value; // Lấy user id
-    const emailInput = document.getElementById('email').value; // Lấy email
-    const addressInput = document.getElementById('address').value; // Lấy địa chỉ
+    const userId = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const address = document.getElementById('address').value;
 
-    // Tạo danh sách sản phẩm từ giỏ hàng
-    let currentInvoice = {};
     const productList = cart.map(item => {
         const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
         const itemTotal = item.quantity * priceNumber;
-        return {
-            name: item.name,
-            id: item.id,
-            quantity: item.quantity,
-            total: itemTotal,
-        };
+        return { name: item.name, id: item.id, quantity: item.quantity, total: itemTotal };
     });
 
-    // Tạo hóa đơn hiện tại
-    const total = cart.reduce((sum, item) => {
-        const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
-        return sum + item.quantity * priceNumber;
-    }, 0);
+    const total = productList.reduce((sum, item) => sum + item.total, 0);
 
-    currentInvoice = {
-        id: `HD-${Date.now()}`, // Tạo mã hóa đơn duy nhất
+    const invoice = {
+        id: `HD-${Date.now()}`,
         products: productList,
-        total: total,
-        date: new Date().toLocaleString(), // Thời gian tạo hóa đơn
-        status: 'Chưa xử lý', // Trạng thái hóa đơn mới là "Chưa xử lý"
-        userId: userId || '---', // Thêm user id
-        email: emailInput || '---', // Thêm email
-        address: addressInput || '---', // Thêm địa chỉ
+        total,
+        date: new Date().toLocaleString(),
+        status: 'Chưa xử lý',
+        userId: userId || '---',
+        email: email || '---',
+        address: address || '---',
     };
 
-    // Lưu hóa đơn vào localStorage
     const invoices = JSON.parse(localStorage.getItem('invoices')) || [];
-    invoices.push(currentInvoice);
+    invoices.push(invoice);
     localStorage.setItem('invoices', JSON.stringify(invoices));
 
-    // Hiển thị danh sách sản phẩm vào `billProducts`
-    const productHtml = productList.map(item => `
+    billProducts.innerHTML = productList.map(item => `
         <div class="d-flex justify-content-between my-3 bg-secondary-subtle p-4 rounded">
             <div>
                 <h6>${item.name}</h6>
@@ -185,82 +184,35 @@ function createAndSaveInvoice() {
         </div>
     `).join('');
 
-    billProducts.innerHTML = `
-        <div>
-            <h4 class="text-primary mb-3">Danh sách sản phẩm</h4>
-            ${productHtml}
-        </div>
-    `;
-
-    // Hiển thị tổng tiền
-    document.getElementById('billTotal').textContent = currentInvoice.total ? `${currentInvoice.total.toLocaleString()} VNĐ` : '0 VND';
-
+    document.getElementById('billTotal').textContent = `${total.toLocaleString()} VNĐ`;
 }
 
+// Sự kiện
+document.getElementById('cash').addEventListener('show.bs.modal', loadUserInfo);
+document.getElementById('billModal').addEventListener('show.bs.modal', loadUserInfoForBillModal);
+document.getElementById('confirmPayment').addEventListener('click', confirmPayment);
 
-
-
-
-document.getElementById("finalConfirm").addEventListener('click', function () {
-    const qrImage = bootstrap.Modal.getInstance(document.getElementById('qr-image'));
-    qrImage.hide();
-    const billModal = new bootstrap.Modal(document.getElementById('billModal'));
-    billModal.show();
-    const checkbox = document.getElementById('termsCheckbox');
-
-    if (!checkbox.checked) {
-        alert('Vui lòng đồng ý với các chính sách và điều khoản trước khi tiếp tục.');
-        return;
-    }
-
-    // Tiếp tục xử lý khi checkbox được chọn
-    console.log('Người dùng đã xác nhận điều khoản.');
-
-    // Xóa giỏ hàng sau khi xác nhận
-    cart = []; // Làm rỗng mảng giỏ hàng
-    localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật localStorage
-
-    // Làm mới giao diện giỏ hàng
-    renderCart();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
+// Khởi chạy khi tải trang
+document.addEventListener('DOMContentLoaded', () => {
     const checkbox = document.getElementById('termsCheckbox');
     const confirmButton = document.getElementById('finalConfirm');
+    confirmButton.disabled = true;
 
-    // Theo dõi sự kiện thay đổi trạng thái checkbox
-    checkbox.addEventListener('change', function () {
-        if (checkbox.checked) {
-            confirmButton.disabled = false; // Bật nút
-        } else {
-            confirmButton.disabled = true; // Tắt nút
-        }
+    checkbox.addEventListener('change', () => {
+        confirmButton.disabled = !checkbox.checked;
     });
 });
 
 
-// Lắng nghe sự kiện khi modal cash được mở
-const cashModal = document.getElementById('cash');
-cashModal.addEventListener('shown.bs.modal', function () {
-    const userId = document.getElementById('username').value; // Lấy user ID từ input
-
-    if (!userId) {
-        // Nếu không có userId, xóa các trường nhập
-        document.getElementById('email').value = '';
-        document.getElementById('address').value = '';
-        return;
-    }
-
-    // Lấy thông tin người dùng từ localStorage
-    const users = JSON.parse(localStorage.getItem('users')) || {};
-
-    if (users[userId]) {
-        // Nếu có thông tin người dùng, hiển thị vào các trường input
-        document.getElementById('email').value = users[userId].email || '';
-        document.getElementById('address').value = users[userId].address || '';
-    } else {
-        // Nếu không có thông tin, để trống các trường input
-        document.getElementById('email').value = '';
-        document.getElementById('address').value = '';
-    }
+//Kiểm tra phương thức thanh toán
+document.getElementById('payCashBtn').addEventListener('click', function () {
+    paymentMethod = 'cashMe';
 });
+
+document.getElementById('payBankBtn').addEventListener('click', function () {
+    paymentMethod = 'bankMe';
+})
+
+
+// Tìm người dùng theo số điện thoại
+findUserByPhone(phoneNum);

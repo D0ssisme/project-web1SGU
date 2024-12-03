@@ -109,10 +109,11 @@
 
             <div id="payment-button">
                 <button type="button" class="btn btn-primary me-5 px-4 py-3 fs-5" id="payBankBtn" data-bs-toggle="modal"
-                    data-bs-target="#cashBanking">Thanh toán bằng chuyển khoản</button>
+                    data-bs-target="#cash">Thanh toán bằng chuyển khoản</button>
                 <button type="button" class="btn btn-primary me-5 px-4 py-3 fs-5" id="payCashBtn" data-bs-toggle="modal"
                     data-bs-target="#cash">Thanh toán khi nhận hàng</button>
             </div>
+
             <!-- Modal thanh toán bằng chuyển khoản -->
             <div class="modal fade mt-5" id="qr-image" tabindex="-1" aria-labelledby="qe-image1" aria-hidden="true">
                 <div class="modal-dialog">
@@ -128,72 +129,25 @@
                         <!-- Modal Footer -->
                         <div class="modal-footer justify-content-between">
                             <div class="form-check align-items-center">
-                                <input class="form-check-input border border-info mx-2" type="checkbox" id="termsCheckbox" style="width:12px; height:12px; transform:scale(1.5);">
+                                <input class="form-check-input border border-info mx-2" type="checkbox"
+                                    id="termsCheckbox" style="width:12px; height:12px; transform:scale(1.5);">
                                 <label class="form-check-label fs-4 ms-2" for="termsCheckbox">
                                     Tôi xác nhận đã thanh toán
                                 </label>
                             </div>
                             <div>
-                                <button type="button" class="btn btn-secondary fs-4" data-bs-dismiss="modal">Đóng</button>
-                                <button type="submit" class="btn btn-primary fs-4" id="finalConfirm" disabled>Xác nhận</button>
+                                <button type="button" class="btn btn-secondary fs-4"
+                                    data-bs-dismiss="modal">Đóng</button>
+                                <button type="submit" class="btn btn-primary fs-4" id="finalConfirm" disabled>Xác
+                                    nhận</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
 
-            <!-- Cập nhật thông tin người dùng trước khi thanh toán bằng chuyển khoản -->
-            <div class="modal fade" id="cashBanking" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <!-- Modal Header -->
-                        <div class="modal-header p-4">
-                            <h1 class="modal-title fs-2" id="exampleModalLabel">Cập nhật thông tin</h1>
-                            <button type="button" class="btn-close fs-3" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <!-- Modal Body -->
-                        <div class="modal-body fs-4 p-4">
-                            <div class="input-group mb-3">
-                                <label for="username2" class="form-label">Tài khoản</label>
-                                <div class="input-group">
-                                    <input id="username2" type="text" class="form-control mx-1" aria-label="Username"
-                                        disabled>
-                                </div>
-                            </div>
-
-                            <div class="input-group mb-3">
-                                <label for="email2" class="form-label">Email </label>
-                                <div class="input-group">
-                                    <input id="email2" type="email" class="form-control mx-1" aria-label="email"
-                                        placeholder="Email của bạn">
-                                </div>
-                            </div>
-
-                            <div class="input-group mb-3">
-                                <label for="address2" class="form-label">Địa chỉ </label>
-                                <div class="input-group">
-                                    <input id="address2" type="text" class="form-control mb-3" aria-label="address"
-                                        placeholder="Nhập địa chỉ của bạn!" required>
-                                </div>
-                            </div>
-
-                            <div class="input-group my-3">
-                                <span class="input-group-text">Lời nhắn</span>
-                                <textarea class="form-control" id="message" aria-label="With textarea"></textarea>
-                            </div>
-                        </div>
-                        <!-- Modal Footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary fs-4" data-bs-dismiss="modal">Đóng</button>
-                            <button type="submit" class="btn btn-primary fs-4" id="confirmPayment2">Xác nhận</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cập nhật thông tin người dùng trước khi thanh toán bằng tiền mặt -->
+            <!-- Cập nhật thông tin người dùng trước khi thanh toán -->
             <div class="modal fade" id="cash" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -277,11 +231,9 @@
                     </div>
                 </div>
             </div>
-
-
-
     </main>
 
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="grid">
