@@ -20,9 +20,6 @@ function closeFormOutside() {
 }
 
 
-window.onload = function () {
-    checkLoginStatus(); // Kiểm tra trạng thái đăng nhập khi trang tải xong
-};
 
 
 function checkLoginStatus() {
@@ -45,7 +42,7 @@ function checkLoginStatus() {
                     document.getElementById('dropdown-menu').style.display = 'none';
                     document.getElementById('logout-button').style.display = 'block';
                     document.getElementById('account-link').removeAttribute('onclick');
-                    document.getElementById('account-').removeAttribute('onclick');
+
 
                     document.getElementById('account-button').onmouseover = function () {
                         document.getElementById('dropdown-menu').style.display = 'block';
@@ -54,17 +51,13 @@ function checkLoginStatus() {
                         document.getElementById('dropdown-menu').style.display = 'none';
                     };
 
-                    document.getElementById('account-').onmouseover = function () {
-                        document.getElementById('dropdown-menu').style.display = 'block';
-                    };
-                    document.getElementById('account-').onmouseout = function () {
-                        document.getElementById('dropdown-menu').style.display = 'none';
-                    };
+
                 }
             })
             .catch(error => {
                 console.error("Lỗi khi tải file JSON:", error);
             });
+
     } else {
         document.getElementById('account-link').innerHTML = '<a href="#" onclick="showForm(\'login\')">Tài Khoản</a>';
         document.getElementById('dropdown-menu').style.display = 'none';
@@ -77,14 +70,14 @@ function logout(event) {
     event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('username');
-   
+
     location.reload();
 }
 function logout1(event) {
     event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('username');
-  
+
     location.href = 'index.html'; // Chuyển hướng về trang index.html
 }
 
@@ -127,6 +120,7 @@ function checkformlogin() {
 
     // Kiểm tra các thông tin nhập vào
     if (sdtlogin === '') {
+        document.getElementById('sdt-error').innerText = "Vui lòng nhập vào số điện thoại!";
         document.getElementById('sdt-error').style.display = 'block';
         document.getElementById('sdtlogin').focus();
         return false;
@@ -157,7 +151,7 @@ function checkformlogin() {
         .then(users => {
             const user = users.find(usr => usr.sdt === sdtlogin && usr.password === passlogin);
             if (user) {
-               
+
                 localStorage.setItem('isLoggedIn', 'true');
                 localStorage.setItem('sdt', user.sdt);
                 closeFormOutside();
@@ -171,9 +165,9 @@ function checkformlogin() {
         })
         .catch(error => {
             console.error("Lỗi khi tải file JSON:", error);
-           
+
         });
-    document.getElementById("loginthanhcong").style.display = "flex";
+
 
 }
 
@@ -200,6 +194,10 @@ function openModal_dangkythanhcong() {
 function closeModal_loginthanhcong() {
     document.getElementById("loginthanhcong").style.display = "none";
 }
+window.onload = function () {
+    checkLoginStatus(); // Kiểm tra trạng thái đăng nhập khi trang tải xong
+};
+
 
 
 

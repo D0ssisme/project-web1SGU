@@ -67,7 +67,8 @@ function loadProduct() {
 
 
 window.onload = function () {
-    checkLoginStatus(); // Kiểm tra trạng thái đăng nhập khi trang tải xong
+    checkLoginStatus();
+     // Kiểm tra trạng thái đăng nhập khi trang tải xong
     loadProduct();
 };
 

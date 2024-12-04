@@ -9,19 +9,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Web admin onlyfans </title>
-
+  <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css">
   <!-- Bootstrap -->
-  <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
-  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- NProgress -->
-  <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+  <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
   <!-- iCheck -->
-  <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+  <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 
   <!-- Custom Theme Style -->
-  <link href="../build/css/custom.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="assets/css/custom.min.css" rel="stylesheet">
+
   <style>
     .color {
       color: #2679f3 !important;
@@ -72,7 +72,7 @@
           <div class="navbar nav_title">
             <div class="imglogo" style="padding-left: 20px;">
               <a href="index.html">
-                <img src="../images/favicon.png" alt="Logo" style="width: 30px; height: auto;">
+                <img src="assets/images/favicon.png" alt="Logo" style="width: 30px; height: auto;">
               </a>
             </div>
             <div style="padding-right:10px ; ">
@@ -87,7 +87,7 @@
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_pic">
-              <img src="../images/admin1.jpg" alt="..." class="img-circle profile_img">
+              <img src="assets/images/admin1.jpg" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
               <span>Xin chào ,</span>
@@ -108,7 +108,7 @@
                 <li><a href="index.html"><i class="fas fa-newspaper"></i> Bảng tin</a></li>
                 <li><a><i class="fas fa-box"></i> Quản lí sản phẩm <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="../sanpham.html">Tất cả sản phẩm </a></li>
+                    <li><a href="sanpham.html">Tất cả sản phẩm </a></li>
 
 
 
@@ -170,7 +170,7 @@
               <li class="nav-item dropdown open" style="padding-left: 15px;">
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                   data-toggle="dropdown" aria-expanded="false">
-                  <img src="../images/admin1.jpg" alt="">
+                  <img src="assets/images/admin1.jpg" alt="">
                   <span id="username-display"></span>
 
                 </a>
@@ -253,10 +253,10 @@
       <div class="right_col" role="main">
 
 
-        <div style="">
-          <h3 class="color" style="font-weight:500">Quản lý tải khoản</h3>
+        <div>
+          <h3 class="color" style="font-weight:500 ;">Quản lý tải khoản</h3>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Thêm tải khoản
+            Thêm tài khoản
           </button>
         </div>
         <div class="row" style="margin:4px 20px;">
@@ -508,24 +508,19 @@
     </div>
   </div>
 
-  <!-- jQuery -->
-  <script src="../vendors/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- FastClick -->
-  <script src="../vendors/fastclick/lib/fastclick.js"></script>
-  <!-- NProgress -->
-  <script src="../vendors/nprogress/nprogress.js"></script>
-  <!-- iCheck -->
-  <script src="../vendors/iCheck/icheck.min.js"></script>
+  <script src="vendors/jquery/dist/jquery.min.js"></script>
+  <script src="vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="vendors/fastclick/lib/fastclick.js"></script>
+  <script src="vendors/nprogress/nprogress.js"></script>
+  <script src="vendors/iCheck/icheck.min.js"></script>
 
-  <!-- Custom Theme Scripts -->
-  <script src="../build/js/custom.min.js"></script>
+
+  <script src="assets/js/custom.min.js"></script>
 </body>
 
 </html>
 <script>
-  // Kiểm tra và hiển thị tên người dùng từ localStorage
+
   window.onload = function () {
     var username = localStorage.getItem('username');
     if (username) {
