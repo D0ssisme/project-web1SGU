@@ -75,6 +75,14 @@ function logout(event) {
     alert('Bạn đã đăng xuất!');
     location.reload();
 }
+function logout1(event) {
+    event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+    alert('Bạn đã đăng xuất!');
+    location.href = 'index.html'; // Chuyển hướng về trang index.html
+}
+
 
 
 function toggleDropdown(event) {
