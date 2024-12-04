@@ -222,14 +222,36 @@
           <h3>Danh sách đơn hàng</h3>
         </div>
 
-        <!-- <div class="button" style="display: flex;">
-          <div class="button1"> <button type="button" class="btn btn-outline-success">Success</button></div>
-          <div class="button2"><button type="button" class="btn btn-outline-info">Info</button></div>
-          <div class="button3"><button type="button" class="btn btn-outline-primary">Primary</button></div>
-          <div class="button4"><button type="button" class="btn btn-outline-success">Success</button></div>
-          <div class="button5"><button type="button" class="btn btn-outline-secondary">Secondary</button></div>
+        <!-- Lọc theo ngày -->
+        <div class="mb-3 d-flex">
+          <div class="w-50 me-3">
+            <label for="startDate" class="form-label">Từ ngày</label>
+            <input type="date" id="startDate" class="form-control">
+          </div>
 
-        </div> -->
+          <div class="w-50">
+            <label for="endDate" class="form-label">Đến ngày</label>
+            <input type="date" id="endDate" class="form-control">
+          </div>
+        </div>
+        <button id="filterDate" class="btn btn-primary">Lọc</button>
+
+        <!-- Bảng đơn hàng -->
+        <table class="table table-bordered table-striped mt-3" style="border-width:2px">
+          <thead>
+            <tr>
+              <th class="sortable" data-column="id" data-order="asc" style="cursor: pointer;">Mã đơn</th>
+              <th class="sortable" data-column="date" data-order="asc" style="cursor: pointer;">Ngày</th>
+              <th>Chi tiết sản phẩm</th>
+              <th class="sortable" data-column="total" data-order="asc" style="cursor: pointer;">Tổng tiền</th>
+              <th>Trạng thái</th>
+              <th>Thao tác</th>
+              <th>Xem chi tiết</th>
+            </tr>
+          </thead>
+          <tbody id="invoiceTableBody"></tbody>
+        </table>
+
 
       </div>
 

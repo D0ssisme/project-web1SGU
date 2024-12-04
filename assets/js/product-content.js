@@ -54,7 +54,7 @@ function loadProduct() {
                     alert(`${product.name} đã được thêm vào giỏ hàng!`);
                 }
                 else {
-                    alert('Vui lòng đăng nhập trước khi mua hàng!');
+                  
                     showForm('login');
                     return;
                 }

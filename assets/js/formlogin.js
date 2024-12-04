@@ -2,9 +2,13 @@ function showForm(formType) {
     if (formType === 'register') {
         document.getElementById('registerForm').style.display = 'flex';
         document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('check').style.display = 'none';
+        document.getElementById('dangkythanhcong').style.display = 'none';
     } else if (formType === 'login') {
         document.getElementById('loginForm').style.display = 'flex';
         document.getElementById('registerForm').style.display = 'none';
+        document.getElementById('check').style.display = 'none';
+        document.getElementById('dangkythanhcong').style.display = 'none';
     }
 }
 
@@ -12,6 +16,7 @@ function showForm(formType) {
 function closeFormOutside() {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("registerForm").style.display = "none";
+
 }
 
 
@@ -72,14 +77,14 @@ function logout(event) {
     event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('username');
-    alert('Bạn đã đăng xuất!');
+   
     location.reload();
 }
 function logout1(event) {
     event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('username');
-    alert('Bạn đã đăng xuất!');
+  
     location.href = 'index.html'; // Chuyển hướng về trang index.html
 }
 
@@ -112,27 +117,31 @@ document.addEventListener('click', function (event) {
 
 
 
-
 function checkformlogin() {
     var sdtlogin = document.getElementById('sdtlogin').value;
     var passlogin = document.getElementById('passlogin').value;
 
+    // Ẩn các thông báo lỗi cũ
+    document.getElementById('sdt-error').style.display = 'none';
+    document.getElementById('pass-error').style.display = 'none';
+
     // Kiểm tra các thông tin nhập vào
     if (sdtlogin === '') {
-        alert("Vui lòng nhập vào số điện thoại");
+        document.getElementById('sdt-error').style.display = 'block';
         document.getElementById('sdtlogin').focus();
         return false;
     } else {
         var phonePattern = /^[0-9]+$/;
         if (!phonePattern.test(sdtlogin)) {
-            alert("Số điện thoại phải là số!");
+            document.getElementById('sdt-error').innerText = "Số điện thoại không hợp lệ !";
+            document.getElementById('sdt-error').style.display = 'block';
             document.getElementById('sdtlogin').focus();
             return false;
         }
     }
 
     if (passlogin === '') {
-        alert("Vui lòng nhập mật khẩu");
+        document.getElementById('pass-error').style.display = 'block';
         document.getElementById('passlogin').focus();
         return false;
     }
@@ -148,7 +157,7 @@ function checkformlogin() {
         .then(users => {
             const user = users.find(usr => usr.sdt === sdtlogin && usr.password === passlogin);
             if (user) {
-                alert("Đăng nhập thành công!");
+               
                 localStorage.setItem('isLoggedIn', 'true');
                 localStorage.setItem('sdt', user.sdt);
                 closeFormOutside();
@@ -157,19 +166,43 @@ function checkformlogin() {
                 // Tải lại trang sau khi đăng nhập thành công
                 location.reload();  // Tải lại trang để cập nhật giỏ hàng
             } else {
-                alert("Sai thông tin đăng nhập !");
+                document.getElementById('error').style.display = 'block';
             }
         })
         .catch(error => {
             console.error("Lỗi khi tải file JSON:", error);
-            alert("Đã xảy ra lỗi khi kiểm tra tài khoản.");
+           
         });
+    document.getElementById("loginthanhcong").style.display = "flex";
+
 }
+
 
 function closeFormOutside() {
     document.getElementById('loginForm').style.display = 'none';
     document.getElementById('registerForm').style.display = 'none';
+    document.getElementById('check').style.display = 'none';
+
+
 }
+
+function openModal() {
+    document.getElementById("check").style.display = "flex";
+}
+
+function openModal_dangkythanhcong() {
+    document.getElementById('registerForm').style.display = 'none';
+    document.getElementById("dangkythanhcong").style.display = "flex";
+
+}
+
+
+function closeModal_loginthanhcong() {
+    document.getElementById("loginthanhcong").style.display = "none";
+}
+
+
+
 
 
 

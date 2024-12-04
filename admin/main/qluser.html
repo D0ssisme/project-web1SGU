@@ -7,7 +7,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="./Images/png" href="/assets/Images/favicon.png">
 
   <title>Web admin onlyfans </title>
 
@@ -95,6 +94,7 @@
               <h2 id="username-display1">admin</h2>
             </div>
           </div>
+
           <!-- /menu profile quick info -->
 
           <br />
@@ -253,7 +253,7 @@
       <div class="right_col" role="main">
 
 
-        <div>
+        <div style="">
           <h3 class="color" style="font-weight:500">Quản lý tải khoản</h3>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Thêm tải khoản
@@ -280,16 +280,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr data-id="0">
                 <td>01</td>
                 <td>NguyenHuy</td>
 
                 <td>Nguyen Tuong Huy</td>
                 <td>TPHCM</td>
 
-                <td>nguyentuonghuy@gmail.com
+                <td>nguyentuonghuy@gmail.com</td>
                 <td>
-                  Khách hàng cao cấp
+                  Quản Lý
                 </td>
 
 
@@ -297,8 +297,8 @@
                   <!--                         
                                       <a href="" class="btn button"
                                           style="margin-left:10px;"><i class="fa-solid fa-user-lock"></i></a> -->
-                  <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;"
-                    data-target="#exampleModal2">
+                  <button type="button" class="btn btn-primary" data-id="0" data-toggle="modal"
+                    style="margin-left:10px;" data-target="#exampleModal2">
                     <i class="fa-solid fa-key"></i>
                   </button>
                   <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;"
@@ -309,74 +309,6 @@
                 </td>
 
               </tr>
-
-              <tr>
-                <td>02</td>
-                <td>Dinhhung</td>
-
-                <td>Nhu Dinh Hung</td>
-                <td>TPHCM</td>
-
-                <td>nhudinhhung@gmail.com
-                <td>
-                  Khách hàng
-                </td>
-
-
-                <td>
-
-                  <!--                         
-                                    <a href="" class="btn button"
-                                        style="margin-left:10px;"><i class="fa-solid fa-user-lock"></i></a> -->
-                  <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;"
-                    data-target="#exampleModal2">
-                    <i class="fa-solid fa-key"></i>
-                  </button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;"
-                    data-target="#exampleModal1">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                  </button>
-
-                </td>
-
-              </tr>
-
-
-
-
-
-
-              <tr>
-                <td>03</td>
-                <td>NguyenBao</td>
-
-                <td>Nguyen Nguyen Bao</td>
-                <td>TPHCM</td>
-
-                <td>nguyenbao@gmail.com
-                <td>
-                  Quản lý
-                </td>
-
-
-                <td>
-
-                  <!--                         
-                                    <a href="" class="btn button"
-                                        style="margin-left:10px;"><i class="fa-solid fa-user-lock"></i></a> -->
-                  <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;"
-                    data-target="#exampleModal2">
-                    <i class="fa-solid fa-key"></i>
-                  </button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;"
-                    data-target="#exampleModal1">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                  </button>
-
-
-
-
-
 
             </tbody>
           </table>
@@ -391,7 +323,7 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <form action="" method="POST">
+                <form id="myform" action="" method="POST">
 
                   <div class="modal-body">
                     <div class="row">
@@ -463,10 +395,10 @@
                   <div class="modal-body">
                     <div class="row">
                       <div class="col-md-12 mt">
-                        <label for="">Trạng thái người dùng</label>
+                        <label for="">Thay đổi trạng thái người dùng</label>
                         <select class="form-control" name="trangthai" required>
                           <option value="khóa">Khóa</option>
-                          <option value="Đang sử dụng">Đang sử dụng</option>
+                          <option value="Đang sử dụng">Mở khóa</option>
                         </select>
                       </div>
                     </div>
@@ -489,6 +421,8 @@
             </div>
           </div>
 
+
+          <!-- sua tai khoan -->
           <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
@@ -507,22 +441,22 @@
                       <div class="col-md-12">
                         <label for="">Tên người dùng</label>
                         <input type="text" class="form-control" placeholder="Nhập tên người dùng" name="tennguoidung"
-                          required>
+                          value="HuyNguyen" required>
                       </div>
                       <div class="col-md-12 mt">
                         <label for="">Họ tên</label>
                         <input type="text" class="form-control" placeholder="Nhập họ tên người dùng" name="hoten"
-                          required>
+                          value="Nguyen Tuong Huy" required>
                       </div>
                       <div class="col-md-12 mt">
                         <label for="">Địa chỉ</label>
                         <input type="text" class="form-control" placeholder="Nhập địa chỉ người dùng" name="address"
-                          required>
+                          value="TPHCM" required>
                       </div>
                       <div class="col-md-12 mt">
                         <label for="">Email</label>
                         <input type="email" class="form-control" placeholder="Nhập email người dùng" name="email"
-                          required>
+                          value="nguyentuonghuy@gmail.com" required>
                       </div>
                       <div class="col-md-12 mt">
                         <label for="">Password</label>
@@ -601,6 +535,233 @@
   }
 </script>
 
+
+
+<script>
+
+
+
+  document.querySelectorAll(".edit-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+      const rowIndex = this.getAttribute("data-id"); // Lấy chỉ mục hàng
+      const row = document.querySelector("tbody").rows[rowIndex]; // Tìm hàng dựa trên chỉ mục
+
+      // Lấy dữ liệu từng ô của hàng
+      const cells = row.querySelectorAll("td");
+      const tenNguoiDung = cells[1].textContent.trim();
+      const hoTen = cells[2].textContent.trim();
+      const diaChi = cells[3].textContent.trim();
+      const email = cells[4].textContent.trim();
+      const vaiTro = cells[5].textContent.trim();
+
+      // Điền dữ liệu vào form trong modal
+      document.querySelector("input[name='tennguoidung']").value = tenNguoiDung;
+      document.querySelector("input[name='hoten']").value = hoTen;
+      document.querySelector("input[name='address']").value = diaChi;
+      document.querySelector("input[name='email']").value = email;
+      document.querySelector("select[name='role_id']").value =
+        vaiTro === "Quản lý" ? "1" : vaiTro === "Nhân viên" ? "2" : vaiTro === "Khách hàng cao cấp" ? "4" : "3";
+
+      // Lưu chỉ mục hàng được sửa vào localStorage để sử dụng khi lưu lại
+      localStorage.setItem("editingRowIndex", rowIndex);
+    });
+  });
+
+
+
+  // Hàm hiển thị dữ liệu từ localStorage vào bảng
+  function populateTable() {
+    // Lấy dữ liệu tài khoản từ localStorage
+    const accountData = localStorage.getItem("accountInfo");
+
+    // Chuyển chuỗi JSON thành đối tượng (nếu dữ liệu tồn tại)
+    const account = accountData ? JSON.parse(accountData) : null;
+
+    // Kiểm tra nếu có dữ liệu
+    if (account) {
+      // Lấy tất cả các hàng trong bảng
+      const rows = document.querySelectorAll("tbody tr");
+
+      rows.forEach(row => {
+        const rowId = row.getAttribute("data-id"); // Lấy data-id của hàng
+
+        if (rowId == account.id) {  // Kiểm tra nếu data-id trùng với account.id
+          const cells = row.querySelectorAll("td");
+
+          // Gán dữ liệu vào các ô tương ứng
+          cells[1].textContent = account.tennguoidung || "N/A"; // Tên người dùng
+          cells[2].textContent = account.hoten || "N/A"; // Họ tên
+          cells[3].textContent = account.address || "N/A"; // Địa chỉ
+          cells[4].textContent = account.email || "N/A"; // Email
+          cells[5].textContent =
+            account.role_id == "1"
+              ? "Quản lý"
+              : account.role_id == "2"
+                ? "Nhân viên"
+                : account.role_id == "3"
+                  ? "Khách hàng"
+                  : "Khách hàng cao cấp"; // Vai trò
+        }
+      });
+    }
+  }
+
+
+
+
+
+  function updateFirstRow() {
+    // Lấy dữ liệu tài khoản từ localStorage
+    const accountData = localStorage.getItem("accountInfo");
+
+    // Chuyển chuỗi JSON thành đối tượng (nếu dữ liệu tồn tại)
+    const account = accountData ? JSON.parse(accountData) : null;
+
+    // Kiểm tra nếu có dữ liệu
+    if (account) {
+      // Tìm hàng thứ 1 trong bảng
+      const firstRow = document.querySelector("tbody").rows[0]; // Hàng thứ 1
+
+      if (firstRow) {
+        // Gán dữ liệu vào các ô tương ứng
+        const cells = firstRow.querySelectorAll("td");
+        cells[1].textContent = account.tennguoidung || "N/A"; // Tên người dùng
+        cells[2].textContent = account.hoten || "N/A"; // Họ tên
+        cells[3].textContent = account.address || "N/A"; // Địa chỉ
+        cells[4].textContent = account.email || "N/A"; // Email
+        cells[5].textContent =
+          account.role_id == "1"
+            ? "Quản lý"
+            : account.role_id == "2"
+              ? "Nhân viên"
+              : account.role_id == "3"
+                ? "Khách hàng"
+                : "Khách hàng cao cấp"; // Vai trò
+      } else {
+        console.log("Hàng thứ 1 không tồn tại!");
+      }
+    }
+  }
+
+  // Gọi hàm khi cần (ví dụ: khi trang tải)
+  document.addEventListener("DOMContentLoaded", updateFirstRow);
+
+
+
+
+
+
+
+
+
+
+  // Gọi hàm hiển thị dữ liệu khi tải trang
+  document.addEventListener("DOMContentLoaded", populateTable);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const accountForm = document.getElementById("accountForm");
+    const modal = document.getElementById("exampleModal1");
+
+    // Kiểm tra nếu có dữ liệu trong localStorage và điền vào form
+    modal.addEventListener("show.bs.modal", () => {
+      const savedAccount = JSON.parse(localStorage.getItem("accountInfo"));
+      if (savedAccount) {
+        accountForm.tennguoidung.value = savedAccount.tennguoidung || "";
+        accountForm.hoten.value = savedAccount.hoten || "";
+        accountForm.address.value = savedAccount.address || "";
+        accountForm.email.value = savedAccount.email || "";
+        accountForm.password.value = savedAccount.password || "";
+        accountForm.role_id.value = savedAccount.role_id || "1";
+      }
+    });
+
+    // Lưu dữ liệu vào localStorage khi submit form
+    accountForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const accountInfo = {
+        tennguoidung: accountForm.tennguoidung.value,
+        hoten: accountForm.hoten.value,
+        address: accountForm.address.value,
+        email: accountForm.email.value,
+        password: accountForm.password.value,
+        role_id: accountForm.role_id.value,
+      };
+
+      localStorage.setItem("accountInfo", JSON.stringify(accountInfo));
+
+      location.reload();
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Hàm cập nhật một hàng trong bảng
+  function updateRow(rowIndex) {
+    // Lấy dữ liệu tài khoản từ localStorage
+    const accountData = localStorage.getItem("accountInfo");
+
+    // Chuyển chuỗi JSON thành đối tượng (nếu dữ liệu tồn tại)
+    const account = accountData ? JSON.parse(accountData) : null;
+
+    // Kiểm tra nếu có dữ liệu
+    if (account) {
+      // Tìm hàng trong bảng dựa trên chỉ số hàng (rowIndex)
+      const table = document.querySelector("tbody");
+      const row = table.rows[rowIndex]; // Tìm hàng theo chỉ số
+
+      if (row) {
+        // Gán dữ liệu vào các ô tương ứng
+        const cells = row.querySelectorAll("td");
+        cells[1].textContent = account.tennguoidung || "N/A"; // Tên người dùng
+        cells[2].textContent = account.hoten || "N/A"; // Họ tên
+        cells[3].textContent = account.address || "N/A"; // Địa chỉ
+        cells[4].textContent = account.email || "N/A"; // Email
+        cells[5].textContent =
+          account.role_id == "1"
+            ? "Quản lý"
+            : account.role_id == "2"
+              ? "Nhân viên"
+              : account.role_id == "3"
+                ? "Khách hàng"
+                : "Khách hàng cao cấp"; // Vai trò
+      } else {
+        console.log("Hàng không tồn tại!");
+      }
+    }
+  }
+
+  // Lắng nghe sự kiện click trên nút "Sửa thông tin"
+  document.addEventListener("DOMContentLoaded", () => {
+    const editButtons = document.querySelectorAll(".btn-primary");
+
+    editButtons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        // Lấy rowIndex từ data-id của nút bấm
+        const rowId = e.target.closest('button').getAttribute('data-id');
+        const rowIndex = parseInt(rowId); // Chuyển data-id thành số nguyên
+
+        updateRow(rowIndex); // Gọi hàm cập nhật hàng với chỉ số hàng
+      });
+    });
+  });
+
+</script>
+
+
+
+
 <script>
   document.querySelector("form").addEventListener("submit", function (event) {
     // Ngăn chặn hành động gửi form 
@@ -622,82 +783,5 @@
     // Tạo URL cho Blob
     const url = URL.createObjectURL(blob);
 
-    // Tạo một liên kết tải file
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "thong-tin-user.json";
-    document.body.appendChild(a);
-    a.click();
-
-    // Xóa liên kết
-    setTimeout(() => {
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }, 0);
   });
 </script>
-
-<script>
-  document.getElementById('accountForm').onsubmit = function (event) {
-    event.preventDefault(); // Ngăn việc gửi form theo kiểu mặc định
-
-    // Lấy giá trị từ form
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-
-    // Chuyển đổi thành JSON
-    const jsonData = JSON.stringify(data);
-
-    // Tạo một blob với dữ liệu JSON
-    const blob = new Blob([jsonData], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-
-    // Tạo một link để tải file
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'account_data.json'; // Tên file khi tải xuống
-    document.body.appendChild(a);
-    a.click(); // Tự động nhấp vào link để tải file
-    document.body.removeChild(a); // Xóa link khỏi DOM
-
-  }
-</script>
-<script>
-  document.getElementById('lockUserForm').addEventListener('submit', function (event) {
-    // Ngăn chặn hành động gửi form 
-    event.preventDefault();
-
-    // Lấy dữ liệu
-    const formData = new FormData(event.target);
-    const dataObject = {};
-    formData.forEach((value, key) => {
-      dataObject[key] = value;
-    });
-
-    // Chuyển đổi thành chuỗi JSON
-    const jsonData = JSON.stringify(dataObject, null, 2);
-
-    // Tạo Blob từ chuỗi JSON
-    const blob = new Blob([jsonData], { type: "application/json" });
-
-    // Tạo URL cho Blob
-    const url = URL.createObjectURL(blob);
-
-    // Tạo một liên kết tải file
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "thong-tin-user.json";
-    document.body.appendChild(a);
-    a.click();
-
-    // Xóa liên kết
-    setTimeout(() => {
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }, 0);
-  });
-</script>
-
-
-
->>>>>>> 3246055b053dd15bb9115112ac8bd2b29aa4fe79
