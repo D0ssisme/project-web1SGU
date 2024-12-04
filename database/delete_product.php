@@ -33,16 +33,23 @@ if (isset($data['id']) && !empty($data['id'])) {
 
             $products = array();
 
-            while($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) {
+                // Định dạng giá trước khi thêm vào mảng
+                if (isset($row['price'])) {
+                    $row['price'] = number_format($row['price'], 0, '.', '.'); // Định dạng theo kiểu 200,000
+                }
                 $products[] = $row;
             }
 
             // Cập nhật lại nội dung trong file data.js
-            if (file_put_contents('data.js', 'var products = ' . json_encode($products, JSON_PRETTY_PRINT) . ';')) {
+            $data_js_path = 'data.js';
+            $json_content = 'var products = ' . json_encode($products, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . ';';
+
+            if (file_put_contents($data_js_path, $json_content)) {
+                echo "File data.js đã được cập nhật thành công.<br>";
             } else {
                 echo "Lỗi khi cập nhật file data.js.<br>";
             }
-
         } else {
             echo "Lỗi xóa sản phẩm: " . $stmt->error . "<br>";
         }
