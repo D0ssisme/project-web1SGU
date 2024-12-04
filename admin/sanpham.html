@@ -11,26 +11,26 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<link rel="stylesheet" href="../assets/css/admin/admin_mobile/sanpham_mb.css">
 	<link rel="stylesheet" href="../assets/css/base.css">
-	<link rel="icon" type="./Images/png" href="../assets/Images/favicon.png">
+    <link rel="icon" type="./Images/png" href="../assets/Images/favicon.png">
 	<title>Web admin onlyfans </title>
 	<!-- Bootstrap -->
-	<link href="./vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Font Awesome -->
-	<link href="./vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<!-- NProgress -->
-	<link href="./vendors/nprogress/nprogress.css" rel="stylesheet">
-	<!-- iCheck -->
-	<link href="./vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-	<!-- bootstrap-wysiwyg -->
-	<link href="./vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
-	<!-- Select2 -->
-	<link href="./vendors/select2/dist/css/select2.min.css" rel="stylesheet">
-	<!-- Switchery -->
-	<link href="./vendors/switchery/dist/switchery.min.css" rel="stylesheet">
-	<!-- starrr -->
-	<link href="./vendors/starrr/dist/starrr.css" rel="stylesheet">
-	<!-- bootstrap-daterangepicker -->
-	<link href="./vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+		<link href="./vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font Awesome -->
+		<link href="./vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<!-- NProgress -->
+		<link href="./vendors/nprogress/nprogress.css" rel="stylesheet">
+		<!-- iCheck -->
+		<link href="./vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+		<!-- bootstrap-wysiwyg -->
+		<link href="./vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+		<!-- Select2 -->
+		<link href="./vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+		<!-- Switchery -->
+		<link href="./vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+		<!-- starrr -->
+		<link href="./vendors/starrr/dist/starrr.css" rel="stylesheet">
+		<!-- bootstrap-daterangepicker -->
+		<link href="./vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
 	<!-- Custom Theme Style -->
 	<link href="./build/css/custom.min.css" rel="stylesheet">
@@ -59,11 +59,12 @@
 					<!-- menu profile quick info -->
 					<div class="profile clearfix">
 						<div class="profile_pic">
-							<img src="./images/admin1.jpg" alt="..." class="img-circle profile_img">
+							<img src="./images/admin1.jpg" alt="..."
+								class="img-circle profile_img">
 						</div>
 						<div class="profile_info">
 							<span>Xin chào ,</span>
-							<h2 id="username-display1">admin</h2>
+							<h2>Admin</h2>
 						</div>
 					</div>
 
@@ -99,8 +100,7 @@
 								</li>
 								<li><a href="./main/qluser.html"><i class="fas fa-user"></i> Quản lí người dùng</a></li>
 
-								<li><a href="./main/thongke.html" id="thong-ke-link"><i class="fas fa-chart-bar"></i>
-										Thống
+								<li><a href="./main/thongke.html" id="thong-ke-link"><i class="fas fa-chart-bar"></i> Thống
 										kê</a></li>
 
 								<li><a href="#"><i class="fas fa-comment"></i> Phản hồi</a></li>
@@ -145,18 +145,17 @@
 							<li class="nav-item dropdown open" style="padding-left: 15px;">
 								<a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
 									id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-									<img src="./images/admin1.jpg" alt="">
-									<span id="username-display"></span>
-
+									<img src="./images/admin1.jpg" alt="">Admin
 								</a>
 								<div class="dropdown-menu dropdown-usermenu pull-right"
 									aria-labelledby="navbarDropdown">
 									<a class="dropdown-item" href="javascript:;"> Profile</a>
 
-									<a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>
+									<a class="dropdown-item" href="./main/login.html"><i class="fa fa-sign-out pull-right"></i>
 										Log Out</a>
 								</div>
 							</li>
+
 							<li role="presentation" class="nav-item dropdown open">
 
 								<ul class="dropdown-menu list-unstyled msg_list" role="menu"
@@ -231,177 +230,168 @@
 
 			<!-- page content -->
 			<div class="right_col" role="main">
-				<div class="product-admin">
-					<div class="admin_input-products">
-						<h2>Nhập Sản Phẩm</h2>
-						<form id="productForm">
-							<!-- Loại bỏ trường ID -->
-							<label for="name">Tên Sản Phẩm:</label>
-							<input type="text" id="name" name="name" required placeholder="Nhập tên sản phẩm">
+					<div class="product-admin">
+						<div class="admin_input-products">
+							<h2>Nhập Sản Phẩm</h2>
+							<form id="productForm">
+								<!-- Loại bỏ trường ID -->
+								<label for="name">Tên Sản Phẩm:</label>
+								<input type="text" id="name" name="name" required placeholder="Nhập tên sản phẩm">
+							
+								<label for="description">Mô Tả:</label>
+								<textarea id="description" name="description" required style="width:100%;font-size:15px;" placeholder="Nhập mô tả sản phẩm"></textarea>
+							
+								<label for="price" class="spacejam">Giá:</label>
+								<input type="number" id="price" name="price" required min="0" placeholder="Nhập giá sản phẩm">
+							
+								<label for="image">Hình Ảnh:</label>
+								<input type="file" id="image" name="image" accept="image/*" required>
+							
+								<label for="brand">Hãng:</label>
+								<input type="text" id="brand" name="brand" required placeholder="Nhập hãng">
+							
+								<label for="type">Loại:</label>
+					<select id="type" name="type" required style="font-size: 15px;">
+						<option value="Quạt lửng">Quạt lửng</option>
+						<option value="Quạt trần">Quạt trần</option>
+						<option value="Quạt hơi nước">Quạt hơi nước</option>
+					</select>
+					
+							
+								<label for="power" class="spacejam">Công Suất:</label>
+								<input type="number" id="power" name="power" required min="0" placeholder="Công suất">
 
-							<label for="description">Mô Tả:</label>
-							<textarea id="description" name="description" required style="width:100%;font-size:15px;"
-								placeholder="Nhập mô tả sản phẩm"></textarea>
-
-							<label for="price" class="spacejam">Giá:</label>
-							<input type="number" id="price" name="price" required min="0"
-								placeholder="Nhập giá sản phẩm">
-
-							<label for="image">Hình Ảnh:</label>
-							<input type="file" id="image" name="image" accept="image/*" required>
-
-							<label for="brand">Hãng:</label>
-							<input type="text" id="brand" name="brand" required placeholder="Nhập hãng">
-
-							<label for="type">Loại:</label>
-							<select id="type" name="type" required style="font-size: 15px;">
-								<option value="Quạt lửng">Quạt lửng</option>
-								<option value="Quạt trần">Quạt trần</option>
-								<option value="Quạt hơi nước">Quạt hơi nước</option>
-							</select>
-
-
-							<label for="power" class="spacejam">Công Suất:</label>
-							<input type="number" id="power" name="power" required min="0" placeholder="Công suất">
-
-							<label for="speed">Tốc độ:</label>
-							<select name="speed" id="speed" style="font-size: 15px;">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select>
-							<label for="highlight" class="noibat_la">Nổi Bật:</label>
-							<textarea id="highlight" name="highlight" required style="width:100%;font-size: 15px;"
-								placeholder="Điểm nổi bật"></textarea>
-
-							<label for="origin" class="spacejam">Xuất Xứ:</label>
-							<input type="text" id="origin" name="origin" required placeholder="Xuất xứ của sản phẩm">
-
-							<input type="submit" value="Thêm Sản Phẩm">
-						</form>
-					</div>
-
-					<div id="message"></div>
-					<div id="notification"></div>
-
-					<div class="admin_status-products">
-						<div class="phanloai">
-							<ul class="phanloai_sp">
-								<li><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
-								<li class="li-space"><a href="#"
-										onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
-								<li class="li-space"><a href="#"
-										onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
-								<li class="li-space"><a href="#" onclick="filterProducts(''); return false;">Tất cả</a>
-								</li>
-							</ul>
+								<label for="speed">Tốc độ:</label>
+								<select name="speed" id="speed" style="font-size: 15px;">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+								<label for="highlight" class="noibat_la">Nổi Bật:</label>
+								<textarea id="highlight" name="highlight" required style="width:100%;font-size: 15px;" placeholder="Điểm nổi bật"></textarea>
+							
+								<label for="origin" class="spacejam">Xuất Xứ:</label>
+								<input type="text" id="origin" name="origin" required placeholder="Xuất xứ của sản phẩm">
+							
+								<input type="submit" value="Thêm Sản Phẩm">
+							</form>        
 						</div>
-						<h3>Danh Sách Sản Phẩm</h3>
-						<table id="productTable" class="table_desktop">
-							<thead>
-								<tr>
-									<th style="width:30px;border-top-left-radius: 5px;">ID</th>
-									<th style="text-align: center;">Tên</th>
-									<th style="max-width:130px;text-align: center;">Mô Tả</th>
-									<th style="width:80px;text-align: center;">Giá</th>
-									<th style="max-width:100px;text-align: center;">Hình Ảnh</th>
-									<th style="width:100px;text-align: center;">Hãng</th>
-									<th style="text-align: center;">Loại</th>
-									<th style="border-top-right-radius: 5px;text-align: center;">Hành Động</th>
-								</tr>
-							</thead>
-							<tbody>
-							</tbody>
-						</table>
-						<div class="pagination-admin">
-							<button id="prevPage" style="display:none;">&#10094;</button>
-							<span id="pageInfo"></span>
-							<button id="nextPage" style="display:none;">&#10095;</button>
+					
+						<div id="message"></div>
+						<div id="notification"></div>
+					
+						<div class="admin_status-products">
+							<div class="phanloai">
+								<ul class="phanloai_sp">
+									<li><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
+									<li class="li-space"><a href="#" onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
+									<li class="li-space"><a href="#" onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
+									<li class="li-space"><a href="#" onclick="filterProducts(''); return false;">Tất cả</a></li>
+								</ul>
+							</div>        
+							<h3>Danh Sách Sản Phẩm</h3>
+							<table id="productTable" class="table_desktop">
+								<thead>
+									<tr>
+										<th style="width:30px;border-top-left-radius: 5px;">ID</th>
+										<th style="text-align: center;">Tên</th>
+										<th style="max-width:130px;text-align: center;">Mô Tả</th>
+										<th style="width:80px;text-align: center;">Giá</th>
+										<th style="max-width:100px;text-align: center;">Hình Ảnh</th>
+										<th style="width:100px;text-align: center;">Hãng</th>
+										<th style="text-align: center;">Loại</th>
+										<th style="border-top-right-radius: 5px;text-align: center;">Hành Động</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+							<div class="pagination-admin">
+								<button id="prevPage" style="display:none;">&#10094;</button>
+								<span id="pageInfo"></span>
+								<button id="nextPage" style="display:none;">&#10095;</button>
+							</div>
 						</div>
-					</div>
-
-					<div id="editProductModal" class="modal">
-						<div class="modal-content">
-							<form id="editProductForm" action="update_product.php" method="POST"
-								enctype="multipart/form-data">
-								<div class="display_product">
-									<div class="left-section">
-										<label for="editId">ID Sản Phẩm:</label>
-										<input type="text" id="editId" name="editId" readonly>
-
-										<label for="editName">Tên Sản Phẩm:</label>
-										<input type="text" id="editName" name="editName" required>
-
-										<label for="editDescription">Mô Tả:</label>
-										<textarea id="editDescription" name="editDescription" required></textarea>
-
-										<label for="editPrice">Giá:</label>
-										<input type="number" id="editPrice" name="editPrice" required min="0">
-
-										<label for="editImage">Hình Ảnh:</label>
-										<input type="file" id="editImage" name="editImage" accept="image/*">
-										<img id="imagePreview" style="max-width:120px; display:none;"
-											alt="Hình ảnh sản phẩm">
-										<button type="button" id="removeImageButton" style="display:none;"
-											onclick="removeImage()" class="remove_img">Gỡ Ảnh</button>
+					
+						<div id="editProductModal" class="modal">
+							<div class="modal-content">
+								<form id="editProductForm" action="update_product.php" method="POST" enctype="multipart/form-data">
+									<div class="display_product">
+										<div class="left-section">
+											<label for="editId">ID Sản Phẩm:</label>
+											<input type="text" id="editId" name="editId" readonly>
+						
+											<label for="editName">Tên Sản Phẩm:</label>
+											<input type="text" id="editName" name="editName" required>
+						
+											<label for="editDescription">Mô Tả:</label>
+											<textarea id="editDescription" name="editDescription" required></textarea>
+						
+											<label for="editPrice">Giá:</label>
+											<input type="number" id="editPrice" name="editPrice" required min="0">
+						
+											<label for="editImage">Hình Ảnh:</label>
+											<input type="file" id="editImage" name="editImage" accept="image/*">
+											<img id="imagePreview" style="max-width:120px; display:none;" alt="Hình ảnh sản phẩm">
+											<button type="button" id="removeImageButton" style="display:none;" onclick="removeImage()" class="remove_img">Gỡ Ảnh</button>
+										</div>
+						
+										<div class="right-section">
+											<label for="editBrand">Thương Hiệu:</label>
+											<input type="text" id="editBrand" name="editBrand">
+						
+											<label for="editType">Loại:</label>
+											<select id="editType" name="editType">
+												<option value="Quạt lửng">Quạt Lửng</option>
+												<option value="Quạt trần">Quạt Trần</option>
+												<option value="Quạt hơi nước">Quạt Hơi Nước</option>
+											</select>
+											
+											<label for="editPower" class="space-power">Công Suất:</label>
+											<input type="number" id="editPower" name="editPower" min="1">
+						
+											<label for="editSpeed">Tốc Độ:</label>
+											<select name="editSpeed" id="editSpeed">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+											</select>
+											<label for="editHighlight" class="noibat_la">Nổi Bật:</label>
+											<textarea id="editHighlight" name="editHighlight"></textarea>
+						
+											<label for="editOrigin">Xuất Xứ:</label>
+											<input type="text" id="editOrigin" name="editOrigin">
+										</div>
 									</div>
-
-									<div class="right-section">
-										<label for="editBrand">Thương Hiệu:</label>
-										<input type="text" id="editBrand" name="editBrand">
-
-										<label for="editType">Loại:</label>
-										<select id="editType" name="editType">
-											<option value="Quạt lửng">Quạt Lửng</option>
-											<option value="Quạt trần">Quạt Trần</option>
-											<option value="Quạt hơi nước">Quạt Hơi Nước</option>
-										</select>
-
-										<label for="editPower" class="space-power">Công Suất:</label>
-										<input type="number" id="editPower" name="editPower" min="1">
-
-										<label for="editSpeed">Tốc Độ:</label>
-										<select name="editSpeed" id="editSpeed">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-										</select>
-										<label for="editHighlight" class="noibat_la">Nổi Bật:</label>
-										<textarea id="editHighlight" name="editHighlight"></textarea>
-
-										<label for="editOrigin">Xuất Xứ:</label>
-										<input type="text" id="editOrigin" name="editOrigin">
+						
+									<div class="button-distance">
+										<input type="submit" value="Cập Nhật">
+										<button type="button" onclick="closeEditModal()" class="huy-edit">Hủy</button>
 									</div>
-								</div>
-
-								<div class="button-distance">
-									<input type="submit" value="Cập Nhật">
-									<button type="button" onclick="closeEditModal()" class="huy-edit">Hủy</button>
-								</div>
-							</form>
+								</form>
+							</div>
 						</div>
-					</div>
-					<div id="confirmDeleteModal" class="modal">
-						<div class="modal-content form_xacnhan" style="text-align: center;">
-							<h4>Bạn có chắc chắn muốn xóa sản phẩm này?</h4>
-							<button id="confirmDeleteBtn">Xóa</button>
-							<button id="cancelDeleteBtn">Hủy</button>
+							<div id="confirmDeleteModal" class="modal">
+							<div class="modal-content form_xacnhan" style="text-align: center;">
+								<h4>Bạn có chắc chắn muốn xóa sản phẩm này?</h4>
+								<button id="confirmDeleteBtn">Xóa</button>
+								<button id="cancelDeleteBtn">Hủy</button>
+							</div>
 						</div>
+				
+						<div id="toast-admin" class="toast-admin">Sản phẩm đã được thêm thành công!</div>
 					</div>
-
-					<div id="toast-admin" class="toast-admin">Sản phẩm đã được thêm thành công!</div>
-				</div>
 			</div>
 			<!-- /page content -->
 
 			<!-- footer content -->
 			<footer>
 				<div class="pull-right">
-					<a href="#">From onlyfans with love</a>
+					<a href="#">From onlyfans with love</a> 
 				</div>
 				<div class="clearfix"></div>
 			</footer>
@@ -445,63 +435,52 @@
 	<!-- Custom Theme Scripts -->
 	<script src="./build/js/custom.min.js"></script>
 	<script>
-		// Kiểm tra và hiển thị tên người dùng từ localStorage
-		window.onload = function () {
-			 loadProducts;
-			var username = localStorage.getItem('username');
-			if (username) {
-				document.getElementById('username-display').textContent = username;
-				document.getElementById('username-display1').textContent = username; // Cập nhật tên người dùng
-			}
-		}
-	</script>
-	<script>
-		let currentPage = 1;
-		const productsPerPage = 5;
-		let products = [];
-		let productIdToDelete = null;
-		let filteredProducts = products;
-		document.getElementById('productForm').addEventListener('submit', function (event) {
-			event.preventDefault();
-			const formData = new FormData(this);
+        let currentPage = 1;
+        const productsPerPage = 5;
+        let products = [];
+        let productIdToDelete = null;
+        let filteredProducts = products;
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
 
-			fetch('../database/insert_product.php', {
-				method: 'POST',
-				body: formData
-			})
-				.then(response => response.text())
-				.then(data => {
-					document.getElementById('message').innerHTML = data;
-					this.reset();
-					loadProducts();
-					showToast('Sản phẩm đã được thêm thành công!', 'success');
-				})
-				.catch(error => console.error('Error:', error));
-		});
+            fetch('../database/insert_product.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('message').innerHTML = data;
+                this.reset();
+                loadProducts();
+                showToast('Sản phẩm đã được thêm thành công!','success');
+            })
+            .catch(error => console.error('Error:', error));
+        });
 
-		function loadProducts() {
-			fetch('../database/data.js')
-				.then(response => response.text())
-				.then(data => {
-					products = JSON.parse(data.replace('var products = ', '').slice(0, -1));
-					filteredProducts = products;
-					displayProducts();
-				})
-				.catch(error => console.error('Error loading products:', error));
-		}
+        function loadProducts() {
+            fetch('../database/data.js')
+                .then(response => response.text())
+                .then(data => {
+                    products = JSON.parse(data.replace('var products = ', '').slice(0, -1));
+                    filteredProducts = products;
+                    displayProducts();
+                })
+                .catch(error => console.error('Error loading products:', error));
+        }
 
-		function displayProducts() {
-			const tbody = document.querySelector('#productTable tbody');
-			tbody.innerHTML = '';
+        function displayProducts() {
+    const tbody = document.querySelector('#productTable tbody');
+    tbody.innerHTML = '';
 
-			// Sử dụng filteredProducts thay vì products
-			const startIndex = (currentPage - 1) * productsPerPage;
-			const endIndex = Math.min(startIndex + productsPerPage, filteredProducts.length);
-			const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
+    // Sử dụng filteredProducts thay vì products
+    const startIndex = (currentPage - 1) * productsPerPage;
+    const endIndex = Math.min(startIndex + productsPerPage, filteredProducts.length);
+    const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
 
-			paginatedProducts.forEach(product => {
-				const row = document.createElement('tr');
-				row.innerHTML = `
+    paginatedProducts.forEach(product => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
             <td style="font-size:15px";>${product.id}</td>
             <td class="name" style="font-size:15px";>${product.name}</td>
             <td class="description" style="font-size:15px";>${product.description}</td>
@@ -514,234 +493,234 @@
                 <button class="delete-btn" onclick="deleteProduct('${product.id}')">Xóa</button>
             </td>
         `;
-				tbody.appendChild(row);
-			});
+        tbody.appendChild(row);
+    });
 
-			updatePagination();
-		}
+    updatePagination();
+}
 
 
-		function updatePagination() {
-			const totalPages = Math.ceil(products.length / productsPerPage);
-			document.getElementById('pageInfo').textContent = `Trang ${currentPage} / ${totalPages}`;
-			document.getElementById('prevPage').style.display = currentPage > 1 ? 'inline' : 'none';
-			document.getElementById('nextPage').style.display = currentPage < totalPages ? 'inline' : 'none';
-		}
+        function updatePagination() {
+            const totalPages = Math.ceil(products.length / productsPerPage);
+            document.getElementById('pageInfo').textContent = `Trang ${currentPage} / ${totalPages}`;
+            document.getElementById('prevPage').style.display = currentPage > 1 ? 'inline' : 'none';
+            document.getElementById('nextPage').style.display = currentPage < totalPages ? 'inline' : 'none';
+        }
 
-		document.getElementById('prevPage').addEventListener('click', () => {
-			if (currentPage > 1) {
-				currentPage--;
-				displayProducts();
-			}
-		});
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayProducts();
+            }
+        });
 
-		document.getElementById('nextPage').addEventListener('click', () => {
-			const totalPages = Math.ceil(products.length / productsPerPage);
-			if (currentPage < totalPages) {
-				currentPage++;
-				displayProducts();
-			}
-		});
+        document.getElementById('nextPage').addEventListener('click', () => {
+            const totalPages = Math.ceil(products.length / productsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayProducts();
+            }
+        });
 
-		function deleteProduct(productId) {
-			productIdToDelete = productId;
-			document.getElementById('confirmDeleteModal').style.display = 'flex';
-		}
+        function deleteProduct(productId) {
+            productIdToDelete = productId;
+            document.getElementById('confirmDeleteModal').style.display = 'flex';
+        }
 
-		document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
-			if (productIdToDelete) {
-				fetch('../database/delete_product.php', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({ id: productIdToDelete })
-				})
-					.then(response => response.text())
-					.then(data => {
-						showToast('Sản phẩm đã được xóa thành công!', 'error');
-						loadProducts();
-						closeModal();
-					})
-					.catch(error => console.error('Error:', error));
-			}
-		});
+        document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
+            if (productIdToDelete) {
+                fetch('../database/delete_product.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id: productIdToDelete })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    showToast('Sản phẩm đã được xóa thành công!','error');
+                    loadProducts();
+                    closeModal();
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        });
 
-		document.getElementById('cancelDeleteBtn').addEventListener('click', closeModal);
+        document.getElementById('cancelDeleteBtn').addEventListener('click', closeModal);
 
-		function closeModal() {
-			document.getElementById('confirmDeleteModal').style.display = 'none';
-			productIdToDelete = null;
-		}
+        function closeModal() {
+            document.getElementById('confirmDeleteModal').style.display = 'none';
+            productIdToDelete = null;
+        }
 
 		function showToast(message, type) {
-			const toast = document.getElementById('toast-admin');
+    const toast = document.getElementById('toast-admin');
 
-			// Xóa tất cả các lớp trạng thái trước đó
-			toast.classList.remove('toast-success', 'toast-error', 'toast-info', 'show');
+    // Xóa tất cả các lớp trạng thái trước đó
+    toast.classList.remove('toast-success', 'toast-error', 'toast-info', 'show');
 
-			// Thêm nội dung thông báo
-			toast.textContent = message;
+    // Thêm nội dung thông báo
+    toast.textContent = message;
 
-			// Thêm lớp trạng thái phù hợp
-			if (type === 'success') {
-				toast.classList.add('toast-success');
-			} else if (type === 'error') {
-				toast.classList.add('toast-error');
-			} else if (type === 'info') {
-				toast.classList.add('toast-info');
-			}
+    // Thêm lớp trạng thái phù hợp
+    if (type === 'success') {
+        toast.classList.add('toast-success');
+    } else if (type === 'error') {
+        toast.classList.add('toast-error');
+    } else if (type === 'info') {
+        toast.classList.add('toast-info');
+    }
 
-			// Hiển thị thông báo
-			toast.classList.add('show');
+    // Hiển thị thông báo
+    toast.classList.add('show');
 
-			// Ẩn thông báo sau 3 giây
-			setTimeout(() => {
-				toast.classList.remove('show');
-			}, 3000);
-		}
+    // Ẩn thông báo sau 3 giây
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
 
 
-		
+        window.onload = loadProducts;
 
 		function editProduct(productId) {
-			fetch('../database/data.js')
-				.then(response => response.text())
-				.then(data => {
-					const products = JSON.parse(data.replace('var products = ', '').slice(0, -1));
-					const product = products.find(p => p.id == productId);
+    fetch('../database/data.js')
+        .then(response => response.text())
+        .then(data => {
+            const products = JSON.parse(data.replace('var products = ', '').slice(0, -1));
+            const product = products.find(p => p.id == productId);
 
-					if (product) {
-						const editFields = [
-							{ field: 'editId', value: product.id },
-							{ field: 'editName', value: product.name },
-							{ field: 'editDescription', value: product.description },
-							{ field: 'editPrice', value: product.price.toString().replace(/\./g, '').replace(/,/g, '.') }, // Chuyển đổi giá
-							{ field: 'editBrand', value: product.brand },
-							{ field: 'editType', value: product.type },
-							{ field: 'editPower', value: product.power },
-							{ field: 'editSpeed', value: product.speed },
-							{ field: 'editHighlight', value: product.highlight },
-							{ field: 'editOrigin', value: product.origin }
-						];
+            if (product) {
+                const editFields = [
+                    { field: 'editId', value: product.id },
+                    { field: 'editName', value: product.name },
+                    { field: 'editDescription', value: product.description },
+                    { field: 'editPrice', value: product.price.toString().replace(/\./g, '').replace(/,/g, '.') }, // Chuyển đổi giá
+                    { field: 'editBrand', value: product.brand },
+                    { field: 'editType', value: product.type },
+                    { field: 'editPower', value: product.power },
+                    { field: 'editSpeed', value: product.speed },
+                    { field: 'editHighlight', value: product.highlight },
+                    { field: 'editOrigin', value: product.origin }
+                ];
 
-						editFields.forEach(({ field, value }) => {
-							const element = document.getElementById(field);
-							if (element) {
-								element.value = value;
-							}
-						});
+                editFields.forEach(({ field, value }) => {
+                    const element = document.getElementById(field);
+                    if (element) {
+                        element.value = value;
+                    }
+                });
 
-						// Thêm phần tử hình ảnh hiện tại vào modal
-						const editImageField = document.getElementById('editImage');
-						const currentImage = product.image ? `/project-web1sgu/assets/Images/products/${product.image}` : 'default-image-path.jpg'; // Thay thế default-image-path.jpg bằng ảnh mặc định nếu không có hình
-						const imagePreview = document.getElementById('imagePreview');
+                // Thêm phần tử hình ảnh hiện tại vào modal
+                const editImageField = document.getElementById('editImage');
+                const currentImage = product.image ? `../assets/Images/products/${product.image}` : 'default-image-path.jpg'; // Thay thế default-image-path.jpg bằng ảnh mặc định nếu không có hình
+                const imagePreview = document.getElementById('imagePreview');
 
-						if (imagePreview) {
-							imagePreview.src = currentImage; // Cập nhật hình ảnh hiện tại
-							imagePreview.style.display = 'block'; // Hiển thị hình ảnh
-						} else {
-							// Nếu không có phần tử img, tạo nó và thêm vào DOM
-							const imgElement = document.createElement('img');
-							imgElement.id = 'imagePreview';
-							imgElement.src = currentImage;
-							imgElement.alt = 'Hình ảnh sản phẩm';
-							imgElement.style.maxWidth = '150px';
-							imgElement.style.display = 'block'; // Hiển thị hình ảnh
-							editImageField.insertAdjacentElement('afterend', imgElement); // Thêm ảnh vào sau input
-						}
-						if (imagePreview && product.image) {
-							imagePreview.src = `../assets/Images/products/${product.image}`;
-							imagePreview.style.display = 'block';
+                if (imagePreview) {
+                    imagePreview.src = currentImage; // Cập nhật hình ảnh hiện tại
+                    imagePreview.style.display = 'block'; // Hiển thị hình ảnh
+                } else {
+                    // Nếu không có phần tử img, tạo nó và thêm vào DOM
+                    const imgElement = document.createElement('img');
+                    imgElement.id = 'imagePreview';
+                    imgElement.src = currentImage;
+                    imgElement.alt = 'Hình ảnh sản phẩm';
+                    imgElement.style.maxWidth = '150px';
+                    imgElement.style.display = 'block'; // Hiển thị hình ảnh
+                    editImageField.insertAdjacentElement('afterend', imgElement); // Thêm ảnh vào sau input
+                }
+				if (imagePreview && product.image) {
+    imagePreview.src = `../assets/Images/products/${product.image}`;
+    imagePreview.style.display = 'block';
 
-							const removeImageButton = document.getElementById('removeImageButton');
-							removeImageButton.style.display = 'block';
-						}
+    const removeImageButton = document.getElementById('removeImageButton');
+    removeImageButton.style.display = 'block';
+}
 
-						document.getElementById('editProductModal').style.display = 'flex';
-					}
-				})
-				.catch(error => console.error('Error:', error));
-		}
-
-
-		document.getElementById('editProductForm').addEventListener('submit', function (event) {
-			event.preventDefault();
-			const formData = new FormData(this);
-
-			// Debug: Kiểm tra nội dung của formData
-			for (let pair of formData.entries()) {
-				console.log(pair[0] + ', ' + pair[1]);
-			}
-
-			fetch('../database/update_product.php', {
-				method: 'POST',
-				body: formData
-			})
-				.then(response => {
-					if (!response.ok) {
-						throw new Error('Network response was not ok: ' + response.statusText);
-					}
-					return response.json();
-				})
-				.then(data => {
-					if (data.success) {
-						showToast(data.success);
-						loadProducts();  // Đảm bảo loadProducts() được định nghĩa để tải lại sản phẩm
-						closeEditModal();
-					} else {
-						showToast(data.error || 'Sản phẩm đã được cập nhật thành công.');
-					}
-				})
-				.catch(error => {
-					console.error('Error:', error);
-					showToast('Sản phẩm đã được cập nhật thành công.');
-				});
-		});
-
-		function closeEditModal() {
-			document.getElementById('editProductModal').style.display = 'none';
-		}
-
-		function removeImage() {
-			const imagePreview = document.getElementById('imagePreview');
-			const removeImageButton = document.getElementById('removeImageButton');
-
-			// Ẩn ảnh và nút gỡ ảnh
-			imagePreview.src = '';
-			imagePreview.style.display = 'none';
-			removeImageButton.style.display = 'none';
-
-			// Thêm hidden input để đánh dấu việc gỡ ảnh
-			let removeImageInput = document.getElementById('removeImageInput');
-			if (!removeImageInput) {
-				removeImageInput = document.createElement('input');
-				removeImageInput.type = 'hidden';
-				removeImageInput.id = 'removeImageInput';
-				removeImageInput.name = 'removeImage';
-				removeImageInput.value = 'true';
-				document.getElementById('editProductForm').appendChild(removeImageInput);
-			}
-		}
-
-		// Hiển thị nút "Gỡ Ảnh" khi có ảnh
-		const imagePreview = document.getElementById('imagePreview');
-		if (imagePreview && imagePreview.src) {
-			const removeImageButton = document.getElementById('removeImageButton');
-			removeImageButton.style.display = 'block';
-		}
-
-		function filterProducts(selectedType = '') {
-			filteredProducts = products.filter(product => {
-				return selectedType ? product.type === selectedType : true; // Lọc theo loại nếu có, nếu không thì lấy tất cả sản phẩm
-			});
-
-			currentPage = 1; // Reset về trang đầu khi lọc
-			displayProducts(); // Hiển thị sản phẩm đã lọc
-		}
+                document.getElementById('editProductModal').style.display = 'flex';
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
 
 
-	</script>
+document.getElementById('editProductForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+
+    // Debug: Kiểm tra nội dung của formData
+    for (let pair of formData.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
+    }
+
+    fetch('../database/update_product.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok: ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.success) {
+            showToast(data.success);
+            loadProducts();  // Đảm bảo loadProducts() được định nghĩa để tải lại sản phẩm
+            closeEditModal();
+        } else {
+            showToast(data.error || 'Sản phẩm đã được cập nhật thành công.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showToast('Sản phẩm đã được cập nhật thành công.');
+    });
+});
+
+function closeEditModal() {
+    document.getElementById('editProductModal').style.display = 'none';
+}
+
+function removeImage() {
+    const imagePreview = document.getElementById('imagePreview');
+    const removeImageButton = document.getElementById('removeImageButton');
+
+    // Ẩn ảnh và nút gỡ ảnh
+    imagePreview.src = '';
+    imagePreview.style.display = 'none';
+    removeImageButton.style.display = 'none';
+
+    // Thêm hidden input để đánh dấu việc gỡ ảnh
+    let removeImageInput = document.getElementById('removeImageInput');
+    if (!removeImageInput) {
+        removeImageInput = document.createElement('input');
+        removeImageInput.type = 'hidden';
+        removeImageInput.id = 'removeImageInput';
+        removeImageInput.name = 'removeImage';
+        removeImageInput.value = 'true';
+        document.getElementById('editProductForm').appendChild(removeImageInput);
+    }
+}
+
+// Hiển thị nút "Gỡ Ảnh" khi có ảnh
+const imagePreview = document.getElementById('imagePreview');
+if (imagePreview && imagePreview.src) {
+    const removeImageButton = document.getElementById('removeImageButton');
+    removeImageButton.style.display = 'block';
+}
+
+function filterProducts(selectedType = '') {
+    filteredProducts = products.filter(product => {
+        return selectedType ? product.type === selectedType : true; // Lọc theo loại nếu có, nếu không thì lấy tất cả sản phẩm
+    });
+
+    currentPage = 1; // Reset về trang đầu khi lọc
+    displayProducts(); // Hiển thị sản phẩm đã lọc
+}
+
+
+    </script>
 </body>
 
 </html>
