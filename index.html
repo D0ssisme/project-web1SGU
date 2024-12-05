@@ -90,10 +90,14 @@
         <div class="container_products-left-mb">
             <div class="nav-left-mb">
                 <ul>
-                    <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
-                    <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
-                    <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
-                    <li class="phanloai_animation"><a href="#" onclick="filterProducts(''); return false;">Tất cả</a></li>
+                    <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt
+                            trần</a></li>
+                    <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt lửng'); return false;">Quạt
+                            lửng</a></li>
+                    <li class="phanloai_animation"><a href="#"
+                            onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
+                    <li class="phanloai_animation"><a href="#" onclick="filterProducts(''); return false;">Tất cả</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -111,10 +115,14 @@
             <div class="container_products-left">
                 <div class="nav-left">
                     <ul>
-                        <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
-                        <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
-                        <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
-                        <li class="phanloai_animation"><a href="#" onclick="filterProducts(''); return false;">Tất cả</a></li>
+                        <li class="phanloai_animation"><a href="#"
+                                onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
+                        <li class="phanloai_animation"><a href="#"
+                                onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
+                        <li class="phanloai_animation"><a href="#"
+                                onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
+                        <li class="phanloai_animation"><a href="#" onclick="filterProducts(''); return false;">Tất
+                                cả</a></li>
                     </ul>
                 </div>
             </div>
@@ -487,7 +495,7 @@
                 sdt.focus();
                 return false;
             } else {
-                var phonePattern = /^[0-9]+$/;
+                var phonePattern = /^(0[1-9]{1}[0-9]{8})$/;  // Kiểm tra số điện thoại bắt đầu với '0' và có tổng cộng 10 chữ số
                 if (!phonePattern.test(sdt.value)) {
                     document.getElementById('error-sdt').innerText = "Số điện thoại không hợp lệ !";
                     document.getElementById('error-sdt').style.display = 'block';
@@ -504,8 +512,13 @@
             }
 
 
-            // Kiểm tra mật khẩu
             if (pass1.value === "") {
+                document.getElementById('error-pass1').innerText = "Mật khẩu không được để trống!";
+                document.getElementById('error-pass1').style.display = 'block';
+                pass1.focus();
+                return false;
+            } else if (pass1.value.length < 6) {
+                document.getElementById('error-pass1').innerText = "Mật khẩu phải có ít nhất 6 ký tự!";
                 document.getElementById('error-pass1').style.display = 'block';
                 pass1.focus();
                 return false;
