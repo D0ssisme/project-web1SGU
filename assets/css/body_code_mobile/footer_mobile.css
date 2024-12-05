@@ -1,0 +1,12 @@
+@media screen and (max-width:680px)
+{
+    .grid_row
+    {
+        display:block;
+    }
+    .grid_col-2-4
+    {
+        width:100%;
+        padding-bottom:5px;
+    }
+}

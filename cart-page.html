@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng của bạn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/body_code/header.css">
+    <link rel="stylesheet" href="./assets/css/body_code/footer.css">
+    <link rel="stylesheet" href="./assets/css/body_code/containner.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/header_mobile.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/container_mobile.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/header_new.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/footer_mobile.css">
+    <link rel="icon" type="./Images/png" href="./assets/Images/favicon.png">
+
+    <link rel="stylesheet" href="/assets/bootstrap.min.css">
+    <script src="/assets/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo" class="header__logo-desktop"></a>
+        </div>
+        <div class="header__search">
+            <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
+                <div class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></div>
+                <input type="search" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
+            </form>
+        </div>
+        <div class="header__info">
+            <ul>
+                <a href="cart-page.html" id="cartIcon">
+                    <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                </a>
+
+                <!-- Nút tài khoản -->
+
+                <li onclick="showForm('login')" id="account-" class="header__user"><i
+                        class="header__info-usericon fa-regular fa-user"></i></li>
+                <li id="account-button" class="header__info-login">
+                    <span id="account-link" class="header__info-mobile">
+                        <a href="#" onclick="showForm('login')">Tài Khoản</a>
+                    </span>
+
+                    <!-- Menu Dropdown -->
+                    <div id="dropdown-menu" class="dropdown-content" style="display: none;">
+                        <a href="info.html">Thông tin cá nhân</a>
+                        <a href="history.html">Đơn hàng của tôi</a>
+                        <a href="#" id="logout-button" onclick="logout(event)">Đăng Xuất</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <header class="header-mobile">
+        <div class="header_mobile-user">
+            <div class="header_img-logo">
+                <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo"
+                        class="header__logo-desktop"></a>
+            </div>
+            <div class="header-options">
+                <ul>
+                    <a href="cart-page.html" id="cartIcon">
+                        <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                    </a>
+
+                    <!-- Nút tài khoản -->
+
+                    <li onclick="showForm('login')" id="account-" class="header__user"><i
+                            class="header__info-usericon fa-regular fa-user"></i></li>
+                    <li id="account-button" class="header__info-login">
+                        <!-- Menu Dropdown -->
+                        <div id="dropdown-menu" class="dropdown-content" style="display: none;">
+                            <a href="info.html">Thông tin cá nhân</a>
+                            <a href="history.html">Đơn hàng của tôi</a>
+                            <a href="#" id="logout-button" onclick="logout(event)">Đăng Xuất</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header__search">
+            <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
+                <input type="text" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
+                <div class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></div>
+            </form>
+        </div>
+    </header>
+
+    <!-- Product List in Cart Page -->
+    <main style="margin-top: 160px;">
+        <h2 class="py-4 px-5 mb-4 fs-1 border-bottom border-secondary">Giỏ hàng của bạn</h2>
+
+        <!-- Trang sản phẩm trong giỏ hàng -->
+        <div id="cart" class="cart-container my-5 mx-5"></div>
+
+        <hr class="my-3">
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-stretch mb-5">
+            <div id="totalCart" class="mb-4 me-auto"></div>
+
+            <div id="payment-button" class="d-flex flex-column flex-md-row gap-3">
+                <button type="button" class="btn btn-primary me-5 px-4 py-3 fs-5" id="payBankBtn" data-bs-toggle="modal"
+                    data-bs-target="#cash">Thanh toán bằng chuyển khoản</button>
+                <button type="button" class="btn btn-primary me-5 px-4 py-3 fs-5" id="payCashBtn" data-bs-toggle="modal"
+                    data-bs-target="#cash">Thanh toán khi nhận hàng</button>
+            </div>
+
+            <!-- Modal thanh toán bằng chuyển khoản -->
+            <div class="modal fade mt-5" id="qr-image" tabindex="-1" aria-labelledby="qe-image1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header py-4git">
+                            <h1 class="modal-title fs-5" id="modalTitle"></h1>
+                            <button type="button" class="btn-close me-1 fs-3" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img class="img-fluid" src="/assets/Images/bank_QR.jpg">
+                        </div>
+                        <!-- Modal Footer -->
+                        <div class="modal-footer justify-content-between">
+                            <div class="form-check align-items-center">
+                                <input class="form-check-input border border-info mx-2" type="checkbox"
+                                    id="termsCheckbox" style="width:12px; height:12px; transform:scale(1.5);">
+                                <label class="form-check-label fs-4 ms-2" for="termsCheckbox">
+                                    Tôi xác nhận đã thanh toán
+                                </label>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-secondary fs-4"
+                                    data-bs-dismiss="modal">Đóng</button>
+                                <button type="submit" class="btn btn-primary fs-4" id="finalConfirm" disabled>Xác
+                                    nhận</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Cập nhật thông tin người dùng trước khi thanh toán -->
+            <div class="modal fade" id="cash" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header p-4">
+                            <h1 class="modal-title fs-2" id="exampleModalLabel">Cập nhật thông tin</h1>
+                            <button type="button" class="btn-close fs-3" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <!-- Modal Body -->
+                        <div class="modal-body fs-4 p-4">
+                            <div class="input-group mb-3">
+                                <label for="username" class="form-label">Tài khoản</label>
+                                <div class="input-group">
+                                    <input id="username" type="text" class="form-control mx-1" aria-label="Username"
+                                        disabled>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label for="email" class="form-label">Email </label>
+                                <div class="input-group">
+                                    <div id="notification" style="display: none; position: fixed; top: 10px; right: 10px; background: #ff4d4d; color: white; padding: 10px; border-radius: 5px; z-index: 1000;">
+                                        Đơn hàng của bạn đang được xét duyệt
+                                    </div>                                    
+                                    <input id="email" type="email" class="form-control mx-1" aria-label="email"
+                                        placeholder="Email của bạn">
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label for="address" class="form-label">Địa chỉ </label>
+                                <div class="input-group">
+                                    <input id="address" type="text" class="form-control mb-3" aria-label="address"
+                                        placeholder="Nhập địa chỉ của bạn!" required>
+                                    <div id="addressSuggestions"></div>
+                                </div>
+                            </div>
+
+                            <div class="input-group my-3">
+                                <span class="input-group-text">Lời nhắn</span>
+                                <textarea class="form-control" id="message" aria-label="With textarea"></textarea>
+                            </div>
+                        </div>
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary fs-4" data-bs-dismiss="modal">Đóng</button>
+                            <button type="submit" class="btn btn-primary fs-4" id="confirmPayment">Xác nhận</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Div Hóa Đơn -->
+            <div class="modal fade" id="billModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header p-4">
+                            <h2 class="modal-title text-center text-primary">Hóa đơn của bạn</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body fs-5 p-4 mb-4">
+                            <div class="text-secondary"><i>Đơn hàng của bạn đang được xét duyệt...</i></div>
+
+                            <hr>
+
+                            <!-- Thông tin khách hàng -->
+                            <div class="mb-4">
+                                <p>Tài khoản: <span id="billUsername">---</span></p>
+                                <p>Email: <span id="billEmail">---</span></p>
+                                <p>Địa chỉ: <span id="billAddress">---</span></p>
+                            </div>
+                            <!-- Danh sách sản phẩm -->
+                            <div id="billProducts">
+                                <!-- Sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+                            </div>
+                            <!-- Tổng giá -->
+                            <div class="text-end mt-4">
+                                <h5 class="fw-bold">Tổng cộng: <span id="billTotal">0 VNĐ</span></h5>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary fs-5" data-bs-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="grid">
+            <div class="grid_row">
+                <div class="grid_col-2-4">
+                    <h3 class="footer__heading">Giới thiệu</h3>
+                    <ul class="footer__list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Giới thiệu về công ty</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Tuyển dụng</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">Gửi góp ý, khiếu nại</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid_col-2-4">
+                    <h3 class="footer__heading">Tổng đài hỗ trợ</h3>
+                    <ul class="footer__list">
+                        <li class="footer-item">
+                            Gọi mua: <a href="tel:1900 232 461" class="footer-item_link">1900 232 461</a> (8:00 - 21:30)
+                        </li>
+                        <li class="footer-item">
+                            Khiếu nại: <a href="tel:1800.1063 " class="footer-item_link">1800.1063 </a> (8:00 - 21:30)
+                        </li>
+                        <li class="footer-item">
+                            Bảo hành: <a href="tel:1900 232 465" class="footer-item_link">1900 232 465</a> (8:00 -
+                            21:00)
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid_col-2-4">
+                    <h3 class="footer__heading">Liên hệ với chúng tôi</h3>
+                    <ul class="footer__list">
+                        <li class="footer-item">
+                            <a href="https://www.facebook.com/groups/861246416172524" class="footer-item_link">
+                                <i class="footer-item-icon fa-brands fa-facebook"></i>
+                                Facebook</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item_link">
+                                <i class="footer-item-icon fa-brands fa-instagram"></i>
+                                Instagram</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="mailto:fancompany@email.com" class="footer-item_link">
+                                <i class="fa-regular fa-envelope"></i>
+                                Email
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid_col-2-4">
+                    <h3 class="footer__heading">Thanh toán qua</h3>
+                    <ul class="footer-list-thanhtoan">
+                        <li class="footer-item">
+                            <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/visa.jpg"
+                                alt="visa_logo">
+                        </li>
+                        <li class="footer-item">
+                            <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/mastercard.jpg"
+                                alt="mastercard_logo">
+                        </li>
+                        <li class="footer-item">
+                            <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/cash.jpg"
+                                alt="tienmat_logo">
+                        </li>
+                        <li class="footer-item">
+                            <img class="footer__logo-thanhtoan"
+                                src="./assets/Images/thanhtoan_logo/internet-banking.jpg" alt="internetbanking_logo">
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid_col-2-4">
+                    <h3 class="footer__heading">Chứng nhận bảo mật</h3>
+                    <ul class="footer-list-baomat">
+                        <li class="footer-list-item">
+                            <img src="./assets/Images/baomat_logo/bocongthuong.png" alt="bocongthuong_logo"
+                                class="footer__logo-baomat--congthuong">
+                        </li>
+                        <li class="footer-list-item">
+                            <img src="./assets/Images/baomat_logo/tinnhiem.png" alt="tinnhiem_logo"
+                                class="footer__logo-baomat">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__second">
+            <div class="grid">
+                <p class="footer__second-text">
+                    <i class="fa-regular fa-copyright"></i> 2024 by Fan Company. All rights reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form đăng nhập / đăng ký -->
+    
+
+    <script src="assets/js/formlogin.js"></script>
+    <script src="assets/js/xulilogin.js"></script>
+    <script src="user.json"></script>
+    <script src="assets/js/paymentProcess.js"></script>
+
+
+
+    <script>
+        // Lấy danh sách giỏ hàng từ localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartDiv = document.getElementById('cart');
+        const totalCartProduct = document.getElementById('totalCart');
+
+        if (isUserLoggedIn()) {  // Kiểm tra đăng nhập đúng cách
+            // Hàm hiển thị giỏ hàng
+            function renderCart() {
+                if (cart.length === 0) {
+                    cartDiv.innerHTML = '<p>Giỏ hàng trống.</p>';
+                    totalCartProduct.innerHTML = ''; // Xóa tổng cộng khi giỏ hàng trống
+                } else {
+                    cartDiv.innerHTML = cart.map((item, index) => {
+                        // Chuyển price từ chuỗi dạng "12.000" thành số
+                        const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
+
+                        // Tính tổng giá từng sản phẩm
+                        const itemTotal = item.quantity * priceNumber;
+
+                        return `
+                    <div class="d-flex position-relative my-4 bg-secondary-subtle p-4 rounded">
+                        <img src="/assets/Images/products/${item.image}" 
+                            class="flex-shrink-0 me-3 rounded" 
+                            width="100px" 
+                            height="100px" 
+                            alt="${item.name}">
+                        <div>
+                            <h5 class="mt-0 fs-4">${item.name}</h5>
+                            <p>
+                                <span class="space-item-masp">Mã sản phẩm: </span>MKD0${item.id}<br>
+                            </p>
+                            <a href="product_details.html?id=${item.id}" class="text-decoration-none icon-link fs-4">Xem chi tiết</a>
+                        </div>
+                        <div class="ms-auto">
+                            <p class="text-end fw-bold me-3">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                                Tổng: <span class="item-total">${itemTotal.toLocaleString()} VNĐ</span>
+                            </p>
+                            <div class="quantity-display mt-1 ms-4">
+                                <div class="quantity-control my-4">
+                                    <button class="quantity-btn btn px-2 fs-3 py-0 bg-light" onclick="updateQuantity(${index}, -1)">-</button>
+                                    <span class="product-quantity fw-bold">${item.quantity}</span>
+                                    <button class="quantity-btn btn px-2 fs-3 py-0 bg-light" onclick="updateQuantity(${index}, 1)">+</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-danger btn-sm float-end" onclick="removeFromCart(${index})">
+                                <i class="fa-solid fa-trash"></i> Xóa
+                            </button>
+                        </div>
+                    </div>
+                `;
+                    }).join('');
+
+                    // Hiển thị tổng giá toàn bộ giỏ hàng
+                    const total = cart.reduce((sum, item) => {
+                        const priceNumber = Number(item.price.toString().replace(/\./g, '')) || 0;
+                        return sum + priceNumber * item.quantity;
+                    }, 0);
+
+                    totalCartProduct.innerHTML = `
+                <div class="text-end mt-4">
+                    <h5 class="ms-5 text-uppercase fw-bold fs-3">Tổng cộng: <span class="total-price">${total.toLocaleString()} VNĐ</span></h5>
+                </div>
+            `;
+                }
+            }
+
+            // Cập nhật số lượng sản phẩm
+            function updateQuantity(index, change) {
+                cart[index].quantity += change;
+
+                // Đảm bảo số lượng tối thiểu là 1
+                if (cart[index].quantity < 1) {
+                    cart[index].quantity = 1;
+                }
+
+                // Lưu lại giỏ hàng vào localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                // Cập nhật giao diện
+                renderCart();
+            }
+
+            // Xóa sản phẩm khỏi giỏ hàng
+            function removeFromCart(index) {
+                if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?')) {
+                    cart.splice(index, 1); // Xóa sản phẩm theo chỉ số
+                    localStorage.setItem('cart', JSON.stringify(cart)); // Cập nhật localStorage
+                    renderCart(); // Cập nhật giao diện
+                }
+            }
+
+            // Gọi hàm hiển thị khi tải trang
+            renderCart();
+
+
+
+
+        } else {
+            // Nếu chưa đăng nhập, hiển thị thông báo và mở form đăng nhập
+            window.location.href = "index.html";
+        }
+
+        // Hàm kiểm tra đăng nhập
+        function isUserLoggedIn() {
+            return localStorage.getItem('isLoggedIn') === 'true';
+        }
+
+
+        // Lấy các nút thanh toán
+        const payBankBtn = document.getElementById('payBankBtn');
+        const payCashBtn = document.getElementById('payCashBtn');
+
+        // Thiết lập lại data-bs-target nếu người dùng chưa đăng nhập
+        if (!isUserLoggedIn()) {
+            payBankBtn.setAttribute('data-bs-target', ''); // Đặt data-bs-target rỗng
+            payCashBtn.setAttribute('data-bs-target', ''); // Đặt data-bs-target rỗng
+        }
+
+
+
+    </script>
+
+</body>

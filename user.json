@@ -1,0 +1,13 @@
+  [
+    {
+        "sdt": "123",
+        "password": "123"
+    },
+    {
+        "sdt": "0912345678",
+        "password": "mypassword"
+    },
+    { "sdt":"0786026878",
+      "password": "thinh2014"
+    }
+  ]

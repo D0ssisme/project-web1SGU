@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Web admin onlyfans </title>
+  <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css">
+  <!-- Bootstrap -->
+  <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="assets/css/custom.min.css" rel="stylesheet">
+
+  <style>
+    .color {
+      color: #2679f3 !important;
+    }
+
+    .button {
+
+      background-color: #d42220;
+      color: #ffffff;
+      border: none !important;
+
+    }
+
+    .button:hover {
+      background-color: #d42220;
+      color: #ffffff;
+    }
+
+    .dt-length {
+      display: none;
+    }
+
+    div.dt-container .dt-paging .dt-paging-button.current,
+    div.dt-container .dt-paging .dt-paging-button.current:hover {
+      background-color: #2679f3 !important;
+      color: #ffffff !important;
+      border: none !important;
+    }
+
+    .mt {
+      margin-top: 10px !important;
+    }
+
+    .btn-success {
+      color: white !important;
+
+      background-color: #87CB16 !important;
+    }
+  </style>
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+
+          <div class="navbar nav_title">
+            <div class="imglogo" style="padding-left: 20px;">
+              <a href="index.html">
+                <img src="assets/images/favicon.png" alt="Logo" style="width: 30px; height: auto;">
+              </a>
+            </div>
+            <div style="padding-right:10px ; ">
+
+              <a href="index.html" class="site_title" style="padding-left: 0px;"> <span>Quản lí Onlyfans</span></a>
+            </div>
+          </div>
+
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          <div class="profile clearfix">
+            <div class="profile_pic">
+              <img src="assets/images/admin1.jpg" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+              <span>Xin chào ,</span>
+              <h2 id="username-display1">admin</h2>
+            </div>
+          </div>
+
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+
+              <ul class="nav side-menu">
+                <li><a href="index.html"><i class="fas fa-newspaper"></i> Thống kê</a></li>
+                <li><a><i class="fas fa-box"></i> Quản lí sản phẩm <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="sanpham.html">Tất cả sản phẩm </a></li>
+
+
+
+
+                  </ul>
+                </li>
+                <li><a><i class="fa-solid fa-cart-shopping"></i> Quản lí đơn hàng <span
+                      class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="tatcadonhang.html">Tất cả đơn hàng</a></li>
+                    <li><a href="donhangchuaxuli.html">Chưa xử lí </a></li>
+                    <li><a href="donhangdaxuli.html">Đã xử lí</a></li>
+
+                  </ul>
+                </li>
+                <li><a href="qluser.html"><i class="fas fa-user"></i> Quản lí người dùng</a></li>
+
+           
+
+                <li><a href="#"><i class="fas fa-comment"></i> Phản hồi</a></li>
+              </ul>
+
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- /sidebar menu -->
+
+          <!-- /menu footer buttons -->
+          <div class="sidebar-footer hidden-small">
+
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+            </a>
+          </div>
+          <!-- /menu footer buttons -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <div class="nav toggle">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+          </div>
+          <nav class="nav navbar-nav">
+            <ul class=" navbar-right">
+              <li class="nav-item dropdown open" style="padding-left: 15px;">
+                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
+                  data-toggle="dropdown" aria-expanded="false">
+                  <img src="assets/images/admin1.jpg" alt="">
+                  <span id="username-display"></span>
+
+                </a>
+                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="javascript:;"> Profile</a>
+
+                  <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                </div>
+              </li>
+
+
+              <li role="presentation" class="nav-item dropdown open">
+
+                <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item">
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                        <span>John Smith</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <div class="text-center">
+                      <a class="dropdown-item">
+                        <strong>See All Alerts</strong>
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- /top navigation -->
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+
+
+        <div>
+          <h3 class="color" style="font-weight:500 ;">Quản lý tải khoản</h3>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Thêm tài khoản
+          </button>
+        </div>
+        <div class="row" style="margin:4px 20px;">
+
+
+          <table id="myTable" class="display">
+            <thead>
+              <tr>
+                <th class="color">Mã</th>
+                <th class="color">Tên người dùng</th>
+                <th class="color">Họ tên người dùng</th>
+                <th class="color">Địa chỉ</th>
+
+                <th class="color">Email</th>
+                <th class="color">Vai trò</th>
+
+
+                <th class="color">Thao tác</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-id="0">
+                <td>01</td>
+                <td>NguyenHuy</td>
+
+                <td>Nguyen Tuong Huy</td>
+                <td>TPHCM</td>
+
+                <td>nguyentuonghuy@gmail.com</td>
+                <td>
+                  Quản Lý
+                </td>
+
+
+                <td>
+                  <!--                         
+                                      <a href="" class="btn button"
+                                          style="margin-left:10px;"><i class="fa-solid fa-user-lock"></i></a> -->
+                  <button type="button" class="btn btn-primary" data-id="0" data-toggle="modal"
+                    style="margin-left:10px;" data-target="#exampleModal2">
+                    <i class="fa-solid fa-key"></i>
+                  </button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-left:10px;"
+                    data-target="#exampleModal1">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </button>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+          </table>
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Thêm mới tài khoản</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form id="myform" action="" method="POST">
+
+                  <div class="modal-body">
+                    <div class="row">
+
+                      <div class="col-md-12">
+                        <label for="">Tên người dùng</label>
+                        <input type="text" class="form-control" placeholder="Nhập tên người dùng" name="tennguoidung"
+                          required>
+                      </div>
+                      <div class="col-md-12 mt">
+                        <label for="">Họ tên</label>
+                        <input type="text" class="form-control" placeholder="Nhập họ tên người dùng" name="hoten"
+                          required>
+                      </div>
+                      <div class="col-md-12 mt">
+                        <label for="">Địa chỉ</label>
+                        <input type="text" class="form-control" placeholder="Nhập địa chỉ người dùng" name="address"
+                          required>
+                      </div>
+                      <div class="col-md-12 mt">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control" placeholder="Nhập email người dùng" name="email"
+                          required>
+                      </div>
+                      <div class="col-md-12 mt">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control" placeholder="Nhập mật khẩu người dùng"
+                          name="password" required>
+                      </div>
+                      <div class="col-md-12 mt">
+                        <label for="">Vai trò người dùng</label>
+                        <select class="form-control" name="role_id" id="" required>
+                          <option value="1">Quản lý</option>
+                          <option value="2">Nhân viên</option>
+                          <option value="3">Khách hàng</option>
+                          <option value="4">Khách hàng cao cấp</option>
+                        </select>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-info" style=".btn-custom {
+                                background-color: #00BFFF; /* Màu xanh da trời */
+                                color: white; /* Màu chữ */
+                                border: none; /* Bỏ viền */
+                            }
+                        
+                            .btn-custom:hover {
+                                background-color: #1E90FF; /* Màu khi hover */
+                            }">Lưu thông tin</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Khóa tài khoản</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form id="lockUserForm">
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-md-12 mt">
+                        <label for="">Thay đổi trạng thái người dùng</label>
+                        <select class="form-control" name="trangthai" required>
+                          <option value="khóa">Khóa</option>
+                          <option value="Đang sử dụng">Mở khóa</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-info" style=".btn-custom {
+                            background-color: #00BFFF; /* Màu xanh da trời */
+                            color: white; /* Màu chữ */
+                            border: none; /* Bỏ viền */
+                        }
+                    
+                        .btn-custom:hover {
+                            background-color: #1E90FF; /* Màu khi hover */
+                        }">Lưu thông tin</button>
+                  </div>
+                </form>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- sua tai khoan -->
+          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sửa tài khoản</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form id="accountForm">
+
+                  <div class="modal-body">
+                    <div class="row">
+
+                      <div class="col-md-12">
+                        <label for="">Tên người dùng</label>
+                        <input type="text" class="form-control" placeholder="Nhập tên người dùng" name="tennguoidung"
+                          value="HuyNguyen" required>
+                      </div>
+                      <div class="col-md-12 mt">
+                        <label for="">Họ tên</label>
+                        <input type="text" class="form-control" placeholder="Nhập họ tên người dùng" name="hoten"
+                          value="Nguyen Tuong Huy" required>
+                      </div>
+                      <div class="col-md-12 mt">
+                        <label for="">Địa chỉ</label>
+                        <input type="text" class="form-control" placeholder="Nhập địa chỉ người dùng" name="address"
+                          value="TPHCM" required>
+                      </div>
+                      <div class="col-md-12 mt">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control" placeholder="Nhập email người dùng" name="email"
+                          value="nguyentuonghuy@gmail.com" required>
+                      </div>
+                      <div class="col-md-12 mt">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control" placeholder="Nhập mật khẩu người dùng"
+                          name="password" required>
+                      </div>
+                      <div class="col-md-12 mt">
+                        <label for="">Vai trò người dùng</label>
+                        <select class="form-control" name="role_id" id="" required>
+                          <option value="1">Quản lý</option>
+                          <option value="2">Nhân viên</option>
+                          <option value="3">Khách hàng</option>
+                          <option value="4">Khách hàng cao cấp</option>
+                        </select>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-info" style=".btn-custom {
+                              background-color: #00BFFF; /* Màu xanh da trời */
+                              color: white; /* Màu chữ */
+                              border: none; /* Bỏ viền */
+                          }
+                      
+                          .btn-custom:hover {
+                              background-color: #1E90FF; /* Màu khi hover */
+                          }">Lưu thông tin</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- /page content -->
+
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          <a href="#">From onlyfans with love</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
+  </div>
+
+  <script src="vendors/jquery/dist/jquery.min.js"></script>
+  <script src="vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="vendors/fastclick/lib/fastclick.js"></script>
+  <script src="vendors/nprogress/nprogress.js"></script>
+  <script src="vendors/iCheck/icheck.min.js"></script>
+
+
+  <script src="assets/js/custom.min.js"></script>
+</body>
+
+</html>
+<script>
+
+  window.onload = function () {
+    var username = localStorage.getItem('username');
+    if (username) {
+      document.getElementById('username-display').textContent = username;
+      document.getElementById('username-display1').textContent = username; // Cập nhật tên người dùng
+    }
+  }
+</script>
+
+
+
+<script>
+
+
+
+  document.querySelectorAll(".edit-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+      const rowIndex = this.getAttribute("data-id"); // Lấy chỉ mục hàng
+      const row = document.querySelector("tbody").rows[rowIndex]; // Tìm hàng dựa trên chỉ mục
+
+      // Lấy dữ liệu từng ô của hàng
+      const cells = row.querySelectorAll("td");
+      const tenNguoiDung = cells[1].textContent.trim();
+      const hoTen = cells[2].textContent.trim();
+      const diaChi = cells[3].textContent.trim();
+      const email = cells[4].textContent.trim();
+      const vaiTro = cells[5].textContent.trim();
+
+      // Điền dữ liệu vào form trong modal
+      document.querySelector("input[name='tennguoidung']").value = tenNguoiDung;
+      document.querySelector("input[name='hoten']").value = hoTen;
+      document.querySelector("input[name='address']").value = diaChi;
+      document.querySelector("input[name='email']").value = email;
+      document.querySelector("select[name='role_id']").value =
+        vaiTro === "Quản lý" ? "1" : vaiTro === "Nhân viên" ? "2" : vaiTro === "Khách hàng cao cấp" ? "4" : "3";
+
+      // Lưu chỉ mục hàng được sửa vào localStorage để sử dụng khi lưu lại
+      localStorage.setItem("editingRowIndex", rowIndex);
+    });
+  });
+
+
+
+  // Hàm hiển thị dữ liệu từ localStorage vào bảng
+  function populateTable() {
+    // Lấy dữ liệu tài khoản từ localStorage
+    const accountData = localStorage.getItem("accountInfo");
+
+    // Chuyển chuỗi JSON thành đối tượng (nếu dữ liệu tồn tại)
+    const account = accountData ? JSON.parse(accountData) : null;
+
+    // Kiểm tra nếu có dữ liệu
+    if (account) {
+      // Lấy tất cả các hàng trong bảng
+      const rows = document.querySelectorAll("tbody tr");
+
+      rows.forEach(row => {
+        const rowId = row.getAttribute("data-id"); // Lấy data-id của hàng
+
+        if (rowId == account.id) {  // Kiểm tra nếu data-id trùng với account.id
+          const cells = row.querySelectorAll("td");
+
+          // Gán dữ liệu vào các ô tương ứng
+          cells[1].textContent = account.tennguoidung || "N/A"; // Tên người dùng
+          cells[2].textContent = account.hoten || "N/A"; // Họ tên
+          cells[3].textContent = account.address || "N/A"; // Địa chỉ
+          cells[4].textContent = account.email || "N/A"; // Email
+          cells[5].textContent =
+            account.role_id == "1"
+              ? "Quản lý"
+              : account.role_id == "2"
+                ? "Nhân viên"
+                : account.role_id == "3"
+                  ? "Khách hàng"
+                  : "Khách hàng cao cấp"; // Vai trò
+        }
+      });
+    }
+  }
+
+
+
+
+
+  function updateFirstRow() {
+    // Lấy dữ liệu tài khoản từ localStorage
+    const accountData = localStorage.getItem("accountInfo");
+
+    // Chuyển chuỗi JSON thành đối tượng (nếu dữ liệu tồn tại)
+    const account = accountData ? JSON.parse(accountData) : null;
+
+    // Kiểm tra nếu có dữ liệu
+    if (account) {
+      // Tìm hàng thứ 1 trong bảng
+      const firstRow = document.querySelector("tbody").rows[0]; // Hàng thứ 1
+
+      if (firstRow) {
+        // Gán dữ liệu vào các ô tương ứng
+        const cells = firstRow.querySelectorAll("td");
+        cells[1].textContent = account.tennguoidung || "N/A"; // Tên người dùng
+        cells[2].textContent = account.hoten || "N/A"; // Họ tên
+        cells[3].textContent = account.address || "N/A"; // Địa chỉ
+        cells[4].textContent = account.email || "N/A"; // Email
+        cells[5].textContent =
+          account.role_id == "1"
+            ? "Quản lý"
+            : account.role_id == "2"
+              ? "Nhân viên"
+              : account.role_id == "3"
+                ? "Khách hàng"
+                : "Khách hàng cao cấp"; // Vai trò
+      } else {
+        console.log("Hàng thứ 1 không tồn tại!");
+      }
+    }
+  }
+
+  // Gọi hàm khi cần (ví dụ: khi trang tải)
+  document.addEventListener("DOMContentLoaded", updateFirstRow);
+
+
+
+
+
+
+
+
+
+
+  // Gọi hàm hiển thị dữ liệu khi tải trang
+  document.addEventListener("DOMContentLoaded", populateTable);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const accountForm = document.getElementById("accountForm");
+    const modal = document.getElementById("exampleModal1");
+
+    // Kiểm tra nếu có dữ liệu trong localStorage và điền vào form
+    modal.addEventListener("show.bs.modal", () => {
+      const savedAccount = JSON.parse(localStorage.getItem("accountInfo"));
+      if (savedAccount) {
+        accountForm.tennguoidung.value = savedAccount.tennguoidung || "";
+        accountForm.hoten.value = savedAccount.hoten || "";
+        accountForm.address.value = savedAccount.address || "";
+        accountForm.email.value = savedAccount.email || "";
+        accountForm.password.value = savedAccount.password || "";
+        accountForm.role_id.value = savedAccount.role_id || "1";
+      }
+    });
+
+    // Lưu dữ liệu vào localStorage khi submit form
+    accountForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const accountInfo = {
+        tennguoidung: accountForm.tennguoidung.value,
+        hoten: accountForm.hoten.value,
+        address: accountForm.address.value,
+        email: accountForm.email.value,
+        password: accountForm.password.value,
+        role_id: accountForm.role_id.value,
+      };
+
+      localStorage.setItem("accountInfo", JSON.stringify(accountInfo));
+
+      location.reload();
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Hàm cập nhật một hàng trong bảng
+  function updateRow(rowIndex) {
+    // Lấy dữ liệu tài khoản từ localStorage
+    const accountData = localStorage.getItem("accountInfo");
+
+    // Chuyển chuỗi JSON thành đối tượng (nếu dữ liệu tồn tại)
+    const account = accountData ? JSON.parse(accountData) : null;
+
+    // Kiểm tra nếu có dữ liệu
+    if (account) {
+      // Tìm hàng trong bảng dựa trên chỉ số hàng (rowIndex)
+      const table = document.querySelector("tbody");
+      const row = table.rows[rowIndex]; // Tìm hàng theo chỉ số
+
+      if (row) {
+        // Gán dữ liệu vào các ô tương ứng
+        const cells = row.querySelectorAll("td");
+        cells[1].textContent = account.tennguoidung || "N/A"; // Tên người dùng
+        cells[2].textContent = account.hoten || "N/A"; // Họ tên
+        cells[3].textContent = account.address || "N/A"; // Địa chỉ
+        cells[4].textContent = account.email || "N/A"; // Email
+        cells[5].textContent =
+          account.role_id == "1"
+            ? "Quản lý"
+            : account.role_id == "2"
+              ? "Nhân viên"
+              : account.role_id == "3"
+                ? "Khách hàng"
+                : "Khách hàng cao cấp"; // Vai trò
+      } else {
+        console.log("Hàng không tồn tại!");
+      }
+    }
+  }
+
+  // Lắng nghe sự kiện click trên nút "Sửa thông tin"
+  document.addEventListener("DOMContentLoaded", () => {
+    const editButtons = document.querySelectorAll(".btn-primary");
+
+    editButtons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        // Lấy rowIndex từ data-id của nút bấm
+        const rowId = e.target.closest('button').getAttribute('data-id');
+        const rowIndex = parseInt(rowId); // Chuyển data-id thành số nguyên
+
+        updateRow(rowIndex); // Gọi hàm cập nhật hàng với chỉ số hàng
+      });
+    });
+  });
+
+</script>
+
+
+
+
+<script>
+  document.querySelector("form").addEventListener("submit", function (event) {
+    // Ngăn chặn hành động gửi form 
+    event.preventDefault();
+
+    // Lấy dữ liệu
+    const formData = new FormData(event.target);
+    const dataObject = {};
+    formData.forEach((value, key) => {
+      dataObject[key] = value;
+    });
+
+    // Chuyển đổi thành chuỗi JSON
+    const jsonData = JSON.stringify(dataObject, null, 2);
+
+    // Tạo Blob từ chuỗi JSON
+    const blob = new Blob([jsonData], { type: "application/json" });
+
+    // Tạo URL cho Blob
+    const url = URL.createObjectURL(blob);
+
+  });
+</script>
