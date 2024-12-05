@@ -296,9 +296,6 @@ margin-top:2px;
     height:42px;
     padding: 19px 14px 0px;
     margin-top:10px;
-    border-radius: 10px;
-    border: 1px solid #9c9d9ec5;
-    box-sizing: border-box;
     grid-row:1;
 }
 .small-search-box-row1-amount
@@ -307,9 +304,6 @@ margin-top:2px;
     height:42px;
     padding: 19px 14px 0px;
     margin-top:10px;
-    border-radius: 10px;
-    border: 1px solid #9c9d9ec5;
-    box-sizing: border-box;
     grid-row:1;
 }
 .small-search-box-row1-date
@@ -318,19 +312,13 @@ margin-top:2px;
     height:42px;
     padding: 19px 14px 0px;
     margin-top:10px;
-    border-radius: 10px;
-    border: 1px solid #9c9d9ec5;
-    box-sizing: border-box;
     grid-row:1;
 }
 .sort-button
 {
 width:103px;
 height:42px;
-background: #006eff;
-color:#ffffff;
-border-radius: 10px;
-margin-top:10px;
+
 grid-row:1;
 }
 
