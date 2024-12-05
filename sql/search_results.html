@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/body_code/header.css">
+    <link rel="stylesheet" href="./assets/css/body_code/footer.css">
+    <link rel="stylesheet" href="./assets/css/body_code/containner.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/body_code/middle.css">
+    <link rel="stylesheet" href="./assets/css/body_code/style.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/header_new.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/middle_mb.css">
+    <link rel="stylesheet" href="./assets/css/body_code_mobile/footer_mobile.css">
+    <link rel="icon" type="./Images/png" href="./assets/Images/favicon.png">
+    <title>Trang tìm kiếm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+                <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo" class="header__logo-desktop"></a>
+        </div>
+
+        <div class="header__search">
+            <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
+                <div class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></div>
+                <input type="search" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
+            </form>
+        </div>
+        <div class="header__info">
+            <ul>
+                <a href="cart-page.html" id="cartIcon">
+                    <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                </a>
+
+                <!-- Nút tài khoản -->
+
+                <li onclick="showForm('login')" id="account-" class="header__user"><i
+                        class="header__info-usericon fa-regular fa-user"></i></li>
+                <li id="account-button" class="header__info-login">
+                    <span id="account-link" class="header__info-mobile">
+                        <a href="#" onclick="showForm('login')">Tài Khoản</a>
+                    </span>
+
+                    <!-- Menu Dropdown -->
+                    <div id="dropdown-menu" class="dropdown-content" style="display: none;">
+                        <a href="./info.html">Thông tin cá nhân</a>
+                        <a href="#">Đơn hàng của tôi</a>
+                        <a href="#" id="logout-button" onclick="logout(event)">Đăng Xuất</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <header class="header-mobile">
+        <div class="header_mobile-user">
+                <div class="header_img-logo">
+                    <a href="index.html"><img src="./assets/Images/fan_logo.png" alt="logo" class="header__logo-desktop"></a>
+                </div>
+                <div class="header-options">
+                    <ul>
+                        <a href="cart-page.html" id="cartIcon">
+                            <li><i class="header__info-cart fa-solid fa-cart-shopping"></i></li>
+                        </a>
+        
+                        <!-- Nút tài khoản -->
+        
+                        <li onclick="showForm('login')" id="account-" class="header__user"><i
+                                class="header__info-usericon fa-regular fa-user"></i></li>
+                        <li id="account-button" class="header__info-login">
+                            <!-- Menu Dropdown -->
+                            <div id="dropdown-menu" class="dropdown-content" style="display: none;">
+                                <a href="./info.html">Thông tin cá nhân</a>
+                                <a href="#">Đơn hàng của tôi</a>
+                                <a href="#" id="logout-button" onclick="logout(event)">Đăng Xuất</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="header__search">
+            <form action="search_results.html" method="GET" class="header__search-main" id="searchForm">
+                <div class="search-button"><i class="header__find-button fa-solid fa-magnifying-glass"></i></div>
+                <input type="search" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" autocomplete="off">
+            </form>
+        </div>
+        <div class="container_products-left-mb">
+            <div class="nav-left-mb">
+                <ul>
+                    <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
+                    <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
+                    <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
+                    <li class="phanloai_animation"><a href="#" onclick="filterProducts(''); return false;">Tất cả</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container" style="padding:0;">
+        <div class="container_main" style="padding: 0 5%;">
+            <div class="container_products-left">
+                <div class="nav-left">
+                    <ul>
+                        <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt trần'); return false;">Quạt trần</a></li>
+                        <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt lửng'); return false;">Quạt lửng</a></li>
+                        <li class="phanloai_animation"><a href="#" onclick="filterProducts('Quạt hơi nước'); return false;">Quạt hơi nước</a></li>
+                        <li class="phanloai_animation"><a href="#" onclick="filterProducts(''); return false;">Tất cả</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container_products-right">
+                <div class="loc_main">
+                    <div class="loc-filter">
+                        <i class="loc_icon fa-solid fa-filter" id="filter-icon"></i>
+                    </div>
+                    <div id="filter-box-search" class="loc" style="display: none;">
+                        <h3>Lọc theo sản phẩm</h3>
+                        <form id="price-filter-form">
+                            <label for="min-price">Giá tối thiểu:</label>
+                            <input type="text" id="min-price" placeholder="0">
+                            <label for="max-price">Giá tối đa:</label>
+                            <input type="text" id="max-price" placeholder="100.000.000">
+                            <label for="product-brand">Chọn hãng:</label>
+                            <input type="text" id="product-brand" placeholder="Hãng">
+                            <label for="power-range">Công suất:</label>
+                            <input type="number" id="min-power" placeholder="Tối thiểu">
+                            <input type="number" id="max-power" placeholder="Tối đa">
+                            <label for="product-speed">Tốc độ gió:</label>
+                            <input type="number" id="product-speed" placeholder="Tốc độ (1, 2, 3, 4 ,5)" min="1" max="5">   
+                            <label for="product-type">Chọn loại quạt:</label>
+                            <select id="product-type">
+                                <option value="">Tất cả</option>
+                                <option value="Quạt trần">Quạt trần</option>
+                                <option value="Quạt lửng">Quạt lửng</option>
+                                <option value="Quạt hơi nước">Quạt hơi nước</option>
+                            </select>
+                            
+                            <button type="button" onclick="filterProducts()" class="loc-button">Lọc</button>
+                        </form>
+                    </div>  
+                </div>
+                <h1 id="search-title">Kết quả tìm kiếm</h1>
+                <div id="search-results" class="product-list"></div>
+                <div id="pagination" class="pagination"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="grid">
+                <div class="grid_row">
+                        <div class="grid_col-2-4">
+                            <h3 class="footer__heading">Giới thiệu</h3>
+                            <ul class="footer__list">
+                                <li class="footer-item">
+                                    <a href="" class="footer-item_link">Giới thiệu về công ty</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="" class="footer-item_link">Tuyển dụng</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="" class="footer-item_link">Gửi góp ý, khiếu nại</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid_col-2-4">
+                            <h3 class="footer__heading">Tổng đài hỗ trợ</h3>
+                            <ul class="footer__list">
+                                <li class="footer-item">
+                                    Gọi mua: <a href="tel:1900 232 461" class="footer-item_link">1900 232 461</a> (8:00 - 21:30)
+                                </li>
+                                <li class="footer-item">
+                                    Khiếu nại: <a href="tel:1800.1063 " class="footer-item_link">1800.1063 </a> (8:00 - 21:30)
+                                </li>
+                                <li class="footer-item">
+                                    Bảo hành: <a href="tel:1900 232 465" class="footer-item_link">1900 232 465</a> (8:00 - 21:00)
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid_col-2-4">
+                            <h3 class="footer__heading">Liên hệ với chúng tôi</h3>
+                            <ul class="footer__list">
+                                <li class="footer-item">
+                                    <a href="https://www.facebook.com/groups/861246416172524" class="footer-item_link">
+                                        <i class="footer-item-icon fa-brands fa-facebook"></i>
+                                        Facebook</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="" class="footer-item_link">
+                                        <i class="footer-item-icon fa-brands fa-instagram"></i>
+                                        Instagram</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="mailto:fancompany@email.com" class="footer-item_link">
+                                        <i class="fa-regular fa-envelope"></i>
+                                        Email
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid_col-2-4">
+                            <h3 class="footer__heading">Thanh toán qua</h3>
+                            <ul class="footer-list-thanhtoan">
+                                <li class="footer-item">
+                                    <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/visa.jpg" alt="visa_logo">
+                                </li>
+                                <li class="footer-item">
+                                    <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/mastercard.jpg" alt="mastercard_logo">
+                                </li>
+                                <li class="footer-item">
+                                    <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/cash.jpg" alt="tienmat_logo">
+                                </li>
+                                <li class="footer-item">
+                                    <img class="footer__logo-thanhtoan" src="./assets/Images/thanhtoan_logo/internet-banking.jpg" alt="internetbanking_logo">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid_col-2-4">
+                            <h3 class="footer__heading">Chứng nhận bảo mật</h3>
+                            <ul class="footer-list-baomat">
+                                <li class="footer-list-item">
+                                    <img src="./assets/Images/baomat_logo/bocongthuong.png" alt="bocongthuong_logo" class="footer__logo-baomat--congthuong">
+                                </li>
+                                <li class="footer-list-item">
+                                    <img src="./assets/Images/baomat_logo/tinnhiem.png" alt="tinnhiem_logo" class="footer__logo-baomat">
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+        </div>
+
+        <div class="footer__second">
+            <div class="grid">
+                <p class="footer__second-text">
+                    <i class="fa-regular fa-copyright"></i> 2024 by Fan Company. All rights reserved   
+                </p>
+            </div>
+        </div>
+</footer>
+
+
+
+<div class="modall" id="registerForm" style="display: none;">
+    <div class="modal_overplay" id="overlay" onclick="closeFormOutside()">
+
+    </div>
+    <div class="modal_body">
+        <div class="modal_form">
+
+            <div class="form__head">
+                <h4 class="content2"><strong>Đăng Ký</strong></h4>
+
+            </div>
+
+
+            <div class="form__body">
+                <div class="form__group">
+                    <span id="error-sdt" style="color: red; display: none;font-size: 15px;">Vui lòng nhập vào số
+                        điện thoại </span>
+                    <input type="text" class="form__input" id="sdt" placeholder="Số Điện Thoại">
+                </div>
+                <div class="form__group">
+                    <span id="error-diachi" style="color: red; display: none;font-size: 15px;">Vui lòng nhập vào địa
+                        chỉ
+                    </span>
+                    <input type="text" class="form__input" id="address" placeholder="Địa chỉ">
+                </div>
+                <div class="form__group">
+                    <span id="error-pass1" style="color: red; display: none;font-size: 15px;">vui lòng nhập mật khẩu
+                    </span>
+                    <input type="password" class="form__input" id="pass1" placeholder="Mật Khẩu">
+                </div>
+                <div class="form__group">
+                    <span id="error-pass2" style="color: red; display: none;font-size: 15px;">vui lòng xác nhận mật
+                        khẩu </span>
+                    <input type="password" class="form__input" id="pass2" placeholder="Nhập lại mật khẩu">
+                </div>
+
+
+                <div class="form__police">
+                    <span id="error-agree" style="color: red; display: none;font-size: 15px;">Vui lòng chọn vào ô
+                        đồng ý với điều khoản
+                    </span>
+                    <p class="form__police-text">
+                        <input type="checkbox" id="agree" name="agree"> đồng ý với OnlyFan về
+                        <a href="" class="form__police-link">điều khoản dịch vụ </a>&
+                        <a href="" class="form__police-link">Chính sách bảo mật </a>
+                    </p>
+
+                </div>
+
+                <div class="control">
+                    <div class="d-grid gap-2">
+                        <button onclick=" checkform()" type="submit" class="btn btn-danger btn-custom" id="btbdk">
+
+                            <h4 class="content">ĐĂNG KÝ</h4>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="haveacc">
+                    <p class="noacc">
+                        Bạn đã có tài khoản?
+                        <a href="#" onclick="showForm('login')">Đăng Nhập</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modall" id="loginForm" style="display:none ;">
+    <div class="modal_overplay" id="overlay" onclick="closeFormOutside()">
+
+    </div>
+    <div class="modal_body">
+        <div class="modal_form">
+
+            <div class="form__head">
+                <h4 class="content2"><strong>Đăng Nhập</strong></h4>
+
+            </div>
+
+
+            <div class="form__body">
+                <span id="error" style="color: red; display: none;font-size: 15px;">Sai thông tin đăng nhập</span>
+                <div class="form__group">
+                    <input type="text" class="form__input" id="sdtlogin" placeholder="Số Điện Thoại">
+                    <span id="sdt-error" style="color: red; display: none;font-size: 15px;">Vui lòng nhập vào số
+                        điện thoại</span>
+
+                </div>
+
+                <div class="form__group">
+
+                    <input type="password" class="form__input" id="passlogin" placeholder="Mật Khẩu">
+                    <span id="pass-error" style="color: red; display: none;font-size: 15px;">Vui lòng nhập mật
+                        khẩu</span>
+
+
+                </div>
+
+
+
+                <div class="form__forgot" style="display: flex;">
+
+
+                    <div class="">
+                        <p>
+
+                            <a href="" class="forgot_pass">Quên Mật Khẩu ?</a>
+
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <div class="control">
+                    <div class="d-grid gap-2">
+                        <button onclick="checkformlogin()" type="submit" class="btn btn-danger btn-custom"
+                            id="btbdk">
+
+                            <h4 class="content">ĐĂNG NHẬP</h4>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="haveacc">
+                    Bạn chưa có tài khoản?
+                    <a href="#" onclick="showForm('register')">Đăng Ký</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    function checkform() {
+        document.getElementById('error-sdt').style.display = 'none';
+        document.getElementById('error-diachi').style.display = 'none';
+        document.getElementById('error-pass1').style.display = 'none';
+        document.getElementById('error-pass2').style.display = 'none';
+        document.getElementById('error-agree').style.display = 'none';
+
+        var sdt = document.getElementById("sdt");
+        var address = document.getElementById("address");
+        var pass1 = document.getElementById("pass1");
+        var pass2 = document.getElementById("pass2");
+
+        // Kiểm tra số điện thoại
+        if (sdt.value === "") {
+            document.getElementById('error-sdt').style.display = 'block';
+            sdt.focus();
+            return false;
+        } else {
+            var phonePattern = /^(0[1-9]{1}[0-9]{8})$/;  // Kiểm tra số điện thoại bắt đầu với '0' và có tổng cộng 10 chữ số
+            if (!phonePattern.test(sdt.value)) {
+                document.getElementById('error-sdt').innerText = "Số điện thoại không hợp lệ !";
+                document.getElementById('error-sdt').style.display = 'block';
+                sdt.focus();
+                return false;
+            }
+        }c
+
+        // Kiểm tra địa chỉ
+        if (address.value === "") {
+            document.getElementById('error-diachi').style.display = 'block';
+            address.focus();
+            return false;
+        }
+
+
+        if (pass1.value === "") {
+            document.getElementById('error-pass1').innerText = "Mật khẩu không được để trống!";
+            document.getElementById('error-pass1').style.display = 'block';
+            pass1.focus();
+            return false;
+        } else if (pass1.value.length < 6) {
+            document.getElementById('error-pass1').innerText = "Mật khẩu phải có ít nhất 6 ký tự!";
+            document.getElementById('error-pass1').style.display = 'block';
+            pass1.focus();
+            return false;
+        }
+
+        if (pass2.value === "") {
+            document.getElementById('error-pass2').innerText = "Vui lòng xác nhận mật khẩu !";
+            document.getElementById('error-pass2').style.display = 'block';
+            pass2.focus();
+            return false;
+        }
+
+        if (pass1.value !== pass2.value) {
+            document.getElementById('error-pass2').innerText = "Mật khẩu không trùng khớp !";
+            document.getElementById('error-pass2').style.display = 'block';
+            pass2.focus();
+            return false;
+        }
+
+        // Kiểm tra checkbox đồng ý
+        var agreeCheckbox = document.getElementById('agree');
+        if (!agreeCheckbox.checked) {
+            document.getElementById('error-agree').style.display = 'block';
+            return false;
+        }
+
+        // Nếu tất cả các kiểm tra đều thành công
+
+        openModal_dangkythanhcong();
+        return true;
+
+    }
+    <div class="modal_overplay" id="overlay" onclick="closeFormOutside()">
+
+    </div>
+    <div class="modal_body">
+        <div class="modal_form">
+
+            <div class="form__head">
+                <h4 class="content2"><strong>Đăng Nhập</strong></h4>
+
+            </div>
+
+
+            <div class="form__body">
+                <div class="form__group">
+                    <input type="text" class="form__input" id="sdtlogin" placeholder="Số Điện Thoại">
+                </div>
+
+                <div class="form__group">
+
+                    <input type="password" class="form__input" id="passlogin" placeholder="Mật Khẩu">
+
+
+                </div>
+
+
+
+                <div class="form__forgot">
+
+                    <p>
+
+                        <a href="" class="forgot_pass">Quên Mật Khẩu ?</a>
+
+                    </p>
+
+                </div>
+
+                <div class="control">
+                    <div class="d-grid gap-2">
+                        <button onclick="checkformlogin()" type="submit" class="btn btn-danger btn-custom"
+                            id="btbdk">
+
+                            <h4 class="content">ĐĂNG NHẬP</h4>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="haveacc">
+                    Bạn chưa có tài khoản?
+                    <a href="#" onclick="showForm('register')">Đăng Ký</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="database/data.js"></script>
+    <script>
+const urlParams = new URLSearchParams(window.location.search);
+const query = urlParams.get('query');
+const searchTitle = document.getElementById('search-title');
+const searchResults = document.getElementById('search-results');
+const pagination = document.getElementById('pagination');
+const productsPerPage = 8;
+let filteredProducts = [];
+let currentPage = 1;
+
+// Hàm hiển thị kết quả tìm kiếm
+function displaySearchResults(page = 1) {
+    const startIndex = (page - 1) * productsPerPage;
+    const endIndex = page * productsPerPage;
+    const currentProducts = filteredProducts.slice(startIndex, endIndex);
+
+    searchResults.innerHTML = '';
+    currentProducts.forEach(product => {
+        const productItem = document.createElement('div');
+        productItem.classList.add('product-item');
+        productItem.innerHTML = `
+            <a href="product_details.html?id=${product.id}">
+                <img src="./assets/Images/products/${product.image}" alt="${product.name}">
+                <h3 style="font-size:1.6rem;line-height:20px;">${product.name}</h3>
+                <p style="font-size:1.4rem";><strong>${product.price} VND</strong></p>
+            </a>
+        `;
+        searchResults.appendChild(productItem);
+    });
+
+    createPagination(page);
+}
+
+// Hàm tạo phân trang
+function createPagination(currentPage) {
+    pagination.innerHTML = '';
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+    const prevButton = document.createElement('button');
+    prevButton.innerHTML = '<i class="fas fa-arrow-left"></i>';
+    prevButton.disabled = currentPage === 1;
+    prevButton.addEventListener('click', () => {
+        if (currentPage > 1) {
+            displaySearchResults(currentPage - 1);
+        }
+    });
+    pagination.appendChild(prevButton);
+
+    for (let i = 1; i <= totalPages; i++) {
+        const pageButton = document.createElement('button');
+        pageButton.textContent = i;
+        pageButton.classList.toggle('disabled', i === currentPage);
+        pageButton.addEventListener('click', () => {
+            displaySearchResults(i);
+        });
+        pagination.appendChild(pageButton);
+    }
+
+    const nextButton = document.createElement('button');
+    nextButton.innerHTML = '<i class="fas fa-arrow-right"></i>';
+    nextButton.disabled = currentPage === totalPages;
+    nextButton.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            displaySearchResults(currentPage + 1);
+        }
+    });
+    pagination.appendChild(nextButton);
+}
+
+document.getElementById('min-price').addEventListener('input', (event) => {
+    const value = event.target.value.replace(/[^\d]/g, ''); // Loại bỏ ký tự không phải số
+    event.target.value = Number(value).toLocaleString('vi-VN'); // Định dạng thành số kiểu Việt Nam
+});
+
+document.getElementById('max-price').addEventListener('input', (event) => {
+    const value = event.target.value.replace(/[^\d]/g, ''); // Loại bỏ ký tự không phải số
+    event.target.value = Number(value).toLocaleString('vi-VN'); // Định dạng thành số kiểu Việt Nam
+});
+// Hàm xử lý tìm kiếm và lọc sản phẩm
+function handleSearch(query) {
+    filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(query.toLowerCase())
+    );
+
+    // Lọc thêm theo loại, giá và hãng
+    const minPrice = parseFloat(document.getElementById('min-price').value) || 0;
+    const maxPrice = parseFloat(document.getElementById('max-price').value) || Infinity;
+    const minPower = parseFloat(document.getElementById('min-power').value) || 0;
+    const maxPower = parseFloat(document.getElementById('max-power').value) || Infinity;
+    const speedType = parseFloat(document.getElementById('product-speed').value) || 0;
+    const selectedType = document.getElementById('product-type').value;
+    const selectedBrand = document.getElementById('product-brand').value.trim().toLowerCase();
+
+    filteredProducts = filteredProducts.filter(product => {
+        const price = parseFloat(product.price);
+        const power = parseFloat(product.power);
+        const speed = parseFloat(product.speed);
+        const matchesType = selectedType ? product.type === selectedType : true;
+        const matchesPrice = price >= minPrice && price <= maxPrice;
+        const matchesBrand = selectedBrand ? product.brand.toLowerCase().includes(selectedBrand) : true;
+        const matchesPower = power >= minPower && power <= maxPower;
+        const matchesSpeed = speed === speedType || speedType === 0;
+        return matchesType && matchesPrice && matchesBrand && matchesPower && matchesSpeed;
+    });
+
+    if (filteredProducts.length > 0) {
+        searchTitle.textContent = `Kết quả tìm kiếm cho: "${query}"`;
+        displaySearchResults(currentPage);
+    } else {
+        searchTitle.textContent = `Không tìm thấy sản phẩm nào cho: "${query}"`;
+        searchResults.innerHTML = '';
+        pagination.innerHTML = '';
+    }
+    document.getElementById('price-filter-form').reset();
+}
+
+// Lắng nghe sự kiện cho nút lọc
+document.getElementById('price-filter-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Ngăn chặn gửi form
+    handleSearch(query); // Gọi lại hàm tìm kiếm
+});
+
+// Gọi hàm tìm kiếm nếu có truy vấn
+if (query) {
+    handleSearch(query);
+}
+
+// Thêm sự kiện cho nút Lọc
+document.querySelector('button[onclick="filterProducts()"]').addEventListener('click', function() {
+    handleSearch(query); // Gọi lại hàm tìm kiếm khi nhấn nút Lọc
+});
+
+// Hàm lọc sản phẩm khi nhấn các liên kết (Quạt trần, Quạt lửng, ...)
+function filterProducts(type = '') {
+    filteredProducts = products.filter(product =>
+        product.type.toLowerCase().includes(type.toLowerCase())
+    );
+    displaySearchResults(1); // Hiển thị lại kết quả sau khi lọc
+}
+document.getElementById("filter-icon").addEventListener("click", function() {
+    var filterBox = document.getElementById("filter-box-search");
+    // Kiểm tra xem bảng lọc hiện tại có đang hiển thị không
+    if (filterBox.style.display === "none" || filterBox.style.display === "") {
+        // Nếu bảng lọc không hiển thị, hiển thị nó
+        filterBox.style.display = "block";
+    } else {
+        // Nếu bảng lọc đang hiển thị, ẩn nó đi
+        filterBox.style.display = "none";
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+     </script>
+     <script src="assets/js/formlogin.js"></script>
+</body>
+
+</html>
