@@ -135,5 +135,5 @@ function showNotification(message, type = 'success') {
     setTimeout(() => {
         notification.style.opacity = '0';
         setTimeout(() => container.removeChild(notification), 300);
-    }, 3000);
+    }, 1800);
 }

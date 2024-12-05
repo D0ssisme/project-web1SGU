@@ -358,8 +358,9 @@
             // Hàm hiển thị giỏ hàng
             function renderCart() {
                 if (cart.length === 0) {
-                    cartDiv.innerHTML = '<p>Giỏ hàng trống.</p>';
+                    cartDiv.innerHTML = '<p class="text-center fs-1 text-secondary">Giỏ hàng trống.</p>';
                     totalCartProduct.innerHTML = ''; // Xóa tổng cộng khi giỏ hàng trống
+                    document.getElementById('cash').id = "noCashDiv";
                 } else {
                     cartDiv.innerHTML = cart.map((item, index) => {
                         // Chuyển price từ chuỗi dạng "12.000" thành số
