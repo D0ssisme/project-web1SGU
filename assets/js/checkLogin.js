@@ -159,9 +159,28 @@ function checkformlogin() {
 function closeFormOutside() {
     document.getElementById('loginForm').style.display = 'none';
     document.getElementById('registerForm').style.display = 'none';
+    document.getElementById('check').style.display = 'none';
+
+
+}
+
+function openModal() {
+    document.getElementById("check").style.display = "flex";
+}
+
+function openModal_dangkythanhcong() {
+    document.getElementById('registerForm').style.display = 'none';
+    document.getElementById("dangkythanhcong").style.display = "flex";
+
 }
 
 
+function closeModal_loginthanhcong() {
+    document.getElementById("loginthanhcong").style.display = "none";
+}
+window.onload = function () {
+    checkLoginStatus(); // Kiểm tra trạng thái đăng nhập khi trang tải xong
+};
 
 
 
