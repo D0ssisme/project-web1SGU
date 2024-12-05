@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const showInvoiceDetails = (invoice) => {
         const modalContent = document.getElementById('modalContent');
         const productHtml = invoice.products.map(item => `
-            <div class="d-flex justify-content-between my-3">
+            <div class="d-flex justify-content-between my-3 p-3 rounded" style="background-color:#dad8d8">
                 <div>
                     <h6>${item.name}</h6>
                     <p>Mã sản phẩm: ${item.id}</p>

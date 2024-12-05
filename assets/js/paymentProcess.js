@@ -171,7 +171,7 @@ function showNotification(message, type = 'error') {
     // Ẩn thông báo sau 3 giây
     setTimeout(() => {
         notification.style.display = 'none';
-    }, 3000);
+    }, 1800);
 }
 
 
